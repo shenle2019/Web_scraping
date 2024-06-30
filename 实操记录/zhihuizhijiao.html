@@ -1,0 +1,1019 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=1200, maximum-scale=1, user-scalable=yes">
+    <meta name="renderer" content="webkit">
+    <title>首页 - 智慧职教</title>
+    <meta name="keywords" content="智慧职教,职业教育,数字化,信息化,在线教育,智慧教育, 碎片化,慕课,微课,知识点,技能点">
+    <meta name="description" content="智慧职教以知识点/技能点为基本颗粒度，以整个专业的知识/技能树为整体架构，通过系列元数据对素材实现系统化管理，从而使得每个素材都能被便捷地查询和调用。">
+    <!-- <script src="/common/js/tingyun-rum.js"></script> -->
+    <link href="/common/css/images/favicon.ico" rel="SHORTCUT ICON" />
+    <link rel="stylesheet" href="/portal_new/css/yui.css">
+    <link rel="stylesheet" href="/portal_new/fonts/iconfont.css">
+    <link href="/common/css/footer.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/common/css/jquery-ui.css">
+    <link href="/common/js/pnotify/jquery.pnotify.default.css" rel="stylesheet" />
+    <link href="/common/js/select2/select2.css" rel="stylesheet" />
+    <link href="/portal_new/css/main.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/portal_new/css/index.css">
+    <link href="/common/js/select2/select2.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/common/css/portalcommon/portalcommon.css">
+    <!--<link href="/common/js/pnotify/jquery.pnotify.default.css" rel="stylesheet" />-->
+    <!--<link rel="stylesheet" href="/portal/css/jquery-ui.css" type="text/css" media="all" />-->
+    <script src="/common/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="/common/js/common.js"></script>
+    <script type="text/javascript" src="/common/js/pagination.js"></script>
+    <script type="text/javascript" src="/portal_new/js/Slide.js"></script>
+    <script type="text/javascript" src="/portal/js/common/jquery.flexslider.js"></script>
+    <script type="text/javascript" src="/common/js/select2/select2.min.js"></script>
+    <script src="/common/js/pnotify/jquery.pnotify.min.js"></script>
+    <script type="text/javascript" src="/common/js/jqueryui/jqueryui.js"></script>
+</head>
+
+<body>
+    <!--头部-->
+    <div class="top-head subpage-top">
+        <div class="top-head-inner">
+            <div class="top-head-left fl">
+                <a href="/portal_new/portal/portal.html">
+                    <img src="/portal_new/images/subpage-logo.png" width="94" />
+                </a>
+            </div>
+            <ul class="top-head-right">
+                <li id="link_login">
+                    <a href="javascript:;" id="wechat-btn"
+                        style="color: #009999" class="usermenu">
+                        <img style="padding-top: 10px;" src="/common/css/images/weixin.png">微信登录
+                    </a>|
+                    <a href="javascript:;" class="login-link" id="login-btn">登录</a>|
+                    <a href="javascript:;" class="register-link" id="register-btn">注册</a></li>
+                <li>
+                    <a href="javascript:;" id="mycollection" style="color: #afadad;cursor:default">我的收藏</a>
+                    <div class="tea-studio collection-box" id="collection" style="display:none;">
+                        <div class="collection-nav">
+                            <a href="javascript:;" data-type="2" class="selected">微课</a>
+                            <a href="javascript:;" data-type="3">课程</a>
+                            <a href="javascript:;" data-type="1">素材</a>
+                        </div>
+                        <div id="collection_div">
+                            正在加载...
+                        </div>
+                    </div>
+                </li>
+                <li><a href="javascript:;" id="studyCenter" style="color: #afadad;cursor:default">我的学习中心</a></li>
+                <li>
+                    <a href="javascript:;" id="teaStudio" style="color: #afadad;cursor:default">教师工作室</a>
+                    <div class="tea-studio" id="teaStudioList">
+                        正在加载...
+                    </div>
+                </li>
+                <li style="text-align: center;">
+                    <a href="javascript:;" id="weChat" style="width: 80px;text-align: center;float: right;">公众号</a>
+                    <div class="tea-studio QR-code hidden" id="weChatPic">
+                        <div class="pic">
+                            <img src="/common/css/images/qrcode_zhzjguanfang_1.jpg" style="width:120px;height:120px;">
+                            <p>微信公众号</p>
+                        </div>
+                    </div>
+                </li>
+                <li style="text-align: center;">
+                    <a href="javascript:;" id="teacherApp" style="width: 80px;text-align: center;float: right;">APP</a>
+                    <div class="tea-studio QR-code hidden" id="teacherAppPic">
+                        <div class="pic">
+                            <img src="/common/css/images/qrcode_zjyguanfang.png" style="width:120px;height:120px;">
+                            <p>
+                                云课堂APP
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--头部end-->
+    <!--公共内容-->
+    <script src="/common/js/portal_new/portal_new3.js" type="text/javascript"></script>
+
+ <!--遮罩层-->
+ <div class="e-mask" style="display: none;"></div>
+
+ <div class="more-school-dialog login-learn-community" id="login-learn-community-close" style="display: none;">
+     <div class="dialog-opacity"></div>
+     <div class="dialog-content">
+         <div class="dialog-close"><a href="javascript:void(0);">X</a></div>
+         <div class="learn-community-dialog-h2">欢迎您
+             智慧职教平台，请选择：</div>
+         <div class="learn-community-dialog-btn">
+             <a href="javascript:void(0);" class="dialog-close-community-all">留在当前页</a>
+         </div>
+     </div>
+ </div>
+
+ <!--项目管理员登录弹出公告-->
+ <div class="e-mask" style="display: none;"></div>
+
+ <div class="more-school-dialog login-learn-community" id="tip_projectuser11" style="display: none;height:400px;padding: 36px 56px;top:25%;">
+     <div class="dialog-opacity" style="background: #fff url(/common/css/images/beijing.png) no-repeat top left;background-size: cover; opacity: 1;">
+         <div class="dialog-close">
+             <a id="a_tip_close" href="javascript:void(0);">X</a>
+         </div>
+     </div>
+     <!--<div class="dialog-content" data-type="1" style="padding:8px;display:none;">
+         <div style="height:200px;margin-top:30px;font-size: 12pt;">
+             <b style="font-size:14px;">【重要提示】</b>
+             &nbsp;&nbsp;&nbsp;根据《职业教育专业教学资源库建设工作手册（2017）》有关要求,
+             智慧职教平台应与各资源库项目签订<a href="/special/专业教学资源库知识产权保障协议.pdf" download style="color:blue;">《知识产权保障协议》（点击下载）</a>。
+             请各项目负责人打印填写相关内容，由主持院校签字盖章，在一个月之内寄回，敬请尽快办理，以保证正常运行。
+             寄回地址：北京市朝阳区惠新东街4号富盛大厦高等教育出版社19层（100029）,沈洁,13810019456。QQ：76566219。<br />
+             （如已签订协议并返回，请忽略此信息）
+         </div>
+     </div>-->
+     <div class="dialog-content protoco" data-type="2" style="display:none;">
+         <!--新申请-->
+         <div style="margin-top:30px;font-size: 12pt;">
+             尊敬的项目负责人： <br />
+             &emsp;&emsp;贵校“<label id="lbl_projectName"></label> ”专业尚未签订知识产权协议，请查看并打印本专业知识产权保障协议<a style="color:blue;" target="_blank" href="/portal_new/projectapplication/projectprotoco.html">（预览及打印）</a>，一式四份，并在协议末页加盖学校公章和学校负责人签名章。返回至以下地址：（重要文件，请选择正规快递！）<br />
+             <p style="border: 1px solid #fddeb2;margin: 1em;padding: 0.5em 1em;border-radius: 10px;background: #fffaec;color:#b46a15">
+                 北京市朝阳区富盛大厦1座高等教育出版社  100029 <br />
+                 沈洁  010-58556550 <br />
+             </p>
+             &emsp;&emsp;请您在1个月之内盖章并返回该协议，如果逾期未办理，将对您的专业内容建设产生影响。敬请尽快办理。<br />
+             &emsp;&emsp;<label>您也可以前往<a style="color:red;" href="/project/personal/mymsg.html">“个人中心”——“我的消息”</a>中查看本消息并获得协议。</label><br />
+             &emsp;&emsp;（系统管理员收到纸质协议后，此信息不再提示）<br />
+         </div>
+     </div>
+ </div>
+
+ <!--遮罩层-->
+ <div id="login-e-mask" style="display:none;"></div>
+
+ <!-- 重复信息用户 -->
+ <script id="repeat_user_html" type="text/html">
+
+     <div style="font-size:16px;padding:20px;">
+         &emsp;&emsp;系统检测到在智慧职教体系下，您可能还存在以下账号。如确系您本人的账号，请从下列用户中选择，我们将与您当前登录的用户进行合并。合并成功后，在当前账号中将能看到所有合并账号的数据和功能，被合并账号也将不能再登录。
+         <label style="color:red;font-weight:bold;">
+             账号合并过程是不可逆的，请确认后再进行合并。
+         </label>
+     </div>
+
+     <table id="table_repeat_user" style="margin-left:30px;">
+         <thead>
+             <tr>
+                 <th></th>
+                 <th style="text-align:center;">用户名</th>
+                 <th style="text-align:center;">姓名</th>
+                 <th style="width: 20%;text-align:center;">工号/学号</th>
+                 <th style="width: 20%;text-align:center;">身份</th>
+             </tr>
+         </thead>
+         <tbody>
+             {{if repeat_users && repeat_users.length > 0}}
+             {{each repeat_users as repeat_user i}}
+             <tr>
+                 <td class="col-center">
+                     <label>
+                         <input value="{{repeat_user.userId}}" data-userId="{{repeat_user.userId}}" type="checkbox" checked class="ask-i" />
+                     </label>
+                 </td>
+                 <td class="col-left" style="text-align: center;">
+                     {{repeat_user.userName}}
+                 </td>
+                 <td class="col-left" style="text-align: center;">
+                     {{repeat_user.displayName}}
+                 </td>
+                 <td class="col-left" style="text-align: center;">
+                     {{repeat_user.employeeNumber}}
+                 </td>
+                 <td class="col-left" style="text-align: center;">
+                     {{repeat_user.role}}
+                 </td>
+             </tr>
+             {{/each}}
+             {{/if}}
+         </tbody>
+     </table>
+     <div class="info-div">
+         <button id="btn_repeat_user" class="info-ok">确定</button>
+     </div>
+ </script>
+
+ <!--登录弹窗-->
+ <div class="more-school-dialog login-learn-community login-dialog hidden" id="login-dialog" style="display: none;z-index:100;">
+     <div class="dialog-opacity"></div>
+     <div class="dialog-content">
+         <div class="dialog-close"><a href="javascript:void(0);">X</a></div>
+         <div class="login-tab">
+             <div class="login-tab-title clefix">
+                 <ul class="ul_login">
+                     <li class="current" data-sourseclass="sourceType1" style="width:100%;color:#FFF">用户登录</li>
+                     <!--<li data-sourseclass="sourceType0"><a href="javascript:void(0);">社会学习者/企业用户</a></li>-->
+                     <!--<li data-sourseclass="sourceType0"><a href="javascript:void(0);">手机号登录</a></li>-->
+                 </ul>
+             </div>
+             <div class="login-tab-content sourceType1" style="padding: 20px;">
+                 <form class="login" method="post" id="form_login" action="/portal/Register/Login_New">
+                     <input type="hidden" name="loginType" value="1" />
+
+                     <div class="login_name">
+                         <em class="iname"></em>
+                         <input type="text" name="username" placeholder="帐号" class="ui-widget-content ui-corner-all" />
+                     </div>
+                     <div class="login_pwd">
+                         <em class="ipwd"></em>
+                         <input type="password" name="pwd" func="validate_passowrd" placeholder="密码" class="ui-widget-content ui-corner-all" />
+                     </div>
+                     <div class="login_yzm">
+                         <input placeholder="字母不分大小写" name="verifycode" type="text" class="loginput ui-widget-content ui-corner-all" maxlength="4" style="width: 152px" />
+                         <img class="img_verifycode" src="/portal/VerifyCode/index?t=0.38074587211869715" alt="验证码" title="看不清？点击更换" />
+                         <a href="#" class="change-code change_verifycode">换一张</a>
+                     </div>
+                     <div>
+                         <button type="submit" id="btn_login">登 录</button>
+                     </div>
+                     <div class="remeber">
+                         <div style="float: left;"><a href="/portal/register/register.html" class="forgetpwd" style="text-align: left;">尚未注册？现在注册</a></div>
+                         <a href="/portal/resetPassword.html" class="forgetpwd" target="_blank">忘记密码？</a>
+                     </div>
+                 </form>
+             </div>
+
+             <div class="login-tab-content sourceType0" style="display: none;">
+                 <form class="login" method="post" id="form_login_mobile" action="/portal/register/Login_Mobile">
+                     <div class="login_name">
+                         <em class="iname"></em>
+                         <input type="text" name="mobile" placeholder="手机号" maxlength="20" class="ui-widget-content ui-corner-all" />
+                     </div>
+                     <div class="login_pwd">
+                         <em class="ipwd"></em>
+                         <input type="password" name="pwd" func="validate_passowrd" placeholder="密码/短信验证码" maxlength="20" class="ui-widget-content ui-corner-all" />
+                         <label>
+                             <a class="message-code getCode" aria-disabled="false" href="javascript:;">获取验证码</a>
+                         </label>
+                     </div>
+                     <div class="login_yzm">
+                         <input placeholder="字母不分大小写" name="verifycode" type="text" class="loginput ui-widget-content ui-corner-all" maxlength="4" style="width: 152px" />
+                         <img class="img_verifycode" src="/portal/VerifyCode/index?t=0.38074587211869715" alt="验证码" title="看不清？点击更换" />
+                         <a href="#" class="change-code change_verifycode">换一张</a>
+                     </div>
+                     <div>
+                         <button type="submit" id="btn_login_mobile">登 录</button>
+                     </div>
+                     <div class="remeber">
+                         <div style="float: left;"><a href="/portal/register/register.html" class="forgetpwd" style="text-align: left;">尚未注册？现在注册</a></div>
+                         <a href="/portal/resetPassword.html" class="forgetpwd" target="_blank">忘记密码？</a>
+                     </div>
+                 </form>
+             </div>
+         </div>
+         <div class="resetpwd" style="display: none; padding: 20px;">
+             <form class="login" method="post" id="form_resetpwd" action="/portal/register/resetpwd">
+                 <input type="hidden" name="verifyCode" class="verifyCode">
+                 <div class="login_name hidden">
+                     <em class="iname"></em>
+                     <input type="text" name="username" placeholder="帐号" class="ui-widget-content ui-corner-all" />
+                 </div>
+
+                 <div class="login_pwd hidden">
+                     <em class="ipwd"></em>
+                     <input type="password" name="pwd" func="validate_passowrd" placeholder="密码" maxlength="20" class="ui-widget-content ui-corner-all" />
+                 </div>
+
+                 <div class="login_name" id="school_select" style="padding-bottom: 20px;">
+                     <span class="select2" style="display: block;">
+                         <input type="hidden" id="schoolId" name="schoolId" style="width: 100%" />
+                     </span>
+                 </div>
+
+                 <div class="login_name">
+                     <input type="text" class="ui-widget-content ui-corner-all" name="realname" maxlength="11" placeholder="真实姓名">
+                 </div>
+
+                 <div class="login_pwd">
+                     <em class="ipwd"></em>
+                     <input type="password" name="newpwd" func="validate_passowrd" placeholder="新密码" maxlength="20" class="ui-widget-content ui-corner-all" />
+                     <span style="color: #949494">密码由大写字母、小写字母、数字、特殊字符中任意三种组成，长度为<span style='color:#ff8030;display: inline;'>8-32</span>位，特殊字符为<span style='color:#ff8030;display: inline;'>!@#$%^&*()_+-=</span></span>
+                 </div>
+
+                 <div class="login_name">
+                     <input type="text" name="mobile" placeholder="手机号" maxlength="20" class="ui-widget-content ui-corner-all" />
+                 </div>
+
+                 <div class="login_name">
+                     <input type="text" class="message ui-widget-content ui-corner-all" name="message" placeholder="验证码" style="width: 200px" />
+                     <label>
+                         <a class="message-code getCode" aria-disabled="false" href="javascript:;">获取验证码</a>
+                     </label>
+                 </div>
+
+                 <div>
+                     <button type="submit" id="btn_resetpwd">确 定</button>
+                 </div>
+             </form>
+         </div>
+     </div>
+ </div>
+
+ <!-- 是否合并账号 -->
+ <div class="merge">
+     <div class="merge-content">
+         <div class="content-header">温馨提示</div>
+         <div class="merge-info">
+             <div class="info-c">
+                 如果您在系统中有多个账号，您可以 <a class="join_bang" style="color:blue;cursor:pointer">进入合并</a> 进行账号合并。合并完成后，您可以用合并后的账号，一站访问智慧职教，职教云，慕课学院三个平台。
+                 <br />
+                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;如果您没有多个账号，请点击 “确定” 后直接访问系统即可
+             </div>
+             <div class="info-content">
+                 <input type="hidden" class="user-id">
+                 <input type="checkbox" checked class="info-input">
+                 <span>不再提醒(如需进行多个账号合并，可前往“个人中心”—“个人信息”进行设置)</span>
+             </div>
+             <div class="info-div">
+                 <button class="info-ok">确定</button>
+                 <!--<button class="info-false">取消</button>-->
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <div class="showmsg" style="display: none;">
+     <!--<div style="height:50px;background-color:#389FC0;color:#fff;font-size:20px;line-height:50px;padding-left:20px;">
+         温馨提示
+     </div>-->
+     <div style="font-size:18px;margin-top:10px;text-indent:36px;padding:20px;">
+         为了让您在智慧职教平台有更好的应用体验，我们正在为您进行一站式账号打通服务，请稍等……
+         账号合并完成后，您可以使用一个账号<!--或经过实名认证的手机号-->登录并使用智慧职教系统中的所有平台，包括职教云和mooc学院。
+     </div>
+ </div>
+
+ <script id="div_resetusername" type="text/html">
+     <form class="login" method="get" id="form_resetusername" action="/portal/register/resetusername">
+         <div style="background-color:#F5F5F5; width:599px;height:420px;border-radius:6px;overflow: hidden;">
+             <!--<div class="ty-user-title">亲爱的用户：请选择需要保留的用户名</div>-->
+             <input type="hidden" name="pwd" />
+             <div style="margin:30px;" class="select-radio-wrapper">
+                 <div class="radio-child-wrapper-left">
+                     <!--<div class="img-wrapper">
+                         <img src="/common/css/images/zjy.png" />
+                     </div>-->
+                     <!--<div class="label-title"> 职教云 </div>-->
+                     <div class="label-title"> 账户A </div>
+                     <div class="label-content">{{userInfo.UserName}}</div>
+                     <div class="radio-s"><input type="radio" name="username" /></div>
+                 </div>
+                 <div style="float:right;width:250px;height:187px;border-radius:6px;background-color:#fff;position:relative;">
+                     <!--<div style="width:88px;height:88px;margin:0 auto;margin-top:21px;">
+                         <img src="/common/css/images/zhzj.png" />
+                     </div>-->
+                     <!--<div class="label-title"> 智慧职教 </div>-->
+                     <div class="label-title"> 账户B </div>
+                     <div class="label-content">{{userInfo.SecondUserName}}</div>
+                     <div class="radio-s"> <input type="radio" name="username" /></div>
+                 </div>
+             </div>
+             <div class="important-tips">
+                 <div class="tip-title">重要提示：</div>
+                 <div class="tip-content">
+                     选择保留的用户名将成为您登录智慧职教系统的唯一用户名，您可使用该用户名及密码一站式访问智慧职教、职教云及mooc学院。另一用户名将不能继续使用。
+                 </div>
+             </div>
+
+             <div class="btn-sure-wrapper">
+                 <button type="button" id="btn_resetusername" style=" width: 526px;margin: 0 auto;">确 定</button>
+             </div>
+         </div>
+     </form>
+ </script>
+
+ <div class="last-tip-wrapper">
+     <div class="new-tip-child">
+         <div class="tip-head-s">温馨提示</div>
+         <div class="tip-content-s">
+             <div class="warning-img">
+                 <img src="/common/css/images/warning.png" />
+             </div>
+
+             <div class="last-user-name">您选择的智慧职教用户名是：<span style="color:#389FC0;" id="last-user-name"></span> </div>
+             <div class="remenber-user-name">请牢记您的用户名哦！</div>
+         </div>
+         <div class="btn-sure-wrapper-last">
+             <button type="button" id="ButtonLast" style=" width: 526px;
+             margin: 0 auto;">
+                 确 定
+             </button>
+         </div>
+     </div>
+ </div>
+
+ <div class="more-school-dialog login-learn-community login-dialog hidden" id="complete-dialog" style="top:40%">
+ </div>
+ <div class="more-school-dialog login-learn-community login-dialog hidden" id="askbind_dialog" style="top:50%">
+ </div>
+<div class="more-school-dialog login-learn-community login-dialog hidden" id="mooc_upgrade_dialog" style="top:50%">
+ </div>
+
+
+ <script id="complete_dialog_html" type="text/html">
+     <div class="dialog-opacity"></div>
+     <div class="dialog-content" style="padding: 20px 20px 0px;">
+         <p style="color: #ff0000;font-size: 14px;line-height: 18px;">
+             【提示】目前尚未进行实名制登记的用户，请完善个人信息后，继续使用平台相关功能。
+         </p>
+         <div class="dialog-login-title" style="padding-top:10px">完善信息</div>
+         <form class="login" method="post" id="form_complete" action="/portal/register/completeRegister">
+             <input type="hidden" name="usertype" value="{{usertype}}">
+             <input type="hidden" name="username" value="{{username}}">
+             <input type="hidden" name="userId" value="{{userInfo.Id}}" />
+             <input type="hidden" name="verifyCode" class="verifyCode">
+             <div class="login_name">
+                 <div class="cols">
+                     <input type="text" class="text" name="realname" maxlength="11" placeholder="真实姓名" value="{{userInfo.DisplayName}}">
+                 </div>
+             </div>
+
+             <div class="login_name">
+                 <div class="cols">
+                     <input type="text" class="text" name="mobile" id="mobile" maxlength="11" placeholder="手机号" value="{{userInfo.Mobile}}" data-mobile="{{userInfo.Mobile}}">
+                     <div class="register-num-wrong"></div>
+                 </div>
+             </div>
+
+             <div class="login_name" id="message_div">
+                 <input type="text" class="message" id="message" name="message" placeholder="验证码" style="width: 200px" />
+                 <label>
+                     <a class="message-code getCode" aria-disabled="false" href="javascript:;">获取验证码</a>
+                 </label>
+             </div>
+             <input type="hidden" id="unit" value="{{unit}}" />
+             <div class="login_name">
+                {{if editSchoolRight==1}}
+                 <span class="select2" style="display: block;">
+                     <input type="hidden" id="hostunit" name="hostunit" style="width: 100%" value="{{userInfo.SchoolId}}"  />
+                 </span>
+                 {{else}}
+                 <span class="select2" style="display: block;">
+                    <input type="hidden" id="hostunit" name="hostunit" style="width: 100%" value="{{userInfo.SchoolId}}"  readonly/>
+                </span>
+                {{/if}}
+             </div>
+             <br />
+             {{if usertype == 1 || usertype == 2 || usertype == 9 || usertype == 11 || usertype == 14 || usertype == 15}}
+             <div class="login_name">
+                 {{if usertype == 1}}
+                 <input type="text" name="worknum" class="worknum" placeholder="学号" value="{{userInfo.EmployeeNumber}}">
+                 {{else}}
+                 <input type="text" name="worknum" class="worknum" placeholder="工号" value="{{userInfo.EmployeeNumber}}">
+                 {{/if}}
+                 <div class="register-worknum-wrong"></div>
+             </div>
+             {{/if}}
+             <div>
+                 <button type="button" id="btn_complete">完成</button>
+             </div>
+         </form>
+     </div>
+ </script>
+
+ <script id="askauthbind_dialog_html" type="text/html">
+     <div class="dialog-opacity"></div>
+     <div class="dialog-content" style="height:375px;">
+         <p class="tip_p" style="color: #ff0000;padding: 48px 20px 0px;">
+             【提示】
+         </p>
+         <p class="tip_p">
+             ①一个智慧职教账号只能认证关联一个职教云账号
+         </p>
+         <p class="tip_p">
+             ②系统会自动检测您在职教云上的账号，如果没有
+         </p>
+         <p class="tip_p">
+             检测到，您可以直接输入用户名密码进行认证
+         </p>
+         <p class="tip_p">
+             ③如果您在职教云上还没有账号，您可以直接跳过
+         </p>
+         <div style="height: 45px;margin-top: 45px;">
+             <input type="checkbox" id="bindstate" name="bindstate" value=1 style="width:20px;height:20px;margin-left: 20px;margin-top:10px;" />
+             <span style="font-size: 16px;">不再提示</span>
+         </div>
+         <div>
+             <button type="button" class="bind_btn" id="skipbind" style="margin-left:50px;">暂不认证</button>
+             <button type="button" class="bind_btn" id="gotobind">前往认证</button>
+         </div>
+     </div>
+ </script>
+ <!--遮罩层结束-->
+ <!--教师工作室、我的收藏、个人信息-->
+ <script type="text/html" id="teaStudioList_html">
+     {{if list.length > 0}}
+     {{each list as item i}}
+     <div class="course-view clefix">
+         {{if item.cover.length > 0 }}
+         <img src='{{item.cover}}' style="width: 110px; height: 65px" class="courseimg" />
+         {{else}}
+         <img src="/project/img/smile.jpg" style="width: 110px; height: 65px" class="courseimg" />
+         {{/if}}
+         <div class="course-name">
+             <h3 title="{{item.title}}">{{subString(item.title,0,15)}}</h3>
+             <a href="/project/welcome/welcome.html?PJId={{item.propertyId}}" class="enter-btn" target="_blank">点击进入</a>
+         </div>
+     </div>
+     {{/each}}
+     {{else}}
+     暂无课程
+     {{/if}}
+ </script>
+ <script type="text/html" id="collection_html">
+     {{if list.length > 0}}
+     {{each list as item i}}
+     <div class="course-view clefix">
+         {{if item.PreviewUrl_Cover.length > 0 }}
+         <img src='{{item.PreviewUrl_Cover}}' style="width: 110px; height: 65px" class="courseimg" />
+         {{else}}
+         <img src="/studycenter/img/course.jpg" style="width: 110px; height: 65px" class="courseimg" />
+         {{/if}}
+         <div class="course-name">
+             <h3 title="{{item.title}}">{{subString(item.title,1,15)}}</h3>
+             <a href="{{item.linkUrl}}" class="enter-btn" target="_blank">点击进入</a>
+         </div>
+     </div>
+     {{/each}}
+     {{else}}
+     暂无收藏
+     {{/if}}
+ </script>
+ <!--教师工作室、我的收藏、个人信息结束-->
+
+<script type="text/html" id="mooc_upgrade_html">
+<div id="dlg_info" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 30px; max-height: none; height: auto;">
+        <div class="am-form am-form-horizontal am-g-collapse from_add_activity am-form">
+            <div class="am-panel-bd">
+                <div class="am-form-group">
+                    <p style="line-height: 30px;overflow-x: hidden;overflow-y: auto;word-break: break-word;display: inline-block;padding: 0;margin: 0;">
+                       智慧职教MOOC学院更新啦！点击【去新版】前往新版，请使用手机号验证码登录。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+
+
+
+
+
+
+ <!--底部结束-->
+
+    <!--公共内容end-->
+    <!--菜单-->
+    <div class="nav-box">
+    <div class="nav-inner">
+        <ul class="nav">
+            <li><a href="/portal_new/portal/portal.html">首页</a></li>
+			<li><a href="https://kcsz.icve.com.cn" target="_blank">课程思政</a></li>
+            <li><a href="https://qun.icve.com.cn" target="_blank">专业群</a></li>
+            <li>
+                <a href="//zyk.icve.com.cn" class="has-child">资源库</a>
+                <span class="sub-nav">
+                    <a href="//zyk.icve.com.cn/project">专业</a>
+                    <a href="//zyk.icve.com.cn/course">课程</a>
+                    <a style="display:none;" href="/portal_new/coursetrain/coursetrain.html">培训</a>
+                    <a style="display:none;" href="/portal_new/courseskill/skilltraining.html">技能训练</a>
+                    <a style="display:none;" href="/portal_new/weike/weike.html">微课</a>
+                    <a href="//zyk.icve.com.cn/material">素材</a>
+                </span>
+            </li>
+
+            <li style="width:135px;">
+                <a href="//zjy2.icve.com.cn" target="_blank" class="has-child" style="text-align:center;">职教云</a>
+                <span class="sub-nav" style="width:135px;">
+                    <a href="//zjy2.icve.com.cn" target="_blank">新版SPOC平台</a>
+                    <a href="//user.icve.com.cn" target="_blank">职教云3.0</a>
+                </span>
+            </li>
+
+
+
+
+            <!-- <li><a id="jumpzjy2" href="https://user.icve.com.cn/" target="_blank">职教云</a></li> -->
+            
+            <li><a id="jumpmooc" href="https://mooc.icve.com.cn/" target="_blank">MOOC学院</a></li>
+            <!-- <li><a href="https://x.icve.com.cn/" target="_blank">X学院</a></li> -->
+            <li><a href="https://icve-mooc.icve.com.cn/cms/secondaryVocationalCourses/index.htm" target="_blank">中职频道</a></li>
+            <li><a href="https://px.icve.com.cn/app/continuingEdu" target="_blank">智慧继教</li>
+            <li><a href="https://strs.icve.com.cn/index" target="_blank">智慧教研室</a></li>
+            <li><a href="https://ic.icve.com.cn/" target="_blank">国际频道</a></li>
+            <li style="display:none;">
+                <a href="javascript:;" class="has-child">高教社专区</a>
+                <span class="sub-nav">
+                    <a href="/portal_new/ythbook/ythknowledgenode.html" target="_blank">新形态教材</a>
+                    <a href="/portal_new/opencourse/gjs.html" target="_blank">数字课程</a>
+                    <a href="/portal_new/portal/special.html" target="_blank">专题资源库</a>
+                    <a href="https://ebook.hep.com.cn/ebooks/index.html#/" target="_blank">高教社电子书</a>
+                </span>
+            </li>
+        </ul>
+    </div>
+</div>
+
+    <!--菜单end-->
+
+<div class="course-banner"></div>
+<div class="wrapper">
+    <div class="wrapper-inner">
+        <!-- 课程 BOX -->
+        <div class="yui3-g">
+            <div class="yui3-u-1">
+                <div class="e-section section-course">
+                    <div class="m-tag">
+                        <div class="attr" id="main">
+                            <div class="m-attr clefix metype">
+                                <div class="a-key"><strong>专业大类：</strong></div>
+                                <div class="a-val clefix" style="height: auto;">
+                                    <span style="width: 50px;" class="fl"><a href="#" class="current isGetCourseZY parent" type="mAll">全部</a></span>
+                                    <div class="a-val-right fl">
+                                        <span>
+                                            <a href="#" data-id="qwwpasgkvkll4dhwzjtbxq" title="" class="parent">公共基础</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="-da5apuj069jwifwrgfmka" title="" class="parent">民族文化传承与创新</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="zatjarmmaa5htbscbmke5a" title="" class="parent">财经商贸大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="2v9darmmj6fpt-zavmx0eg" title="" class="parent">医药卫生大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="gdryarmmyl1elrkwv5dejg" title="" class="parent">电子信息大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="du42armmrlxkjatg4l5cva" title="" class="parent">装备制造大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="myz0armmoq9e93e3b0vgeg" title="" class="parent">教育与体育大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <br />
+                                        <span>
+                                            <a href="#" data-id="gsafarmmgovioqfg2rhotg" title="" class="parent">土木建筑大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="kjhmarmmerhjvpt-bkom-w" title="" class="parent">交通运输大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="ibbsarmmvodbvvprmrhvxa" title="" class="parent">文化艺术大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="ucnoarmmvp9dlw3wcb14lg" title="" class="parent">旅游大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="e9blapkjrydao5ds-1-bda" title="" class="parent">农林牧渔大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="79pgarmmulnckxua66wegw" title="" class="parent">食品药品与粮食大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="u9v3armmxitaauj9m4of-g" title="" class="parent">公安与司法大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <br />
+                                        <span>
+                                            <a href="#" data-id="fyadarmmdatbbkdyqcpwbg" title="" class="parent">资源环境与安全大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="yvgrarmmy55clv2etsawwg" title="" class="parent">能源动力与材料大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="dpp6armme7nnurlxjdmauw" title="" class="parent">公共管理与服务大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="vtjaarmmrjjkahp-uc5byg" title="" class="parent">生物与化工大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="wenzarmmoqrdplnn8mx1wg" title="" class="parent">新闻传播大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="ionearmm5rbpubgh-x0d9q" title="" class="parent">轻工纺织大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                        <span>
+                                            <a href="#" data-id="xoejarmmskbcmim2fwhzpg" title="" class="parent">水利大类</a>
+                                            <p class="associated" style="height: auto; display: none;">加载中...</p>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="m-attr bor-none clefix major">
+                                <div class="a-key"><strong>综合排序：</strong></div>
+                                <div class="a-val">
+                                    <span><a href="#" data-order="WeekLogCount" class="current _order">热度</a></span>
+                                    <span><a href="#" data-order="DatePublish" class="_order">时间</a></span>
+                                </div>
+                            </div>
+                            <div class="m-attr bor-none clefix print hidden">
+                                <div class="a-key"><strong>出版状态：</strong></div>
+                                <div class="a-val">
+                                    <span><a href="#" data-state="" class="current _order">全部</a></span>
+                                    <span><a href="#" data-state="1" class="_order">已出版</a></span>
+                                    <span><a href="#" data-state="2" class="_order">未出版</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="data-list">
+                        <style type="text/css">
+                            .pageChange {
+                                background: #e77470 !important;
+                                border: none !important;
+                            }
+                        </style>
+                        <div class="widgets view-row" id="select_view" style="margin-bottom:0;">
+                            <a href="#" class="view-thumb select" data-type="coursethumb"></a>
+                            <a href="#" class="view-list" data-type="courseList"></a>
+                        </div>
+                        <div class="search-box">
+                            <input type="text" placeholder="按主讲人/课程名称/所属院校查询" class="search-i" name="keyvalue" id="searchValue" value="">
+                            <input type="button" value="" class="search-b">
+                        </div>
+
+                        <form action="/portal/course/getNewCourseInfo" class="gform" id="course_thumb_form">
+                            <input type="hidden" name="order" />
+                            <input type="hidden" name="kczy" />
+                            <input type="hidden" name="keyvalue" />
+                            <input type="hidden" value="" name="printstate" />
+                            <div id="coursethumb">
+                            </div>
+                        </form>
+                        <form action="/portal/course/getNewCourseInfo" class="gform" id="course_list_form">
+                            <input type="hidden" name="order" />
+                            <input type="hidden" name="kczy" />
+                            <input type="hidden" name="keyvalue" />
+                            <input type="hidden" value="" name="printstate" />
+                            <div id="courseList" style="display:none;">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 课程 BOX 结束 -->
+    </div>
+</div>
+
+<script type="text/html" id="course_zy_html">
+    {{if list && list.length > 0}}
+    {{each list as item i}}
+    <a href="#" class="isGetCourseZY" data-id="{{item.Id}}">{{item.Name}}</a>
+    {{/each}}
+    {{/if}}
+</script>
+
+<script type="text/html" id="course_list_html">
+    <style>
+        .li_bg5 {
+            background: url(/portal_new/images/print.png) no-repeat;
+            position: relative;
+            top: -9px;
+            right: 89px;
+            display: inline-block;
+            height: 42px;
+            width: 94px;
+            background-size: cover;
+            z-index: 10;
+        }
+    </style>
+    {{if list && list.length > 0}}
+    {{each list as item i}}
+    <div class="data-row">
+        <div class="data-inner clefix">
+            {{if item.PrintingStates == 1}}
+                <span class="li_bg5"></span>
+            {{/if}}
+            <div class="data-thumb">
+                <div class="img-scale">
+
+                    <a href="/portal_new/courseinfo/courseinfo.html?courseid={{item.Id}}" target="_blank">
+                        {{if item.Cover}}
+                        <img src="{{item.Cover}}" style="width: 270px; height: 160px;">
+                        {{else}}
+                        <img src="/portal/img/coursepage-pic.jpg" style="width: 270px; height: 160px;">
+                        {{/if}}
+                    </a>
+                </div>
+            </div>
+            <h3 class="data-title">
+                <a href="/portal_new/courseinfo/courseinfo.html?courseid={{item.Id}}" target="_blank">{{item.Title}}</a>
+            </h3>
+            <div class="data-teacher">
+                <span>{{if item.TeacherDisplayname}}{{item.TeacherDisplayname}}{{else}}暂无主讲教师{{/if}}</span>
+                <span class="mgl15" title="{{item.UnitName}}">{{if item.UnitName}}{{item.UnitName}}{{else}}暂无单位{{/if}}</span>
+            </div>
+            <div class="data-desc">
+                {{if  item.RecommendWord  == null || item.RecommendWord  ==""}}
+                此课程暂无推荐词
+                {{else}}
+                {{item.RecommendWord}}
+                {{/if}}
+            </div>
+            <div class="data-info">
+                <a href="/portal_new/courseinfo/courseinfo.html?courseid={{item.Id}}" target="_blank" class="link">查看详细</a>
+                <span style="padding: 0;"><i class="iconfont icon-renyuan"></i>{{item.Num}}</span>
+                <span style="background:url(/portal_new/images/icon_time.png) no-repeat 0px center; padding-left:20px;margin-left: 20px;">{{item.DatePublish}}</span>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{else}}
+    <div style="text-align: center; font-size: 22px">暂无相关课程</div>
+    {{/if}}
+    <div class="paging">
+        <div class="pagination ajax"></div>
+    </div>
+</script>
+
+<script type="text/html" id="course_thumb_html">
+    <style>
+        .li_bg{
+                /*background: url(/portal_new/images/demo.png) no-repeat;*/
+                background: url(/portal_new/images/chuban.png) no-repeat;
+                position: absolute;
+                top: -14px;
+                right: -11px;
+                display: inline-block;
+                height: 50px;
+                width: 80px;
+                background-size: cover;
+                z-index: 10;
+			}
+            .li_bg2{
+                background: url(/portal_new/images/publish.png) no-repeat;
+                position: absolute;
+                top: -11px;
+                right: -11px;
+                display: inline-block;
+                height: 48px;
+                width: 80px;
+                background-size: cover;
+                z-index: 10;
+			}
+            .li_bg3{
+                background: url(/portal_new/images/depu.png) no-repeat;
+                position: absolute;
+                top: -12px;
+                right: -11px;
+                display: inline-block;
+                height: 67px;
+                width: 80px;
+                background-size: cover;
+                z-index: 10;
+			}
+        .li_bg4 {
+            background: url(/portal_new/images/print.png) no-repeat;
+            position: absolute;
+            top: -15px;
+            right: -29px;
+            display: inline-block;
+            height: 42px;
+            width: 94px;
+            background-size: cover;
+            z-index: 10;
+        }
+    </style>
+    <ul class="curriculum clefix kc_2">
+        {{if list.length > 0}}
+        {{each list as item i}}
+        <li style="overflow:inherit">
+            <div class="curriculum-list" style="position:relative;">
+                {{if item.PrintingStates == 1}}
+                   <!--  <span class="li_bg4"></span> -->
+                {{/if}}
+                <div class="pic">
+
+                    <a href="/portal_new/courseinfo/courseinfo.html?courseid={{item.Id}}" target="_blank">
+                        {{if item.Cover}}
+                        <img src="{{item.Cover}}" style="width: 230px; height: 130px;">
+                        {{else}}
+                        <img src="/portal/img/coursepage-pic.jpg" style="width: 230px; height: 130px;">
+                        {{/if}}
+                    </a>
+                </div>
+                <div class="curriculum-info clefix">
+                    <h3 class="info-title"><a href="/portal_new/courseinfo/courseinfo.html?courseid={{item.Id}}" target="_blank" title="{{item.Title}}">{{item.Title}}</a></h3>
+                    <div class="info-left">
+                        <div class="data-teacher"><span>{{if item.TeacherDisplayname}}{{item.TeacherDisplayname}}{{else}}暂无主讲教师{{/if}}</span></div>
+                        <div class="data-job" title="{{item.UnitName}}">{{if item.UnitName}}{{item.UnitName}}{{else}}暂无单位{{/if}}</div>
+                    </div>
+                    <div class="info-right">
+                        <p class="number">{{item.Num}}  </p>
+                        <p class="time">{{item.DatePublish}}</p>
+                    </div>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+        {{else}}
+        <li style="width:100%">
+            <div style="text-align: center; font-size: 22px">暂无相关课程</div>
+        </li>
+        {{/if}}
+    </ul>
+    <div class="paging page-center">
+        <div class="pagination ajax"></div>
+    </div>
+</script>
+
+<script src="/portal_new/js/course/course.js?201902221415"></script>
+<div class="footer">
+    <div class="footer-inner">
+        <div class="footer-left" style="width:40%;margin-bottom: 12px; overflow: hidden;padding-bottom: 10px;">
+        </div>
+        <script id="foot-left" type="text/html">
+            {{ each list as item}}
+            <a href="{{item.SiteUrl}}" target="_blank">{{item.SiteName}}</a>
+            {{/each}}
+        </script>
+        <div class="footer-right" style="width:60%">
+            <h3 class="footer-logo">&nbsp;</h3>
+            <div class="footer-text" style="padding-right:80px;">
+                <p>
+                    <a href="/portal_new/apply/apply.html" target="_blank">开通项目申请表</a>&nbsp;|&nbsp;
+
+                    <a href="/portal_new/platform/platform.html?page=1" target="_blank">平台简介</a>&nbsp;|&nbsp;
+
+                    <a href="/portal_new/platform/platform.html?page=2" target="_blank">知识产权</a>&nbsp;|&nbsp;
+
+                    <a href="/portal_new/platform/platform.html?page=3" target="_blank">免责声明</a>&nbsp;|&nbsp;
+
+                    <a href="/portal_new/platform/platform.html?page=4" target="_blank">意见反馈</a>&nbsp;|&nbsp;
+
+                    <a href="/portal_new/platform/platform.html?page=5" target="_blank">联系我们</a>&nbsp;|&nbsp;
+
+                    <!-- <a href="/portal_new/platform/platform.html?page=6" target="_blank">积分说明</a>&nbsp;|&nbsp; -->
+
+                    <a href="/portal_new/platform/policy.html" target="_blank">隐私政策</a>&nbsp;
+                </p>
+            </div>
+            <div class="footer-text">
+                <p>
+                    <a style="float: left;" href="https://help.icve.com.cn/jjxx" target="_blank">&nbsp; &nbsp; &nbsp;疫情防控在线教学方案</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+          <div style="width:800px; margin:0 auto; text-align: center;">
+              <a target="_blank" href="http://www.beian.gov.cn/" style="display:inline-block;text-decoration:none;height:20px;line-height:20px;">
+                <span style="padding: 0 5px;">京公网安备 11010202007836号</span></a>
+              <span>Copyright©2014-2019 高等教育出版社</span>
+              <a target="_blank" href="https://beian.miit.gov.cn/" class="copyright-ICP">京ICP备12020869号-19</a>
+          </div>
+      </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function getFriendLink() {
+        _.ajax("/common/common/getFriendLink", function (r) {
+            $(".footer-left").html(template("foot-left", r));
+        })
+    }
+    getFriendLink();
+
+    (function(w, d, s, q) { 
+	w[q] =w[q] || []; 
+	var f=d.getElementsByTagName(s)[0],j=d.createElement(s); 
+	j.async=true; 
+	j.id='beacon-aplus'; 
+        j.src='https://o.alicdn.com/QTSDK/quicktracking-sdk/qt_web.umd.js'; 
+	f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'aplus_queue');
+
+    aplus_queue.push({ action: 'aplus.setMetaInfo', arguments: ['appKey', 'j48c23j4zslq8xzcww03r6lr']  }) 
+    aplus_queue.push({ action: 'aplus.setMetaInfo', arguments: ['trackDomain', 'qtedu.om.moe.edu.cn']  });
+
+</script>
+</body>
+</html>
+
