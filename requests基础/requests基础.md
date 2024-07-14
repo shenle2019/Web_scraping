@@ -235,7 +235,7 @@
   for dic in page_text['list']:
       title = dic['Title']
       name = dic['TeacherDisplayname']
-      print(title,name)s
+      print(title,name)
   ```
   
   ```python
