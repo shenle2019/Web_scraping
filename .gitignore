@@ -2,6 +2,9 @@
 # 巨量IP 代理凭证配置（每个开发者本地各有一份）
 proxy_config_local.py
 
+# ks.wangxiao.cn 登录Cookie与MySQL配置（每个开发者本地各有一份）
+ks_config_local.py
+
 # 环境变量文件
 .env
 .env.*
@@ -10,6 +13,12 @@ proxy_config_local.py
 __pycache__/
 *.py[cod]
 *.egg-info/
+
+# ===== 生成的大体积成果文件（可由脚本重新生成，不入库）=====
+ks_questions.html
+
+# ===== 运行日志 =====
+*.log
 
 # ===== 编辑器 / 系统 =====
 .idea/
