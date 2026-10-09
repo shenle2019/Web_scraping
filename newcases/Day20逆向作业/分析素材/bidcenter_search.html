@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>人机验证</title>
+    <meta charset="utf-8" />
+    <script src="//static.bidcenter.com.cn/js/www/js/jquery-1.8.2.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="//o.alicdn.com/captcha-frontend/aliyunCaptcha/AliyunCaptcha.js"></script>
+    <script src="//static.bidcenter.com.cn/js/shuju/js/Ali.Captcha2-v4.js"></script>
+</head>
+<body>
+    <div id="space-semantic">
+        <div id="embed-wrapper">
+            <div class="embed-wrapper">
+                <div id="captcha-element"></div>
+                手动跳转：<a href="/" id="button" class="login-btn">https://www.bidcenter.com.cn/</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        if(location.search&&location.search.length>5&&location.search.indexOf('url=')>-1){
+            var url_new=location.search.substring(5);
+            $("#button").attr("href",url_new).html(url_new);
+
+            //参数设置
+            captchaVerifyCallback_params = {
+                from: 6214,
+                location: 11222,
+                SceneId: "wr4rg7sl",
+                mode: 'popup'
+            }
+            // 业务请求验场景及模式
+            initAliyunCaptcha_config.SceneId="wr4rg7sl";
+            initAliyunCaptcha_config.mode="popup";
+            initAliyunCaptcha_config.test=true;
+            // 业务请求验证结果回调函数
+            initAliyunCaptcha_config.onBizResultCallback=function(bizResult) {
+                location.href=url_new;
+            }
+            initAliyunCaptcha(initAliyunCaptcha_config);
+
+            $(function(){
+                setTimeout(function () {
+                    $("#button").click();
+                }, 1000);
+            });
+        }
+    </script>
+</body>
+</html>

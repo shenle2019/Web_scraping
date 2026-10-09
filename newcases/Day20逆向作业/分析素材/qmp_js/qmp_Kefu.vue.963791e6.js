@@ -1,0 +1,1 @@
+import{d as t,j as o,k as s,V as a,s as c}from"./entry.0efbab5b.js";const u=t({__name:"Kefu",setup(r){function n(){var e;(e=document.querySelector(".qmp-one-chat-btn"))==null||e.click()}return(e,_)=>(o(),s("span",{class:"btn-red hand",onClick:n},[a(e.$slots,"default",{},()=>[c("咨询客服")])]))}});export{u as _};

@@ -1,0 +1,1 @@
+import{V as e}from"./entry.94faa935.js";const s=e([{label:"pc顶部广告位",pos:"pc-top",size:"1166px*150px"},{label:"手机顶部广告位",pos:"mobile-top",size:"350px*150px"},{label:"pc右侧广告位",pos:"pc-right",size:"230px*auto"},{label:"手机右侧广告位",pos:"mobile-right",size:"350px*auto"}]),i=p=>s.findIndex(o=>o.pos===p);export{s as AdTypes,i as getAdTypeIndexByPos};

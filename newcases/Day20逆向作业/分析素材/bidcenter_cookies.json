@@ -1,0 +1,62 @@
+[
+ {
+  "name": "bidguid",
+  "value": "53dd24d0-6dc6-4533-b9ce-236476038195",
+  "domain": ".bidcenter.com.cn",
+  "path": "/",
+  "expires": 1826096920.96363,
+  "httpOnly": false,
+  "secure": false,
+  "sameSite": "Lax"
+ },
+ {
+  "name": "tgw_l7_route",
+  "value": "ce103d3ac7cb8317b66b559b6ace974a",
+  "domain": "wp.qiye.qq.com",
+  "path": "/",
+  "expires": 1791538720.203471,
+  "httpOnly": false,
+  "secure": true,
+  "sameSite": "None"
+ },
+ {
+  "name": "HMACCOUNT_BFESS",
+  "value": "47851D019342E48E",
+  "domain": ".hm.baidu.com",
+  "path": "/",
+  "expires": 1826096921.236618,
+  "httpOnly": false,
+  "secure": true,
+  "sameSite": "None"
+ },
+ {
+  "name": "Hm_lvt_9954aa2d605277c3e24cb76809e2f856",
+  "value": "1791536921",
+  "domain": ".bidcenter.com.cn",
+  "path": "/",
+  "expires": 1823072921,
+  "httpOnly": false,
+  "secure": false,
+  "sameSite": "Lax"
+ },
+ {
+  "name": "Hm_lpvt_9954aa2d605277c3e24cb76809e2f856",
+  "value": "1791536921",
+  "domain": ".bidcenter.com.cn",
+  "path": "/",
+  "expires": -1,
+  "httpOnly": false,
+  "secure": false,
+  "sameSite": "Lax"
+ },
+ {
+  "name": "HMACCOUNT",
+  "value": "47851D019342E48E",
+  "domain": ".bidcenter.com.cn",
+  "path": "/",
+  "expires": -1,
+  "httpOnly": false,
+  "secure": false,
+  "sameSite": "Lax"
+ }
+]

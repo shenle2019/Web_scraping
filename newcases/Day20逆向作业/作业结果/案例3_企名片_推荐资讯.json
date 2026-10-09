@@ -1,0 +1,80 @@
+{
+ "案例": "案例3 企名片-首页推荐资讯",
+ "来源": "https://www.qimingpian.com/",
+ "接口": "https://vipapi.qimingpian.cn/HomePage/recommendInfo",
+ "加密方式": "3DES-ECB + PKCS7（base64 传输），key=5e5062e82f15fe4ca9d24bc5",
+ "抓取时间": "2026-10-09 17:07:16",
+ "条数": 10,
+ "数据": [
+  {
+   "资讯ID": "1817954",
+   "内容": "一次性内窥镜产品研发商“宏济医疗”完成了C轮融资，金额为未披露，投资方为启明创投",
+   "原文链接": "https://mp.weixin.qq.com/s/oiljw93DanNPploc-RD5dw",
+   "发布时间": "2026-03-30 11:17:39",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69c9ebec2ec65645564568.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=t%2BK5iqCbCx3yjzTFS3a4ZcpbkLw%3D"
+  },
+  {
+   "资讯ID": "1814472",
+   "内容": "赛诺生物获数千万元Pre-A轮融资，领跑非粮生物质酶制剂赛道，凯乘资本担任长期独家财务顾问",
+   "原文链接": "https://mp.weixin.qq.com/s/1bOdNbkAASBO-VEkEGnjTQ",
+   "发布时间": "2026-03-23 09:11:18",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69c0954d32742638969242.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=kUggIrRQUZQ0dRaLS8hBVYRuWTU%3D"
+  },
+  {
+   "资讯ID": "1813641",
+   "内容": "先衍生物完成1.5亿元A轮融资，凯乘资本担任独家财务顾问",
+   "原文链接": "https://mp.weixin.qq.com/s/zhJ--_HCP9zkNl82VtQ_oQ",
+   "发布时间": "2026-03-20 10:01:19",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69bcac8259a44228596065.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=WxzpsaPFUd3gxBxVR096RAfaC7I%3D"
+  },
+  {
+   "资讯ID": "1811828",
+   "内容": "智能乐器厂商“Aeroband”完成了A轮融资，金额为近亿元，投资方为经纬创投，绿洲资本，国泰海通，峰瑞资本",
+   "原文链接": "https://s.qmpsee.com/cms/rNd2147KkX",
+   "发布时间": "2026-03-17 09:54:49",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b8b5a877f40177910468.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=Rq0ytu4Tdj5AB64Y%2FGz6WckxZR0%3D"
+  },
+  {
+   "资讯ID": "1811130",
+   "内容": "佰特微医疗完成近亿元B轮融资，凯乘资本担任独家财务顾问",
+   "原文链接": "https://mp.weixin.qq.com/s/oT0MeB7-Zb9MRXNtxpl2xw",
+   "发布时间": "2026-03-16 09:09:20",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b7587207229777069575.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=OG4AzTv%2BiOxIGJThhpJKJ9lLI1s%3D"
+  },
+  {
+   "资讯ID": "1810315",
+   "内容": "光伏智能清扫集成系统研发商“丽天智能”完成了Pre-B轮融资，金额为超亿人民币，投资方为今日资本，耀途资本  Glory Ventures，长石资本",
+   "原文链接": "https://s.qmpsee.com/cms/mQp2nXJ4BK",
+   "发布时间": "2026-03-13 10:38:17",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b3790b0f3ce807087636.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=E0TrSHXH4uVkbiiMDODFH6iQD%2FU%3D"
+  },
+  {
+   "资讯ID": "1810287",
+   "内容": "仝人智能完成近4亿元A轮融资，推出“无需数据训练”的具身大脑，已规模化落地应用",
+   "原文链接": "https://s.qmpsee.com/cms/vXe7br7qOr",
+   "发布时间": "2026-03-13 09:51:50",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b36fa9b46e4503733885.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=7wKU8BoDBwVL9wUMSLtIYfxXURA%3D"
+  },
+  {
+   "资讯ID": "1809665",
+   "内容": "「珩创纳米」完成数亿元B轮融资，年产13万吨磷酸锰铁锂（LMFP）正极材料生产项目落地银川经开区 | 大桉交易",
+   "原文链接": "https://mp.weixin.qq.com/s/h9YEbvjlQajXhAWuZv7TNQ",
+   "发布时间": "2026-03-12 09:44:11",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b21bd06f81f771916691.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=Z4u3HW7Yydh7s1MDqDCJ3yHmnME%3D"
+  },
+  {
+   "资讯ID": "1809168",
+   "内容": "「MatriQ原子矩阵」再获天使轮融资，2048无缺陷物理比特阵列推动中性原子量子计算产业落地",
+   "原文链接": "https://s.qmpsee.com/cms/BRO23O2gl9",
+   "发布时间": "2026-03-11 10:14:03",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69b0d15819d20544251838.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=paybpVUq8cU%2FjvlM%2Buduv54xNSk%3D"
+  },
+  {
+   "资讯ID": "1807963",
+   "内容": "灵初智能已完成20亿融资，获“国家队”资本重磅投资，助力中国具身智能高质量发展｜多维交易",
+   "原文链接": "https://mp.weixin.qq.com/s/hT_K6-mEK2q-vWfz3t1tRw",
+   "发布时间": "2026-03-10 15:06:13",
+   "配图": "https://qmp.oss-cn-beijing.aliyuncs.com/uploadImg/202603/69afc3d0ec8ac290780289.png?x-oss-process=style%2F218_156&OSSAccessKeyId=LTAI2SRf7Sf1P5bU&Expires=1794128836&Signature=3WBYQDpF8Ko4VJjdPIOO2iCZFms%3D"
+  }
+ ]
+}
