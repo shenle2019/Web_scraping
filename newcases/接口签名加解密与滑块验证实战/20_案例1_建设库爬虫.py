@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
-"""案例1 建设库 企业搜索数据爬虫（Day20 逆向作业 · 正式交付版）
+"""案例1 建设库 企业搜索数据爬虫（sign签名逆向 · 正式交付版）
 
 目标站点: https://www.jiansheku.com/search/enterprise/   （建设库 - 企业搜索）
 数据接口: POST https://capi.jiansheku.com/nationzj/enterprice/page
 
-逆向要点（结合 Day21 课件 04/05 jianzhushe 案例）:
+逆向要点:
   1. 接口请求头需携带 sign + timestamp 两个签名参数，缺失/过期会被拒绝；
   2. sign = 三层 MD5 套娃：
        factor1 = MD5(参数序列化串 + K1 + timestamp)
@@ -37,7 +37,7 @@ API = "https://capi.jiansheku.com/nationzj/enterprice/page"
 # ==================================================
 
 
-# ---------- sign 算法（Python 复刻自 Day21 课件 05 jianzhushe.js） ----------
+# ---------- sign 算法（Python 复刻自 jianzhushe.js） ----------
 K1 = "ZuSj0gwgsKXP4fTEz55oAG2q2p1SVGKK"
 K2 = "mwMlWOdyM7OXbjzQPulT1ndRZIAjShDB"
 K3 = "ghaepVf6IhcHmgnk4NCTXLApxQkBcvh1"

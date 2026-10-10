@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """建设库 sign 算法 Python 复刻 + 实际请求 API 测试
-算法来源: Day21 课件 05 jianzhushe.js（三层 MD5 套娃 + 参数序列化）
+算法来源: jianzhushe.js（三层 MD5 套娃 + 参数序列化）
 """
 import hashlib
 import json
@@ -81,13 +81,13 @@ PARAM_P3 = {
     "page": {"page": 3, "limit": 20, "field": "", "order": ""},
 }
 
-# 1. 与课件历史值对照
+# 1. 与历史样例值对照
 T = 1713265415045
 sign = get_sign(dict(PARAM_P3), T)
 print("=== 1. 算法复刻验证 ===")
 print("序列化串:", cu(PARAM_P3))
 print("复刻 sign:", sign)
-print("课件历史值: 8d57e9c98a0c4e753cc08475d8016099")
+print("历史样例值: 8d57e9c98a0c4e753cc08475d8016099")
 print("一致:", sign == "8d57e9c98a0c4e753cc08475d8016099")
 
 # 2. 实际请求测试（2026 年当前接口是否有效）

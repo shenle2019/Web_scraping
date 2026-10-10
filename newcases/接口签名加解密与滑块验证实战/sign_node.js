@@ -1,5 +1,5 @@
 // 建设库 sign 算法 Node 复刻（使用内置 crypto，无需 crypto-js）
-// 原始算法来源: Day21 课件 05 jianzhushe.js
+// 原始算法来源: jianzhushe.js
 const crypto = require('crypto');
 
 const md5 = (s) => crypto.createHash('md5').update(s).digest('hex');
@@ -46,7 +46,7 @@ function getSign(param, time) {
             Su("ZuSj0gwgsKXP4fTEz55oAG2q2p1SVGKK", t, time), time), time);
 }
 
-// 与课件 test.py 历史值对照: time=1713265415045, page=3, 期望 sign=8d57e9c98a0c4e753cc08475d8016099
+// 与 test.py 中的历史样例对照: time=1713265415045, page=3, 期望 sign=8d57e9c98a0c4e753cc08475d8016099
 const param = {
     eid: "",
     achievementQueryType: "and",
@@ -67,6 +67,6 @@ const T = 1713265415045;
 const sign = getSign(param, T);
 console.log("序列化串:", Cu(param));
 console.log("复刻 sign:", sign);
-console.log("课件历史值:", "8d57e9c98a0c4e753cc08475d8016099");
+console.log("历史样例值:", "8d57e9c98a0c4e753cc08475d8016099");
 console.log("一致:", sign === "8d57e9c98a0c4e753cc08475d8016099");
 module.exports = { getSign, Cu };

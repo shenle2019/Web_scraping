@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Day20 作业：三个目标站点接口探测（第一轮摸底）"""
+"""三个目标站点接口探测（第一轮摸底）"""
 import requests
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "

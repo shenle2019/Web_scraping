@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""建设库 sign 算法工具模块（Python 复刻自 Day21 课件 05 jianzhushe.js）
+"""建设库 sign 算法工具模块（Python 复刻自 jianzhushe.js）
    算法: sign = MD5( mid + K3 + ts )，其中 mid = MD5( inner + K2 + ts )，inner = MD5( 序列化参数 + K1 + ts )
 """
 import hashlib

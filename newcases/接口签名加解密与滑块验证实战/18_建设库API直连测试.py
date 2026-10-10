@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""建设库 API 直连测试（Day21 课件 04 jianzhushe.py 的复刻验证）
+"""建设库 API 直连测试（jianzhushe.py 的复刻验证）
 链路: Session 访问首页建立会话(拿 WAF cookie) -> 计算 sign(三层MD5) -> POST capi 接口
 """
 import json
@@ -25,7 +25,7 @@ print("首页:", r0.status_code, "| cookies:", list(s.cookies.keys()))
 r1 = s.get("https://www.jiansheku.com/search/enterprise/", headers=base_h, timeout=20)
 print("搜索页:", r1.status_code, "| 标题:", r1.text[r1.text.find("<title>") + 7: r1.text.find("</title>")][:60])
 
-# 第二步：构造请求体（与课件一致）并计算 sign
+# 第二步：构造请求体（与参考样例一致）并计算 sign
 json_data = {
     "eid": "",
     "achievementQueryType": "and",

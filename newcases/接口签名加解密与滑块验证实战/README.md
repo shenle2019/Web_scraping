@@ -1,9 +1,9 @@
-# Day20 逆向作业：三案例爬虫破解说明
+# 接口签名加解密与滑块验证实战：三案例爬虫破解说明
 
-> 学习完 Day20/Day21 课件后，完成今日练习作业的三个逆向案例。
+> 围绕三个目标站点的请求签名、接口加解密与滑块验证进行的完整逆向实践。
 > 三个案例全部攻克，正式脚本位于本目录 `20/21/22` 开头，结果输出到 `作业结果/`。
 
-## 作业目标（课件原文 base64 解码后）
+## 案例目标（原始要求 base64 解码后）
 
 | 案例 | 目标网站 | 目标接口要求 |
 | --- | --- | --- |
@@ -24,7 +24,7 @@
 请求头带 `sign`、`timestamp` 双签名参数，直接请求返回 403/失败。
 
 **破解过程**：
-1. 从页面加载的打包 JS 里定位到 sign 生成函数（Day21 课件 `jianzhushe` 案例同款，三层 MD5 套娃）：
+1. 从页面加载的打包 JS 里定位到 sign 生成函数（三层 MD5 套娃）：
    - `sign = Su(K3, Su(K2, Su(K1, Cu(param), ts), ts), ts)`，即三次 `MD5(data + key + ts)` 嵌套
    - `Cu(param)`：body 参数按 key 排序后拼接 `key=value&`（空值跳过）
    - K1/K2/K3 三个密钥硬编码在 JS 中（详见 `20_案例1_建设库爬虫.py`）
@@ -88,7 +88,7 @@
 ## 运行方式
 
 ```powershell
-cd e:\webspider\Web_scraping\newcases\Day20逆向作业
+cd e:\webspider\Web_scraping\newcases\接口签名加解密与滑块验证实战
 $env:PYTHONIOENCODING='utf-8'
 python 20_案例1_建设库爬虫.py   # 案例1
 python 21_案例2_招标网爬虫.py   # 案例2（cookies 失效时会自动弹浏览器过滑块）

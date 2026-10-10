@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""案例3 企名片 首页推荐资讯爬虫（Day20 逆向作业 · 正式交付版）
+"""案例3 企名片 首页推荐资讯爬虫（3DES接口解密 · 正式交付版）
 
 目标站点: https://www.qimingpian.com/          （企名片 - 首页"最新融资资讯"）
 数据接口: GET https://vipapi.qimingpian.cn/HomePage/recommendInfo
