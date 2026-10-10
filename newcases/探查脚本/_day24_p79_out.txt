@@ -1,0 +1,31 @@
+﻿========================================================================
+p79 Python 复刻路线 —— 与 p78 Node 原版路线逐项对照
+========================================================================
+
+[1] 固定样本（课件 get_sign 内硬编码样本）
+    nonce=8c1288c3… timestamp=1714400228012 deviceId=7302162-eed3-460c-8403-4c8c8f183
+    L    一致=True  py=7690a792371dadda887518272ae72870
+    B    一致=True  py=af1812a1aeca13595ebafa3988c84eaa6ab7a6ac
+    N    一致=True  py=0bd6a741ce8fa63d4fcf6389220c2aae
+    C15  一致=True  py=03fdfd8351d6ae6
+    D    一致=True  py=17979043229821670
+    F    一致=True  (len=124)
+    Python sign = a6c7f22118797ecd624fd7537d5310f6ae659938f43e6551c9f1540548581464f096f663d276c26ad20ae3c2efbbee18
+    三方 sign 一致（Python / 课件原版 get_sign / 分段复算）= True
+
+[2] 动态请求头（课件 get_header 随机生成）
+    nonce=9a7e1913… time=1791627284926
+    动态输入复算 sign 一致（Python / 课件原版 header / Node 复算）= True
+
+[3] Python 侧格式断言复核
+    nonce 32hex                        True
+    nonce 保留位在 8-b                     True
+    sign 96hex                         True
+    traceid 16位36进制                    True
+    sid 格式 S_+16位                      True
+    traceid 前9位可还原时间戳(±5s)             True
+    sid 内嵌时间为 time-1000(±5s)           True
+
+========================================================================
+最终结论：Python 复刻与 Node 原版双路线完全一致 [PASS]
+========================================================================

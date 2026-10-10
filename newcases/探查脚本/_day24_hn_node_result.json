@@ -1,0 +1,75 @@
+{
+  "module": "p78 Day24 惠农网签名离线验证（Node 原版路线）",
+  "source_js": "E:\\路飞学城\\课件\\JS逆向\\Day24：JS逆向爬虫基础案例05\\huiNong.js + huiNong2.js",
+  "fixed_sample": {
+    "input": {
+      "nonce": "8c1288c3c617bbd7558ba29c295f0b5f",
+      "timestamp": "1714400228012",
+      "deviceId": "7302162-eed3-460c-8403-4c8c8f183",
+      "secret": "EOi^0N5sWWHhkrF2A0gekY9U20BgnAcr",
+      "secretType": 2
+    },
+    "get_sign_logs": [
+      "start",
+      "L: 7690a792371dadda887518272ae72870",
+      "B: af1812a1aeca13595ebafa3988c84eaa6ab7a6ac",
+      "N: 0bd6a741ce8fa63d4fcf6389220c2aae",
+      "C: 03fdfd8351d6ae6",
+      "D: 17979043229821670",
+      "7690a792371dadda887518272ae72870!af1812a1aeca13595ebafa3988c84eaa6ab7a6ac!0bd6a741ce8fa63d4fcf6389220c2aae!17979043229821670",
+      "sign: a6c7f22118797ecd624fd7537d5310f6ae659938f43e6551c9f1540548581464f096f663d276c26ad20ae3c2efbbee18"
+    ],
+    "segments_recomputed": {
+      "L": "7690a792371dadda887518272ae72870",
+      "B": "af1812a1aeca13595ebafa3988c84eaa6ab7a6ac",
+      "N": "0bd6a741ce8fa63d4fcf6389220c2aae",
+      "C15": "03fdfd8351d6ae6",
+      "D": "17979043229821670",
+      "F": "7690a792371dadda887518272ae72870!af1812a1aeca13595ebafa3988c84eaa6ab7a6ac!0bd6a741ce8fa63d4fcf6389220c2aae!17979043229821670"
+    },
+    "segments_matched_with_original_logs": {
+      "L": true,
+      "B": true,
+      "N": true,
+      "C": true,
+      "D": true,
+      "F": true
+    },
+    "sign_from_original_get_sign": "a6c7f22118797ecd624fd7537d5310f6ae659938f43e6551c9f1540548581464f096f663d276c26ad20ae3c2efbbee18",
+    "sign_from_segments": "a6c7f22118797ecd624fd7537d5310f6ae659938f43e6551c9f1540548581464f096f663d276c26ad20ae3c2efbbee18",
+    "original_equals_segments": true,
+    "sign_length": 96
+  },
+  "dynamic_header": {
+    "header": {
+      "X-CLIENT-APPID": "5",
+      "X-CLIENT-PAGE": "/hangqing/",
+      "X-HN-JOB": "If you see these message, I hope you dont hack us, I hope you can join us! Please visit https://www.cnhnkj.com/job.html",
+      "X-CLIENT-ID": "7302162-eed3-460c-8403-4c8c8f183",
+      "X-CLIENT-SID": "S_0MV28MJTIYS4I638",
+      "X-B3-TRACEID": "0MV28MKLA4V277NE",
+      "X-CLIENT-TIME": "1791627284926",
+      "X-CLIENT-NONCE": "9a7e1913dd40595f2091a5717a26a6b8",
+      "X-Client-Sign": "3c83756f8b1e338fe254a16c9207f7f1a43b8f75d86c56e1bc83bd315eaf90449f52634e77811865fa70a54fdbdd4d7d"
+    },
+    "nonce_y_positions": [
+      13,
+      18
+    ],
+    "checks": {
+      "nonce_32hex": true,
+      "nonce_var_positions_8b": [
+        true,
+        true
+      ],
+      "sid_format": true,
+      "traceid_16_u36": true,
+      "time_13digit": true,
+      "sign_96hex": true,
+      "trace_ts_consistent": true,
+      "sid_ts_consistent": true
+    },
+    "sign_recomputed": "3c83756f8b1e338fe254a16c9207f7f1a43b8f75d86c56e1bc83bd315eaf90449f52634e77811865fa70a54fdbdd4d7d",
+    "sign_match_dynamic": true
+  }
+}

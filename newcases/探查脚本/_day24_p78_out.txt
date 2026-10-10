@@ -1,0 +1,16 @@
+﻿=== p78 Node 鍘熺増璺嚎楠岃瘉缁撴灉 ===
+[1] 鍥哄畾鏍锋湰 get_sign()锛堣浠跺師鐗堬級:
+    sign = a6c7f22118797ecd624fd7537d5310f6ae659938f43e6551c9f1540548581464f096f663d276c26ad20ae3c2efbbee18
+    鍒嗘澶嶇畻涓€鑷?= true
+    涓庤浠跺唴閮ㄦ棩蹇楅€愭涓€鑷?= {"L":true,"B":true,"N":true,"C":true,"D":true,"F":true}
+    L = 7690a792371dadda887518272ae72870
+    B = af1812a1aeca13595ebafa3988c84eaa6ab7a6ac
+    N = 0bd6a741ce8fa63d4fcf6389220c2aae
+    C15 = 03fdfd8351d6ae6
+    D = 17979043229821670
+[2] 鍔ㄦ€佽姹傚ご get_header()锛堣浠跺師鐗堬級:
+    nonce = 9a7e1913dd40595f2091a5717a26a6b8
+    traceid = 0MV28MKLA4V277NE  sid = S_0MV28MJTIYS4I638
+    checks = {"nonce_32hex":true,"nonce_var_positions_8b":[true,true],"sid_format":true,"traceid_16_u36":true,"time_13digit":true,"sign_96hex":true,"trace_ts_consistent":true,"sid_ts_consistent":true}
+    鍔ㄦ€佽緭鍏ュ绠楃鍚嶄竴鑷?= true
+[3] 缁撴灉宸插啓鍏? E:\webspider\Web_scraping\newcases\鎺㈡煡鑴氭湰\_day24_hn_node_result.json
