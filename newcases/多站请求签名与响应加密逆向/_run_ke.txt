@@ -1,0 +1,24 @@
+﻿========================================================================
+[1] SSR 列表页解析: https://bj.ke.com/ershoufang/
+    HTTP 200  页面长度=214324
+    GLOBAL_INFOS: url=/web/ershoufang/sidebar count=118448 pageNum=1 ids=30 个
+    sidebar 参数: {"type": "city", "cityId": 110000, "uuid": "85bd0df4-77f4-4624-87e2-516ed658315a", "ucid": null, "id": 110000}
+    SSR 房源块 30 个 / totalPage=100
+
+[2] 侧栏异步接口（GLOBAL_INFOS.url + sidebar 参数）
+    GET https://ajax.api.ke.com/web/ershoufang/sidebar?cityId=110000&id=110000&uuid=85bd0df4-77f4-4624-87e2-516ed658315a&ucid=&type=city&callback=jQuery1102000000000000000000_1791626577947&_=1791626577947
+    HTTP 200  Content-Type=text/javascript;charset=UTF-8
+    JSONP 解析成功 errno=0 request_id=10100719914375
+    data 分区: ['price', 'agent', 'guide', 'resblock', 'redian', 'wenda', 'baike', 'vpoint', 'more_wenda_url', 'ditu']
+
+[3] 搜索建议接口 headerSearchForPlatC（query=望京）
+    GET https://bj.ke.com/api/headerSearchForPlatC?channel=ershoufang&cityId=110000&query=%E6%9C%9B%E4%BA%AC
+    HTTP 200
+    code=0 建议条数=15
+      1. 望京
+      2. 望京站
+      3. 望京南站
+      4. 望京西站
+      5. 望京东站
+
+[4] 验证结果已保存: E:\webspider\Web_scraping\newcases\多站请求签名与响应加密逆向\output\ke_ershoufang_result.json

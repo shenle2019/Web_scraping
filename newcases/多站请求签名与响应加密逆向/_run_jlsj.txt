@@ -1,0 +1,14 @@
+﻿========================================================================
+[1] 请求接口 POST https://vapi.jinglingshuju.com/Data/getNewsList  form: page=1&num=10
+    HTTP 200  Content-Type: text/html; charset=utf-8
+    外层应答: code=0 status=None data 类型=str
+    密文样例: Ou1c1U7XU3pQRu0GosMzTD85Gpd/smdsxvguJhcsIDWfNG4gdrsytEbFJYzWVTqL ...（长度 6336）
+
+[2] 对照组（错误 key 解密）-> 解出乱码/抛异常，证明必须正确密钥
+
+[3] AES-ECB 解密成功，明文 JSON 顶层类型=dict 文章数=10 total=1000
+    1. 汉朔科技完成对哈步数据全资收购，以AI驱动深化数据服务业务布局
+    2. 中茵微电子90后CFO赵泽宇曾是中金公司副总裁，还曾任职星辰天合、后摩智能
+    3. Wearable Robotics获得500万欧元A轮融资
+
+[4] 验证结果已保存: E:\webspider\Web_scraping\newcases\多站请求签名与响应加密逆向\output\jlsj_news_result.json

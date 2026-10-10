@@ -1,0 +1,12 @@
+﻿========================================================================
+[1] 载入密文样本: E:\webspider\Web_scraping\newcases\多站请求签名与响应加密逆向\output\shanbay_cipher_sample.txt
+    seed=5DEV  长度=43708
+    版本头校验值 1 (<=1 通过)
+    PRNG 前 10 值: [26, 18, 8, 19, 6, 10, 1, 21, 28, 6]
+
+[2] 还原标准 base64 前缀: eyJpcHAiOjEwLCJwYWdlIjo0LCJ0b3RhbCI6NTAsIm9iamVjdHMiOlt7InR5cGVf
+
+[3] 解码成功: ipp=10 page=4 total=50
+    objects=10 词表: ['advanced', 'soar', 'evolve', 'associate', 'migrate', 'canal', 'slide', 'overnight', 'cite', 'decisive']
+
+[4] 验证结果已保存: E:\webspider\Web_scraping\newcases\多站请求签名与响应加密逆向\output\shanbay_sample_result.json

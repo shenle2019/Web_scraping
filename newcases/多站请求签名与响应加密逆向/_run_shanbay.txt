@@ -1,0 +1,9 @@
+﻿========================================================================
+[1] 请求接口 GET https://apiv3.shanbay.com/wordsapp/material_books
+    HTTP 200  Content-Type: application/json; charset=UTF-8
+    应答顶层 keys: ['ipp', 'objects', 'page', 'total']
+    该接口未返回密文（内容为明文 JSON，应服务端策略变更），直接展示数据
+
+[3] 明文 keys=['ipp', 'objects', 'page', 'total'] objects=0 条
+
+[4] 验证结果已保存: E:\webspider\Web_scraping\newcases\多站请求签名与响应加密逆向\output\shanbay_wordsweb_result.json
