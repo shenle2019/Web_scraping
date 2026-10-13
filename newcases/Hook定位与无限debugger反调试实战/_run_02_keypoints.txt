@@ -1,0 +1,46 @@
+================================================================
+[1] eval：字符串代码执行 + 极简混淆还原
+    课件表达式 eval 结果: 19.5
+    [PASS] eval 结果 == 19.5
+    混淆存储（base64）  : ZnVuY3Rpb24gY2FsYyhhLCBiKSB7IHJldHVybiBh...
+    [PASS] 严格模式下直接 eval 作用域隔离（calc 不可见）
+    [PASS] 间接 eval 还原后全局可见 calc(6,7) == 49
+    结论：静态只见 base64 数据，hook eval 打印入参即可拿到明文源码
+================================================================
+[2] 调用链：数据从入口流到'发射点'的路径记录
+    调用链: entry -> collect -> buildSign -> send
+    返回值: 已发射:sig(payload-42)
+    [PASS] 调用链完整 entry->collect->buildSign->send
+    [PASS] '发射'结果携带签名
+    运行时栈帧示例: at caller (E:\webspider\Web_scraping\newcases\Hook定位与无限debugger反调试实战\02_keypoints_verify.js:61:32)
+    [PASS] new Error().stack 可定位调用位置
+    结论：hook 脚本里打印 new Error().stack，等于自动记录'谁调用了我'
+================================================================
+[3] Object.defineProperty：读写拦截 + 校验 + 对不可见记账
+    [PASS] 初始 get 返回 0（原值 18 被遮蔽）
+    [PASS] 合法值 50 写入成功
+    [PASS] 非法值 167 抛异常且不落库
+    set 调用流水: ["接受:50","拒绝:167"]
+    [PASS] delete 无法拆除拦截器（严格模式抛错/返回 false）
+    结论：属性读写被 100% 接管 —— 这就是 hook cookie/header 的实现底座
+================================================================
+[4] 无限 debugger：课件六种写法的可执行性 + 静态特征
+    [PASS] 六种写法全部可执行（Node 下 debugger 为空操作）
+    - 写法1 直接 debugger
+    - 写法2 eval('debugger')
+    - 写法3 setInterval 回调
+    - 写法4 setTimeout 递归
+    - 写法5 Function 构造器
+    - 写法6 原型链+字符串构造
+    静态搜索特征表:
+      写法1 -> 搜 debugger
+      写法2 -> 搜 "debugger"
+      写法3 -> 搜 setInterval
+      写法4 -> 搜 setTimeout
+      写法5 -> 搜 Function / constructor
+      写法6 -> 搜 "constructor" / "call"
+    [PASS] Function('debugger') 返回函数对象
+    [PASS] 其 toString() 含 debugger 明文（对抗脚本据此判断）
+================================================================
+汇总: PASS = 13, FAIL = 0
+ALL PASS

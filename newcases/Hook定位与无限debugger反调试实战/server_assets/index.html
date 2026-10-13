@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Hook 演示站 · 商品列表（本地模拟）</title>
+    <style>
+        body { font-family: "Microsoft YaHei", sans-serif; margin: 40px; color: #333; }
+        h1 { font-size: 20px; }
+        .tip { color: #888; font-size: 13px; margin-bottom: 16px; }
+        #goods-list { line-height: 1.9; }
+        #goods-list li { list-style: none; border-bottom: 1px dashed #ddd; max-width: 520px; }
+        .price { color: #c00; margin-left: 12px; }
+        #status { margin-top: 16px; font-size: 13px; color: #06c; }
+    </style>
+</head>
+<body>
+    <h1>Hook 演示站（本地模拟，非真实站点）</h1>
+    <p class="tip">本页模拟真实站点的风控链路：eval 混淆签名 → cookie 访问令牌 → 签名请求头 → 无限 debugger 反调试</p>
+    <ul id="goods-list"></ul>
+    <div id="status">加载中...</div>
+    <script src="/static/main.js"></script>
+</body>
+</html>
