@@ -37,5 +37,6 @@ newcases/惠农网H5请求签名逆向/output/
 newcases/企名片打包JS解密采集/output/
 newcases/多站请求签名与响应加密逆向/output/
 newcases/Hook定位与无限debugger反调试实战/output/
+newcases/JSVMP签名补环境还原与Playwright对比实战/output/
 # 网站会话凭证（cookies 等），严禁入库
 *cookie*.json

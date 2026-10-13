@@ -1,0 +1,37 @@
+================================================================
+03 签名引擎自检（补环境 + JSVMP）
+================================================================
+[环境摘要] {"global_deleted":true,"buffer_alive":true,"ua_tail":"Node.js/24","href":"https://www.xiaohongshu.com/explore","cookie_fields":9,"cookie_source":"placeholder","env_keys":["CanvasRenderingContext2D","HTMLCanvasElement","devicePixelRatio","AudioContext","document","navigator","location","screen","external","localStorage"]}
+
+--- T1 结构校验 ---
+  X-s 全串长度 = 604，前缀 = XYW_eyJzaWdu...
+  X-t = 1791881208559（2026-10-13T08:46:48.559Z）
+  [PASS] X-s 以 XYW_ 开头
+  [PASS] base64 段可解码为 JSON 且含四字段
+  解码字段 = {"signSvn":"51","signType":"x1","appId":"xhs-pc-web"}
+  [PASS] appId = xhs-pc-web（cookie 字段完整时出现）
+  [PASS] payload 为 384 位十六进制（完整签名）
+  [PASS] X-t 在合理时间窗内（±60 秒）
+  单次签名耗时 = 34.3499 ms
+  [PASS] 单次签名耗时 < 100ms
+
+--- T2 确定性观察 ---
+  同输入 3 次：
+    头32 = 4509d8ed4632e9b986d8805a964765e4
+           4509d8ed4632e9b986d8805a964765e4
+           4509d8ed4632e9b986d8805a964765e4
+    尾16 = 83b604ccb4bffa7b | 3a0d0740a7dacaad | 580c6f582854a466
+  [PASS] 同输入多次 payload 头 32 位稳定（输入指纹段）
+  [PASS] 同输入多次 payload 尾部变化（时间/熵成分）
+  变更输入(num 35→36) 头32 = 68be81c80b9140c2c210ad4c76270cf7
+  [PASS] 变更输入后 payload 指纹段变化
+
+--- T3 稳定性压测（进程内连续 200 次）---
+  成功 200/200，总耗时 4816 ms，平均 24.080 ms/次
+  [PASS] 连续 200 次签名全部成功
+  [PASS] 平均单次签名耗时 < 50ms（JSVMP 解释执行量级）
+================================================================
+03 结论: 全部通过（11 PASS / 0 FAIL）
+================================================================
+
+[exit=0, 5.03s]

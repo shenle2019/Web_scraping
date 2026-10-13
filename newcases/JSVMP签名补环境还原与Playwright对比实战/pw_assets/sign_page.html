@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>X-s 签名演示页（本地 mock 站）</title>
+<style>
+  body { font-family: "Microsoft YaHei", sans-serif; max-width: 720px; margin: 40px auto; padding: 0 16px; color: #333; }
+  h1 { font-size: 20px; }
+  code { background: #f5f5f5; padding: 1px 5px; border-radius: 3px; }
+  .note { color: #888; font-size: 13px; }
+</style>
+</head>
+<body>
+<h1>X-s 签名演示页（本地 mock 站）</h1>
+<p>本页加载 <code>/js_asset/source.js</code>（JSVMP 资产，与补环境方案共用同一份文件），
+在<strong>真实浏览器环境</strong>中计算 X-s 签名，供 Playwright 方案（30 脚本）调用。</p>
+<p class="note">合规声明：本地演示页面，数据全部自造，无任何真实站点请求；cookie 为值全占位的假数据。</p>
+
+<script src="/js_asset/source.js"></script>
+<script>
+// ---------- 与 01_env_mini.js 的 PLACEHOLDER_COOKIE 结构完全对齐的 9 字段假 cookie ----------
+// 注意：逐条写入（document.cookie = "k=v" 一次一条）。
+// 一次性写整串 "k1=v1; k2=v2..." 在不同浏览器实现下行为不一致（Chrome/Edge
+// 实测只落盘第 1 条），逐条写是最可靠的方式。
+(function () {
+  var pairs = [
+    "abRequestId=00000000-0000-0000-0000-000000000000",
+    "a1=0000000000000000000000000000000000000000000000000000",
+    "webId=00000000000000000000000000000000",
+    "gid=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "xsecappid=xhs-pc-web",
+    "webBuild=4.16.0",
+    "unread={%22ub%22:%220000000000000000000000%22%2C%22ue%22:%220000000000000000000000%22%2C%22uc%22:0}",
+    "websectiga=0000000000000000000000000000000000000000000000000000000000000000",
+    "sec_poison_id=00000000-0000-0000-0000-000000000000"
+  ];
+  for (var i = 0; i < pairs.length; i++) {
+    document.cookie = pairs[i];
+  }
+})();
+
+// ---------- 页面侧签名入口（与课件 xhs.js 调用完全一致：body 传对象） ----------
+window.xhsSign = function (pathVal, bodyObj) {
+  var r = window._webmsxyw(pathVal, bodyObj);
+  return { "X-s": r["X-s"], "X-t": r["X-t"] };
+};
+
+// ---------- 诊断标志 ----------
+window.__cookieFields = document.cookie.split("; ").filter(Boolean).length;
+window.__xhsReady = (typeof window._webmsxyw === "function");
+</script>
+</body>
+</html>

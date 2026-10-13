@@ -1,0 +1,37 @@
+================================================================
+30 Playwright 方案：真实浏览器环境产出 X-s 签名
+================================================================
+[site] 本地模拟站已就绪: http://127.0.0.1:18999/
+
+--- 浏览器环境观察 ---
+  navigator.userAgent  = Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36 Edg/155.0.0.0
+  navigator.webdriver  = False（add_init_script 修正后）
+  document.cookie 字段数 = 9（与补环境 PLACEHOLDER_COOKIE 对齐）
+  document.cookie 内容  = abRequestId=00000000-0000-0000-0000-000000000000; a1=0000000000000000000000000000000000000000000000000000; webId=00000000000000000000000000000000; gid=0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000; xsecappid=xhs-pc-web; webBuild=4.16.0; unread={%22ub%22:%220000000000000000000000%22%2C%22ue%22:%220000000000000000000000%22%2C%22uc%22:0}; websectiga=0000000000000000000000000000000000000000000000000000000000000000; sec_poison_id=00000000-0000-0000-0000-000000000000
+  typeof window._webmsxyw = function
+  浏览器冷启动（launch -> 页面就绪）墙钟 = 630 ms
+  [PASS] 页面加载后 window._webmsxyw 可用
+  [PASS] navigator.webdriver 已修正为 false
+  [PASS] 9 字段假 cookie 全部写入浏览器（逐条写入）
+
+--- 页面内签名（真实浏览器环境） ---
+  X-s len=604 | 字段=signSvn,signType,appId,payload | payload=384 位 | 头32=4509d8ed4632e9b986d8805a964765e4
+  X-t=1791883751719 | 单次签名（含 evaluate 往返）墙钟 = 40.6 ms
+  [PASS] 浏览器签名结构完整（4 字段含 appId，payload 384 位）
+
+--- 与补环境方案（01+02）的对比 ---
+  补环境: 字段=signSvn,signType,appId,payload | payload=384 位 | 头32=4509d8ed4632e9b986d8805a964765e4 | 含进程启动墙钟=144 ms
+  浏览器: 字段=signSvn,signType,appId,payload | payload=384 位 | 头32=4509d8ed4632e9b986d8805a964765e4
+  [PASS] 两方案 payload 头 32 位一致（同一输入的输入指纹等价）
+
+--- 端到端：浏览器签名请求 mock 站 ---
+  [PASS] 浏览器签名 -> HTTP 200（服务端三层校验通过）
+  HTTP 200 | total=12
+[site] 本地模拟站已停止
+
+================================================================
+30 结论: 6 PASS / 0 FAIL
+================================================================
+  [落盘] E:\webspider\Web_scraping\newcases\JSVMP签名补环境还原与Playwright对比实战\output\pw_sign_result.json
+
+[exit=0, 2.34s]
