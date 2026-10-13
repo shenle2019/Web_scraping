@@ -29,8 +29,9 @@
 ├── 03_sign_selftest.js        签名自检（课件坑复现 / 形态 5 断言 / 随机位 / 输入与 UA 绑定 / 压测）
 ├── 04_env_probe_worker.js     环境矩阵实验 worker（单变体一次签名，被 Python 编排调用）
 ├── 04_env_probe_matrix.py     环境矩阵编排（9 变体 × 独立 Node 进程，规避沙箱 spawn 限制）
-├── 10_mock_server.py          本地 mock 站（端口 18990，三层校验 + 翻页数据 + --selftest）
+├── 10_mock_server.py          本地 mock 站（端口 18990，三层校验 + 翻页数据 + 媒体直链 + --selftest）
 ├── 20_spider_pipeline.py      端到端管线（翻页 2 页 + 5 组风控反例 + 落盘）
+├── 21_video_url_extract.py    视频 URL 提取与真实访问（提取直链 → 访问 → 下载落盘 output/videos/）
 ├── common.py                  公共辅助（LocalSite / Node 签名桥 / 发送原语）
 ├── run_log.py                 UTF-8 日志工具（生成 _run_*.txt）
 └── _run_*.txt                 各脚本运行日志（作业验证结果，UTF-8）
@@ -44,6 +45,7 @@
 | 03_sign_selftest.js | 恢复法 3 连签 164/164/164；形态 5 断言；同进程随机位 20 位；输入绑定 [25,26,40]；UA 绑定 [29,30,43]；20 连签 avg 0.9ms | 8 PASS / 0 FAIL | _run_03_sign_selftest.txt |
 | 10_mock_server.py `--selftest` | 白名单探测 18 样本 → 22 位；真签名通过 / 篡改稳定位拒 / 乱串拒 / 残环境 144 拒 / 重放拒 / 翻页新签名通过 | 6 PASS | _run_10_mock_selftest.txt |
 | 20_spider_pipeline.py | 翻页 200 + 6 条 × 2 页（游标 / has_more / ID 无重复）落盘；无签名 / 乱串 / 篡改 / 重放全部 406；健康检查 | 14 PASS / 0 FAIL | _run_20_pipeline.txt |
+| 21_video_url_extract.py | 两页 12 条提取 48 条直链（play×24 / download×12 / cover×12）；48 次真实访问全部 200（累计 ~1.2MB）；12 个 mp4 下载落盘 output/videos/ | 5 PASS / 0 FAIL | _run_21_video_urls.txt |
 
 ## 四、复现方式
 
@@ -62,6 +64,9 @@ python 10_mock_server.py --selftest
 # 4) 端到端管线（自动启停 mock 站；翻页 + 反例）
 python 20_spider_pipeline.py
 
+# 5) 视频 URL 提取与真实访问下载（产出 output/video_urls.txt 等记录）
+python 21_video_url_extract.py
+
 # 生成 UTF-8 验证日志（或直接查看已有 _run_*.txt）
 python run_log.py 20_pipeline.txt -- python -X utf8 20_spider_pipeline.py
 
@@ -75,10 +80,11 @@ python run_log.py 20_pipeline.txt -- python -X utf8 20_spider_pipeline.py
 - **VM 状态机复位（恢复法）**：bdms 直调第一次成功、第二次返回 undefined（内部状态已推进）。工程解 = 模块加载时对 `window.yuan` 取首帧快照，每次签名前 `window.yuan = SEED` 复位——单次 ~1ms，20 连签 18ms，为高频签名铺路。
 - **进程级副本位与白名单探测策略**：30 进程实验测得跨进程摆动位全集 22 位 = [0-15, 44, 45, 50, 51, 160, 161]。其中 44/45/50/161 取值空间仅 4 种（像进程级 2bit 变量副本）、低变率——**3 进程探测会漏采 pos44**（曾致 mock 用例误拒），改为 12 独立进程 + 同进程 6 样本两两 diff 取并集后稳定覆盖。
 - **mock 站三层校验的近似与局限**：① 形态护栏（len==164 / idx16-17=="5-" / 末位"=" / 字符集）；② 复算比对——用「请求 query（剥除 a_bogus）+ 请求头 UA」调 02 引擎复算，差异位必须 ⊆ 随机位白名单（实测同输入复算差异只有随机位）；③ replay 防护（一次性凭证语义）。局限：黑箱条件下服务端不能真实验签，复算等价于「能算出同样的签名」，这正是真实站密钥壁垒所在。
+- **视频 URL 提取与下载演练（本地自造闭环）**：mock 数据的 video 字段复刻真实 API 形态（play_addr ×2 / download_addr / cover），直链指向 mock 站自身的 /video 与 /cover 路由（确定性伪随机字节，同一 URL 恒定产出）；21 管线完成「提取 → 逐条真实访问 → 主链字节下载落盘」闭环，48 次访问全 200、12 个 mp4 入库 output/videos/，全程不涉及任何真实站点与真实视频。
 - **中文 Windows + Python 3.8 的 http.server 坑**：默认 `server_bind` 调 `socket.getfqdn(host)`，中文主机名经 gethostbyaddr 返回 GBK 字节 → `UnicodeDecodeError` → 服务绑定前崩溃。修复 = 覆写 `server_bind` 绕过 getfqdn（改用 IP 作 server_name）。
 - **沙箱 spawn 限制的工程绕行**：Node `child_process.spawn` 在此环境不可用（`AssignProcessToJobObject: (50)`），环境矩阵改为「JS worker + Python subprocess 编排」双文件结构，顺带获得「每变体一个全新 Node 进程」的隔离保证。
 - **CLI 工程细节**：query 用 base64 传参（规避 Windows 引号转义）；`-X utf8` + `PYTHONIOENCODING` 对齐中文编码。
 
 ## 六、合规声明
 
-本项目所有请求只发往**本地模拟站**（`127.0.0.1:18990`），页面、接口、演示数据全部自造；bdms 资产仅用于本地离线计算（不发起任何真实站点请求）；课程资产与验证数据仅用于逆向技术学习与课件作业验证，采集输出目录 `output/` 不入库。
+本项目所有请求只发往**本地模拟站**（`127.0.0.1:18990`），页面、接口、演示数据、视频/封面媒体字节全部自造（确定性伪随机生成）；bdms 资产仅用于本地离线计算（不发起任何真实站点请求）；课程资产与验证数据仅用于逆向技术学习与课件作业验证，采集输出目录 `output/`（含下载的视频字节）不入库。

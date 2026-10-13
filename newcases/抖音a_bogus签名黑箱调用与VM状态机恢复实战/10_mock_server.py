@@ -9,6 +9,8 @@
      请求的 UA"复算签名，与请求签名逐位比对——差异位置必须 ⊆ 启动时探测
      出的白名单（随机位 + 跨进程位）。已实证：同输入复算的差异只有随机位。
   3) Replay 检测：同一签名重复提交拒绝（演示性一次性凭证语义）
+  4) 媒体直链：/video/<id>.mp4 与 /cover/<id>.jpg 返回确定性自造字节，
+     供爬虫提取视频 URL 后做真实访问与下载验证（不参与签名校验）
 
 白名单探测：启动时 12 个独立 Node 进程 × 1 样本（覆盖"进程级副本位"——
 实测此类位取值空间极小、低样本量会漏，如 pos44 在 3 进程探测中漏掉、
@@ -27,6 +29,7 @@
 import base64
 import json
 import os
+import random
 import socketserver
 import subprocess
 import sys
@@ -58,6 +61,9 @@ USED_SIGS = set()      # 已通过校验的签名（replay 检测）
 PROBE_INFO = {}        # 探测摘要（health 展示）
 
 CORPUS = None          # 12 条演示数据
+
+# 媒体直链基础地址（指向本 mock 站自身）
+MEDIA_BASE = "http://%s:%d" % (HOST, PORT)
 
 
 # ---------------- Node 桥 ----------------
@@ -148,16 +154,56 @@ def verify_a_bogus(query_rest, ua, sig):
 
 
 # ---------------- 演示数据 ----------------
+# 1×1 PNG 基底（封面占位）
+PNG_1PX = base64.b64decode(
+    "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z8BQDwAEhQGAhKmMIQAAAABJRU5ErkJggg==")
+# 伪 mp4 头（ftyp box 占位，非真实编码）
+V_HEAD = b"\x00\x00\x00\x18ftypmp42\x00\x00\x00\x00mp42isom"
+
+_MEDIA_CACHE = {}
+
+
+def mock_media(kind, name):
+    """按直链名确定性生成占位媒体字节（同一 URL 恒定产出同样字节）。
+
+    video → 伪 mp4 头 + 16~48KB 伪随机字节；cover → 1px PNG + 512B 扩展。
+    内容为自造数据，不依赖网络与真实素材，便于爬虫侧校验下载完整性。
+    """
+    key = (kind, name)
+    if key in _MEDIA_CACHE:
+        return _MEDIA_CACHE[key]
+    rnd = random.Random("mock-media:%s:%s" % (kind, name))
+    if kind == "video":
+        size = rnd.randint(16 * 1024, 48 * 1024)
+        body, ctype = V_HEAD + bytes(rnd.getrandbits(8) for _ in range(size)), "video/mp4"
+    else:
+        body, ctype = PNG_1PX + bytes(rnd.getrandbits(8) for _ in range(512)), "image/jpeg"
+    _MEDIA_CACHE[key] = (body, ctype)
+    return body, ctype
+
+
 def make_corpus():
+    """12 条演示数据：video 字段复刻真实 API 形态（play_addr/download_addr/cover），
+    URL 均为指向本 mock 站的自造直链，可真实访问与下载。"""
     items = []
     for i in range(1, 13):
+        aid = "736600000000000000%02d" % i
         items.append({
-            "aweme_id": "736600000000000000%02d" % i,
+            "aweme_id": aid,
             "desc": "演示视频 #%02d｜a_bogus 签名联调数据" % i,
             "create_time": 1716290000 + i * 3600,
             "author": {"nickname": "演示作者%02d" % i, "sec_uid": "MS4wLjABAAAA_demo_%02d" % i},
             "statistics": {"digg_count": 1000 + i * 37, "comment_count": 10 + i, "share_count": i * 3},
-            "video": {"duration": 15000 + i * 1000},
+            "video": {
+                "duration": 15000 + i * 1000,
+                "play_addr": {
+                    "uri": "v0300fg10000mock%012d" % i,
+                    "url_list": ["%s/video/%s.mp4" % (MEDIA_BASE, aid),
+                                 "%s/video/%s.mp4?backup=1" % (MEDIA_BASE, aid)],
+                },
+                "download_addr": {"url_list": ["%s/video/%s.mp4?dl=1" % (MEDIA_BASE, aid)]},
+                "cover": {"url_list": ["%s/cover/%s.jpg" % (MEDIA_BASE, aid)]},
+            },
         })
     return items
 
@@ -220,9 +266,12 @@ class Handler(BaseHTTPRequestHandler):
                              "probe": PROBE_INFO, "used_sigs": len(USED_SIGS)})
         elif path == "/api/aweme/post":
             self.handle_feed(raw_query)
+        elif path.startswith("/video/") or path.startswith("/cover/"):
+            self.handle_media(path)
         elif path == "/":
             self._send(200, {"service": "douyin-mock", "api": "/api/aweme/post",
                              "health": "/api/health",
+                             "media": ["/video/<id>.mp4", "/cover/<id>.jpg"],
                              "note": "本地演示站：三层校验=形态+复算比对+replay"})
         else:
             self._send(404, {"status_code": 404})
@@ -243,6 +292,19 @@ class Handler(BaseHTTPRequestHandler):
         log("通过(%s): cursor=%s 返回%d条" % (reason, raw_query.count("max_cursor"),
                                            len(page["aweme_list"])))
         self._send(200, page)
+
+    def handle_media(self, path):
+        """媒体直链（模拟 CDN 直链，无签名要求）：/video/<id>.mp4、/cover/<id>.jpg"""
+        kind = "video" if path.startswith("/video/") else "cover"
+        name = path.split("/", 2)[2]
+        body, ctype = mock_media(kind, name)
+        self.send_response(200)
+        self.send_header("Content-Type", ctype)
+        self.send_header("Content-Length", str(len(body)))
+        self.send_header("Accept-Ranges", "bytes")
+        self.end_headers()
+        self.wfile.write(body)
+        log("媒体直链: %s %s (%d bytes)" % (kind, name, len(body)))
 
     def log_message(self, fmt, *args):   # 压掉默认 stderr 噪音
         pass
