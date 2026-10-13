@@ -1,0 +1,31 @@
+==============================================================================
+04 补环境完整度影响矩阵（每变体独立 Node 进程）
+==============================================================================
+变体           len       含共同段  sig(前64位)
+------------------------------------------------------------------------------
+base         144       True  OXm0MV8gmEdivD6D5-dLfY3qVle3Ypnj0SVkMDheSVVpa639HMYQ9exow7zvMIub
+keepbuf      144       True  x6RZBQhfDDDB6DWX5-dLfY3qVle3Ypnj0SVkMDheSVVpa639HMTz9exow7zvMIub
+inner        160       True  dvmh/mLfdDDpfDyk5-dLfY3qVle3Ypnj0SVkMDheSVVpa639HMP/9exow7zvMIub
+navi         144       True  m6mZQ5hkdiViDDWk5-dLfY3qVle3Ypnj0SVkMDheSVVpcL39HMYK9exow7zvMIub
+screen8      152       True  O7Wh/5wDdDdBgDWf5-dLfY3qVle3Ypnj0SVkMDheSVVpcL39HMO/9exow7zvMIub
+doc          144       True  mXmZ/V86dEfkffSg5-dLfY3qVle3Ypnj0SVkMDheSVVpcL39HMPK9exow7zvMIub
+loc          144       True  D68MQV0vDiVNkd6h5-dLfY3qVle3Ypnj0SVkMDheSVVpcy39HMT/9exow7zvMIub
+storage      144       True  DJ8ZQVLhmEdTDDyg5-dLfY3qVle3Ypnj0SVkMDheSVVpcy39HMOJ9exow7zvMIub
+full         164       True  EfRM/mgXdi6BvVWg5-dLfY3qVle3Ypnj0SVkMDheSVVpcg39HMYv9exow7zvMIub
+------------------------------------------------------------------------------
+结论（按长度分组；每项±1 字段都改变长度/主体）：
+  len=144  : base, keepbuf, navi, doc, loc, storage
+  len=152  : screen8
+  len=160  : inner
+  len=164  : full
+  逐项对照 base(144)：
+    + keepbuf  -> len=144  无影响
+    + inner    -> len=160  ★ 改变长度
+    + navi     -> len=144  无影响
+    + screen8  -> len=152  ★ 改变长度
+    + doc      -> len=144  无影响
+    + loc      -> len=144  无影响
+    + storage  -> len=144  无影响
+==============================================================================
+
+[exit=0, 0.91s]
