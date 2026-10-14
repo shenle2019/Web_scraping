@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "gt": "ff3cd843746782b0e0f377c2d234d6a5",
+  "challenge": "a4418dbff7c65238de437aa915d5628c",
+  "new_challenge": "a4418dbff7c65238de437aa915d5628cdt",
+  "aeskey": "79e331cb92afbc30",
+  "slide": {
+    "distance": 155,
+    "passtime": 1691,
+    "track_points": 54
+  },
+  "validate": "f40975491c437633dd13cf879f5500eb",
+  "final_response": {
+    "success": 1,
+    "message": "success",
+    "validate": "f40975491c437633dd13cf879f5500eb",
+    "score": "3"
+  },
+  "step_seconds": {
+    "register": 0.26,
+    "gettype": 0.17,
+    "w1_getphp": 0.15,
+    "w2_ajax": 0.26,
+    "getphp2": 0.08,
+    "image_track": 0.25,
+    "w3_ajax": 0.17
+  },
+  "total_seconds": 1.33,
+  "log_file": "run_20261014_165936.txt"
+}
