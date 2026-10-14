@@ -1,0 +1,18 @@
+$ python 02_验证签名.py
+[0] 自造 d_c0 = 84b80cc874764b2982c450f6fb1ab4fd|1791941909
+
+[A] 签名源串 = path+query
+    [A] 拼串: 101_3_3.0+/api/v4/collections/323709385/items?offset=0&limit=20+84b80cc874764b2982c450f6fb1ab4fd|1791941909
+    [A] md5 : 397854975f56ecaf2e545819756886e6
+    -> 401 {"error":{"code":101,"name":"AuthenticationError","message":"身份未经过验证"}}
+
+[B] 签名源串 = 完整 URL
+    [B] 拼串: 101_3_3.0+https://www.zhihu.com/api/v4/collections/323709385/items?offset=0&limit=20+84b80cc874764b2982c450f6fb1ab4fd|1791941909
+    [B] md5 : 3339d8843d86ea4336e684a206ea6a2b
+    -> 401 {"error":{"code":101,"name":"AuthenticationError","message":"身份未经过验证"}}
+
+[C] 形态A 但去掉 x-zst-81 头
+    拼串: 101_3_3.0+/api/v4/collections/323709385/items?offset=0&limit=20+84b80cc874764b2982c450f6fb1ab4fd|1791941909
+    md5: 397854975f56ecaf2e545819756886e6
+    -> 401 {"error":{"code":101,"name":"AuthenticationError","message":"身份未经过验证"}}
+（后续实验证明：该 401 与签名无关，是匿名登录墙）

@@ -1,0 +1,4 @@
+$ python 06_检查Chrome登录态.py
+[0] Chrome 版本: 155.0.8059.40
+[1] encrypted_key 前缀: b'DPAPI' (b"DPAPI"=传统 DPAPI)
+[2] cookies 读取失败: [Errno 13] Permission denied: 'C:\\Users\\Administrator\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies'

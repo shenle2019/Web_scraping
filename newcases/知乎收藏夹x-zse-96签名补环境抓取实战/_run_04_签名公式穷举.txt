@@ -1,0 +1,24 @@
+$ python 04_签名公式穷举.py
+[1] 捕获请求 2 个：
+    [401] https://www.zhihu.com/api/v4/collections/323709385/items?offset=0&limit=20
+          96 = 2.0_pL4GzNWjkuvond5YMZngUjY3I9kGzPwBoPHmam=63FZzBwNksbwOiJLMbqTaNQnL
+    [401] https://www.zhihu.com/api/v4/collections/discover?include=...
+          96 = 2.0_hxdAMV/gu=tWDfaAamaUzGWjV0OHlxL2oHWOQrD5Zjp+APuPZjtSc7dGtmJ2yXYr
+[2] d_c0 = lzUY7kwaDh2PTpGlsg8MMP94C4nQR7zbSIg=|1791942624
+[3] 有效 items 样本数: 1
+    样本已保存 output/sign_samples.json
+
+[4] 逐变体比对（11 变体 x 1 样本）
+    A1 93+path_q+d(raw)      不一致
+    A2 93+path_q+d(no_ts)    不一致
+    A3 93+path_q+d(enc)      不一致
+    B1 93+full+d(raw)        不一致
+    B2 93+full+d(no_ts)      不一致
+    C1 93+path+d(raw)        不一致
+    D1 path_q+d(raw)         不一致
+    E1 93全连path_q+d          不一致
+    F1 path_q+d+93           不一致
+    G1 93+full+d+p(enc)      不一致
+    H1 full+d(raw)           不一致
+[5] 结论: 全部不一致，需继续扩展变体
+（原因分析：浏览器样本本身是 401 登录墙响应；登录态下服务端不校验签名，公式无需继续穷举）

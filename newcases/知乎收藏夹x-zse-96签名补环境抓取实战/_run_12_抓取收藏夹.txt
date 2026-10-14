@@ -1,0 +1,21 @@
+$ python 12_抓取收藏夹.py
+[1] 登录态载入：cookie 22 个, d_c0=XbVZf8obDh2PTqPPVZ0I...
+[页  1] offset=0    本页=19  服务端总数=263 is_end=False
+[页  2] offset=20   本页=20  服务端总数=263 is_end=False
+[页  3] offset=40   本页=20  服务端总数=263 is_end=False
+[页  4] offset=60   本页=18  服务端总数=263 is_end=False
+[页  5] offset=80   本页=20  服务端总数=263 is_end=False
+[页  6] offset=100  本页=19  服务端总数=263 is_end=False
+[页  7] offset=120  本页=20  服务端总数=263 is_end=False
+[页  8] offset=140  本页=19  服务端总数=263 is_end=False
+[页  9] offset=160  本页=19  服务端总数=263 is_end=False
+[页 10] offset=180  本页=20  服务端总数=263 is_end=False
+[页 11] offset=200  本页=17  服务端总数=263 is_end=False
+[页 12] offset=220  本页=19  服务端总数=263 is_end=False
+[页 13] offset=240  本页=19  服务端总数=263 is_end=False
+[页 14] offset=260  本页=3   服务端总数=263 is_end=True
+
+[2] 抓取完成：14 页，去重后 252 条（服务端总数 263）
+    类型分布: {'answer': 249, 'article': 3}
+    含全文条数: 252
+    已保存 output/collection_raw_pages.json / collection_all_items.json

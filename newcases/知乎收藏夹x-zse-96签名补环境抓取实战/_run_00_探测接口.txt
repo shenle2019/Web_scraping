@@ -1,0 +1,13 @@
+$ python 00_探测接口.py
+[1] 访问首页: 200
+    cookie keys: ['_xsrf', '_zap', 'BEC']
+    d_c0 = None
+
+[2] 无签名 items API: 401
+    resp: {"error":{"code":101,"name":"AuthenticationError","message":"身份未经过验证"}}
+
+[3] 无签名收藏夹信息: 200
+    resp: {"collection":{"id":323709385,"type":"collection","title":"10万赞以上的回答","is_public":true,"url":"https://api.zhihu.com/collections/323709385","description":"","follower_count":1604,"answer_count":263,"item_count":263,"like_count":21,"view_count":75220,"comment_count":3,"created_time":1549858194,"updated_time":1790937122,...
+
+[4] 收藏夹页面: 200 长度 53291
+    页面标题片段附近: ="light"><head><meta charSet="utf-8"/><title data-rh="true">10万赞以上的回答 - 收藏夹 - 知乎</title><m

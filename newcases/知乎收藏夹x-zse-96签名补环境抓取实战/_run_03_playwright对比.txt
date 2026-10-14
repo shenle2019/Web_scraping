@@ -1,0 +1,12 @@
+$ python 03_playwright对比.py
+页面标题: 10万赞以上的回答 - 收藏夹 - 知乎
+[1] 浏览器 cookies: {'SESSIONID': 'qDMddvau21UaGF3LLNHOujSRILKNx6BKFIcAQoyx...', 'd_c0': 'isYZ7yAZDh2PTl8oQmbnaUYutneTZXx0Uzc=|179...', ...}
+    d_c0 = isYZ7yAZDh2PTl8oQmbnaUYutneTZXx0Uzc=|1791942317
+[2] 捕获 API 请求数: 5
+[3] 对照实验（拿真实请求反推签名公式）
+    真实 URL : https://www.zhihu.com/api/v4/collections/323709385/items?offset=0&limit=20
+    真实 93  : 101_3_3.0
+    真实 96  : 2.0_mVMv0emNxmn3IrGiRCKgV6dboJO=/5im0T3A11xRJ0Z7Fz0uANRgk2iUHz3tJ0L2
+    [A 93+path+query+d_c0] ✗不一致
+    [B 93+fullurl+d_c0] ✗不一致
+备注：此时浏览器自身请求也是 401（后经 05 脚本确认是"请登录后查看"登录墙）

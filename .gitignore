@@ -39,5 +39,8 @@ newcases/多站请求签名与响应加密逆向/output/
 newcases/Hook定位与无限debugger反调试实战/output/
 newcases/JSVMP签名补环境还原与Playwright对比实战/output/
 newcases/抖音a_bogus签名黑箱调用与VM状态机恢复实战/output/
+newcases/知乎收藏夹x-zse-96签名补环境抓取实战/output/
+# 登录状态凭证（严禁入库）
+zhihu_state.json
 # 网站会话凭证（cookies 等），严禁入库
 *cookie*.json

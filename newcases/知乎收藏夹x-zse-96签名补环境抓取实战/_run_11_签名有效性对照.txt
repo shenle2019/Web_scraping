@@ -1,0 +1,6 @@
+$ python 11_签名有效性对照.py
+[1] 无签名           -> 200 {"paging":{"is_end":false,"is_start":true,"next":"https://www.zhihu.com/api/v4/c
+[2] 错误签名(全A)     -> 200 {"paging":{"is_end":false,"is_start":true,"next":"https://www.zhihu.com/api/v4/c
+[3] 本地补环境签名    -> 200 {"paging":{"is_end":false,"is_start":true,"next":"https://www.zhihu.com/api/v4/c
+
+[结论] 登录态下签名校验强度：错误签名也放行 → 服务端对登录用户未强校验 x-zse-96

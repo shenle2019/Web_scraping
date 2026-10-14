@@ -1,0 +1,15 @@
+$ python 09_playwright采集.py
+[1] 打开收藏夹页面（标题）: (3 封私信) 10万赞以上的回答 - 收藏夹 - 知乎
+    捕获 offset=0    本页=19 累计总数=263 is_end=False 请求URL=https://www.zhihu.com/api/v4/collections/323709385/items?offset=0&limit=20
+[2] 开始滚动加载……
+    已滚动 10 轮，当前页数 1
+    ...（共 80 轮）
+[3] 页面 DOM 条目数: 0 （仅供对照）
+[4] 采集完成：收到 1 页，累计条目 19 条，服务端总数 263
+[5] 首条结构键位: ['content', 'created']
+    content 键位: ['type', 'answer_type', 'url', 'created_time', 'updated_time', 'author', 'thumbnail', 'is_collapsed', 'is_copyable', 'is_visible', 'is_normal', 'voteup_count', 'comment_count', 'thanks_count', 'is_mine', 'comment_permission', 'reshipment_settings', 'content', 'excerpt', 'suggest_edit']
+    content.type = answer | content.id = 123023603901
+    是否含全文 content 字段: True
+    首条 JSON 大小: 13868 字符
+关键发现：items 响应直接携带回答全文（content.content 为 HTML）；
+          无头模式鼠标滚轮未触发翻页，改用 requests 直接分页（12 脚本）。

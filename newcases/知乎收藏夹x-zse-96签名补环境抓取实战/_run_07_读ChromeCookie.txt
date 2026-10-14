@@ -1,0 +1,15 @@
+$ python 07_读ChromeCookie.py
+[1] cookies 副本已写出 0 字节          ← CreateFileW 句柄截断导致（已修复 ctypes 签名后重跑）
+Traceback (most recent call last):
+  ...
+sqlite3.OperationalError: no such table: cookies
+
+$ python 07_读ChromeCookie.py   # 修复 restype=HANDLE 后重跑
+Traceback (most recent call last):
+  File "07_读ChromeCookie.py", line 58, in <module>
+    raw = read_shared(COOKIE_SRC)
+  File "07_读ChromeCookie.py", line 44, in read_shared
+    raise OSError('CreateFileW failed: %d' % ctypes.get_last_error())
+OSError: CreateFileW failed: 32
+结论：Chrome 155 运行时对 Cookies 文件施加独占锁（ERROR_SHARING_VIOLATION=32），
+      共享读绕过失败；改用"Playwright 有头浏览器扫码登录"方案（08 脚本）。

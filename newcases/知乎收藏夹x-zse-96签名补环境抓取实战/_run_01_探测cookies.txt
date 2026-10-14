@@ -1,0 +1,15 @@
+$ python 01_探测cookies.py
+[1] GET / -> 200
+    set-cookie 响应头:
+    session cookies: {'_xsrf': '76e2d736-ca9e-45b5-a8c7-e8d10a33d643', '_zap': '40b2b7ed-7ba7-4167-b6b5-9d3e911a0b7c', 'BEC': '244e292b1eefcef20c9b81b1d9777823'}
+
+[2] HTML 中 d_c0 出现次数: 0
+
+[3] GET /signin -> 200, set-cookie: 无
+    d_c0 = None
+
+[3] GET /search?q=test -> 403, set-cookie: 无
+    d_c0 = None
+
+[3] GET /question/19581624 -> 403, set-cookie: 无
+    d_c0 = None
