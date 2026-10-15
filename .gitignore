@@ -44,3 +44,4 @@ newcases/知乎收藏夹x-zse-96签名补环境抓取实战/output/
 zhihu_state.json
 # 网站会话凭证（cookies 等），严禁入库
 *cookie*.json
+newcases/知乎用户主页回答抓取实战/output/
