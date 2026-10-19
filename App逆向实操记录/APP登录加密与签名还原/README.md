@@ -6,7 +6,7 @@
 
 | 项 | 实际情况 |
 | --- | --- |
-| 电脑 | Windows 11 22H2，Python 3.8.8 |
+| 电脑 | Windows 10 22H2（19045），Python 3.8.8 |
 | 依赖 | frida 16.3.3、requests 2.32.4、pycryptodome 3.24.0 |
 | 手机 | Pixel 2，Android 11，arm64-v8a，Magisk root |
 | frida-server（手机） | 16.3.3，`/data/local/tmp/frida-server`，端口 27042/27043 已转发 |
@@ -56,7 +56,7 @@ getMD5("c058579161250b3748dce77cf43eb6c3APP137")
 aesPassword("lqz123456") = 0FwYho4FQoTYvYu2eioWDw==
 ```
 
-请求头关键项：`encrypt: 1`、`version: 1.0.5`、`orgid: 137`、`platform: android`、随机 15 位 `imei`、`CQ-AGENT` JSON；请求体：
+请求头关键项：`encrypt: 1`、`version: 1.0.5`、`orgid: 137`、`platform: android`、随机 `imei`（hook 到 `e6863ce4595b1909`）、`CQ-AGENT` JSON；请求体：
 
 ```json
 {"codeKey":"","password":"0FwYho4FQoTYvYu2eioWDw==","code":"","phone":"18953675222","key":""}
