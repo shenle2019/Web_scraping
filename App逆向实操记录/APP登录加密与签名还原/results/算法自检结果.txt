@@ -1,0 +1,26 @@
+============================================================================
+day05 算法自检（样本来自 Frida 实时 hook，本地复算）
+============================================================================
+[PASS] 爱安丘 AES key (getMD5)
+       复算 = 6d6656a37cdb7977c10f6d83cab168e9
+       hook = 6d6656a37cdb7977c10f6d83cab168e9
+[PASS] 爱安丘 AES 密码密文
+       复算 = 0FwYho4FQoTYvYu2eioWDw==
+       hook = 0FwYho4FQoTYvYu2eioWDw==
+[PASS] 尿大夫 sign (ts=1792405472)
+       复算 = acf37901198f906cefab3e4001d0b92a
+       hook = acf37901198f906cefab3e4001d0b92a
+[PASS] 尿大夫 sign (ts=1792408334)
+       复算 = 2d61ee52da5d9bf900df35c761994f73
+       hook = 2d61ee52da5d9bf900df35c761994f73
+[PASS] 合伙人 密码 MD5
+       复算 = e10adc3949ba59abbe56e057f20f883e
+       hook = e10adc3949ba59abbe56e057f20f883e
+[PASS] 合伙人 X-Sign (reqTime=1792406196986)
+       复算 = 8c0dc9169e6f24e096e9531e5d070bb5
+       hook = 8c0dc9169e6f24e096e9531e5d070bb5
+[PASS] 合伙人 X-Sign (reqTime=1792408299226)
+       复算 = e06815789f099bcfefbe2a68b942555b
+       hook = e06815789f099bcfefbe2a68b942555b
+----------------------------------------------------------------------------
+合计 7 项，通过 7 项，失败 0 项

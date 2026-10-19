@@ -1,0 +1,8 @@
+# day05 hook 实时日志
+# 目标: niaodaifu (尿大夫)
+# 开始: 2026-10-19 19:12:19
+
+[19:12:20] [HOOK-ERR] OkHttp Error: java.lang.ClassNotFoundException: Didn't find class "okhttp3.internal.http.RealInterceptorChain" on path: DexPathList[[zip file "/data/app/~~FYk3Mg29E_E-oCrxFiwgmA==/com.uulife.medical.activity-mlGGufXOrWXQCcKx-k6QOg==/base.apk"],nativeLibraryDirectories=[/data/app/~~FYk3Mg29E_E-oCrxFiwgmA==/com.uulife.medical.activity-mlGGufXOrWXQCcKx-k6QOg==/lib/arm64, /data/app/~~FYk3Mg29E_E-oCrxFiwgmA==/com.uulife.medical.activity-mlGGufXOrWXQCcKx-k6QOg==/base.apk!/lib/arm64-v8a, /system/lib64, /system/product/lib64]]
+[19:12:20] [HOOK] SafeUtils ok
+[19:12:20] [READY] attached 尿大夫
+[19:12:29] [SIGN] time=1792408334 sign=2d61ee52da5d9bf900df35c761994f73

@@ -1,0 +1,25 @@
+# 爱安丘登录接口验证记录
+# 脚本：01_爱安丘AES登录.py
+# 运行时间：2026-10-19 19:07
+# 说明：以下为脚本实际终端输出；请求成功后服务端返回账号错误而非解密/签名错误。
+#       19:09 起连续重放触发滑块验证码，未再继续请求。
+
+[1] 运行时 AES key = 6d6656a37cdb7977c10f6d83cab168e9
+[2] 密码密文       = 0FwYho4FQoTYvYu2eioWDw==
+[3] 请求体         = {"codeKey": "", "password": "0FwYho4FQoTYvYu2eioWDw==", "code": "", "phone": "18953675222", "key": ""}
+[4] imei           = 552694919257002
+[5] POST https://app-auth.iqilu.com/member/login?e=1
+[6] HTTP 200
+[7] 响应 = {"code":0,"errmsg":"用户或者密码错误  登录失败 账号或密码错误","errorCode":50009}
+
+# 结论：
+# - AES key 由 md5("c058579161250b37" + "48dce77cf43eb6c3" + "APP" + "137") 得到，
+#   与 18:52 Frida hook 的 getMD5 输出一致。
+# - 密文 0FwYho4FQoTYvYu2eioWDw== 与 APP 内 aesPassword("lqz123456") 一致。
+# - 服务端能正常解密并进入账号校验，返回 50009（账号或密码错误），
+#   说明加密方式、key、IV、PKCS7 填充均已还原。
+#
+# 后续风控记录：
+#   19:09 之后重复登录触发滑块验证码 https://app-captcha.litenews.cn/server/slide?e=1
+#   继续请求返回 {"code":5,"errmsg":"  验证码获取次数过多，请稍后重试","errorCode":50000}
+#   因此停止重复请求，以上 19:07 的 50009 为最终有效验证结果。

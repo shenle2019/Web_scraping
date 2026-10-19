@@ -1,0 +1,116 @@
+# day05 hook 实时日志
+# 目标: partner (油联合伙人)
+# 开始: 2026-10-19 19:10:41
+
+[19:10:42] [HOOK] OkHttp ok
+[19:10:42] [HOOK] Md5 ok
+[19:10:42] [HOOK] RequestParamsWrapper.sign ok
+[19:10:42] [READY] attached 油联合伙人
+[19:11:54] [MD5] in=123456 out=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [MD5] in=17924082992263456phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e out=e06815789f099bcfefbe2a68b942555b
+[19:11:54] [SIGN] in=phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e out=e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [HDR] Content-Type: application/x-www-form-urlencoded
+[19:11:54] [HDR] Content-Length: 59
+[19:11:54] [HDR] Host: chinayltx.com
+[19:11:54] [HDR] Connection: Keep-Alive
+[19:11:54] [HDR] Accept-Encoding: gzip
+[19:11:54] [HDR] User-Agent: okhttp/3.10.0
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [HDR] Content-Type: application/x-www-form-urlencoded
+[19:11:54] [HDR] Content-Length: 59
+[19:11:54] [HDR] Host: chinayltx.com
+[19:11:54] [HDR] Connection: Keep-Alive
+[19:11:54] [HDR] Accept-Encoding: gzip
+[19:11:54] [HDR] User-Agent: okhttp/3.10.0
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [HDR] Content-Type: application/x-www-form-urlencoded
+[19:11:54] [HDR] Content-Length: 59
+[19:11:54] [HDR] Host: chinayltx.com
+[19:11:54] [HDR] Connection: Keep-Alive
+[19:11:54] [HDR] Accept-Encoding: gzip
+[19:11:54] [HDR] User-Agent: okhttp/3.10.0
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [HTTP] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [HDR] X-App: native
+[19:11:54] [HDR] X-Noncestr: 123456
+[19:11:54] [HDR] X-OS: partnerApp_android
+[19:11:54] [HDR] X-Req-Time: 1792408299226
+[19:11:54] [HDR] X-Sign: e06815789f099bcfefbe2a68b942555b
+[19:11:54] [HDR] X-Token: 
+[19:11:54] [HDR] X-UserID: 
+[19:11:54] [HDR] Content-Type: application/x-www-form-urlencoded
+[19:11:54] [HDR] Content-Length: 59
+[19:11:54] [HDR] Host: chinayltx.com
+[19:11:54] [HDR] Connection: Keep-Alive
+[19:11:54] [HDR] Accept-Encoding: gzip
+[19:11:54] [HDR] User-Agent: okhttp/3.10.0
+[19:11:54] [BODY] phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}
+[19:11:54] [RESP] 200 https://chinayltx.com/app/api/v1/partnerLogin/login
+[19:11:54] [RESP-BODY] {"msg":"用户没有注册"}

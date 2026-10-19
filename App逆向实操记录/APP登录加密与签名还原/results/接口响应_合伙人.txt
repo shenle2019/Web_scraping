@@ -1,0 +1,7 @@
+[1] 密码 MD5  = e10adc3949ba59abbe56e057f20f883e
+[2] 签名原文  = 17924085226673456phone=18953675221&password=e10adc3949ba59abbe56e057f20f883e
+[3] X-Sign    = 15f13d3e41d8e8f40a7dc2677660703e
+[4] 请求头    = {'X-App': 'native', 'X-Noncestr': '123456', 'X-OS': 'partnerApp_android', 'X-Req-Time': '1792408522667', 'X-Sign': '15f13d3e41d8e8f40a7dc2677660703e', 'X-Token': '', 'X-UserID': '', 'User-Agent': 'okhttp/3.10.0'}
+[5] POST https://chinayltx.com/app/api/v1/partnerLogin/login
+[6] HTTP 200
+[7] 响应 = {"msg":"用户没有注册"}

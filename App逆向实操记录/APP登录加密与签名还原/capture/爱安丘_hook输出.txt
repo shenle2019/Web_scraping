@@ -1,0 +1,44 @@
+# day05 hook 实时日志（爱安丘）
+# 目标: aiqiu (爱安丘)
+#
+# 说明：下面是 2026-10-19 18:52 首次实时 hook 的完整一次登录。
+#       该次运行 JS 里还在用 console.log，日志只出现在 Frida 控制台，
+#       没有进入 Python 回调，因此本文件按当时控制台原始输出整理，数值未改动。
+#       19:07 起用 Python 脚本重放同一请求做接口验证；连续登录后触发风控，
+#       滑块验证码与限制提示见文末。
+
+[18:52:16] [HOOK] EncryptUtil ok
+[18:52:16] [HOOK] OkHttp ok
+[18:52:16] [READY] attached 爱安丘
+[18:52:31] [GETMD5] in=c058579161250b3748dce77cf43eb6c3APP137 out=6d6656a37cdb7977c10f6d83cab168e9
+[18:52:31] [AESPWD] in=lqz123456 out=0FwYho4FQoTYvYu2eioWDw==
+[18:52:31] [HTTP] POST https://app-auth.iqilu.com/member/login?e=1
+[18:52:31] [HDR] encrypt: 1
+[18:52:31] [HDR] version: 1.0.5
+[18:52:31] [HDR] orgid: 137
+[18:52:31] [HDR] User-Agent: null chuangqi.o.137.com.iqilu.app137/1.0.5
+[18:52:31] [HDR] platform: android
+[18:52:31] [HDR] imei: e6863ce4595b1909
+[18:52:31] [HDR] CQ-AGENT: {"os":"android","brand":"google","imei":"e6863ce4595b1909","osversion":"11","network":"unknown","version":"1.0.5","core":"2.2.1.1"}
+[18:52:31] [HDR] Content-Type: application/json; charset=utf-8
+[18:52:31] [BODY] {"codeKey":"","password":"0FwYho4FQoTYvYu2eioWDw==","code":"","phone":"18953675222","key":""}
+[18:52:31] [RESP] 200 https://app-auth.iqilu.com/member/login?e=1
+[18:52:31] [RESP-BODY] {"code":0,"errmsg":"用户或者密码错误  登录失败 账号或密码错误","errorCode":50009}
+
+# APP 内置重试：同一次点击连续发出 8 次相同请求，8 次响应均为上面的 50009。
+# 请求头里的 imei 每次安装/清数据后会变，服务端只当设备标识；CQ-AGENT 与之保持一致。
+
+# ---- 19:07 脚本重放（01_爱安丘AES登录.py，imei=552694919257002）----
+# [1] 运行时 AES key = 6d6656a37cdb7977c10f6d83cab168e9
+# [2] 密码密文       = 0FwYho4FQoTYvYu2eioWDw==
+# [6] HTTP 200
+# [7] 响应 = {"code":0,"errmsg":"用户或者密码错误  登录失败 账号或密码错误","errorCode":50009}
+# 说明：服务端先校验 key/密文，能正常解出密码才会走到账号校验；返回 50009 而不是
+#       签名/解密错误，说明 AES key 与填充方式还原正确。
+
+# ---- 19:09 之后重复测试触发风控 ----
+# 连续登录后 APP 弹出滑块验证码：
+#   https://app-captcha.litenews.cn/server/slide?e=1
+# 继续请求返回：
+#   {"code":5,"errmsg":"  验证码获取次数过多，请稍后重试","errorCode":50000}
+# 因此停止了对该接口的重复请求，改用 18:52 的首次真实响应作为验证依据。

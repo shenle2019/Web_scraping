@@ -1,0 +1,6 @@
+[1] 时间戳    = 1792408520
+[2] sign      = 5b48a079d009c80e258764c707eec8f3
+[3] 请求体    = {'devisetoken': '4dd82976623fca66a044', 'password': '1234567', 'mobile': '18953675221', 'channel': 'android', 'sign': '5b48a079d009c80e258764c707eec8f3', 'time': '1792408520', 'mechanism': '0', 'platform': '1'}
+[4] POST https://api.niaodaifu.cn/v4/site/loginnew
+[5] HTTP 200
+[6] 响应 = {"status":1,"data":[],"message":"用户名或者密码错误"}
