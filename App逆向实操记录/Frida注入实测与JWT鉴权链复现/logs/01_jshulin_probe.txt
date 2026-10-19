@@ -1,0 +1,16 @@
+[2026-10-19 15:30:30] 开始探测金树林案例目标站点
+
+=== 1. DNS 解析 miappshop.jshulin.com ===
+解析结果: 112.124.33.43
+
+=== 2. TCP miappshop.jshulin.com:443 ===
+[2026-10-19 15:30:32] 112.124.33.43:443 连接失败 -> [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+=== 2. TCP miappshop.jshulin.com:80 ===
+[2026-10-19 15:30:34] 112.124.33.43:80 连接失败 -> [WinError 10061] 由于目标计算机积极拒绝，无法连接。
+
+=== 3. HTTPS 请求 phoneCode https://miappshop.jshulin.com/memberLogin/phoneCode ===
+[2026-10-19 15:30:37] 请求失败 -> HTTPSConnectionPool(host='miappshop.jshulin.com', port=443): Max retries exceeded with url: /memberLogin/phoneCode?phone=13800000000&serviceType=6 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001BF536848B0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+
+=== 3. HTTPS 请求 robots.txt https://miappshop.jshulin.com/robots.txt ===
+[2026-10-19 15:30:39] 请求失败 -> HTTPSConnectionPool(host='miappshop.jshulin.com', port=443): Max retries exceeded with url: /robots.txt (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001BF536A12E0>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))

@@ -1,0 +1,22 @@
+==> 目标接口: http://127.0.0.1:18080
+
+[1/4] GET /memberLogin/phoneCode (serviceType=5)
+HTTP 200 | {"code": 10000, "message": "成功(本地 Mock)", "data": {"phoneCode": "123456", "serviceType": "5", "note": "真实环境验证码经短信下发，Mock 直接返回"}}
+
+[2/4] POST /memberLogin/memberRegister
+HTTP 200 | {"code": 10000, "message": "注册成功(本地 Mock)", "data": null}
+
+[3/4] POST /memberLogin/login
+HTTP 200 | {"code": 10000, "message": "成功", "data": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxODA2MzI5NDg3MDU0NzAwMDAyIiwiZXhwIjoxNzkyMzk1ODgzLCJpYXQiOjE3OTIzOTUyODMsInVzZXJJZCI6IjE4MDYzMjk0ODc...
+token: eyJ0eXAiOiJKV1QiLCJhbGci...
+JWT payload: {"aud": "1806329487054700002", "exp": 1792395883, "iat": 1792395283, "userId": "1806329487054700002", "username": "13800000000"}
+
+[4/4] POST /pro/searchByPage (Header: Mobile-Token)
+HTTP 200 | {"code": 10000, "message": "成功", "data": {"list": [{"id": 1001, "name": "法国进口红酒 干红葡萄酒 750ml", "price": 199.0, "stock": 120}, {"id": 1002, "name": "智利赤霞珠红酒 整箱6支装", "price": 268.0, "stock": 66}, {"id": 1003, "name": "澳洲西拉子红酒 单支装", "price": 158.0, "stock": 88}, {"id": 1004, "name": "西班牙丹魄红酒 礼盒装", "price": 328.0, "stock": 40}], "total": 4, "page": 1, "limit": 10}}
+
+搜索结果: total=4
+  - 法国进口红酒 干红葡萄酒 750ml  ¥199.0
+  - 智利赤霞珠红酒 整箱6支装  ¥268.0
+  - 澳洲西拉子红酒 单支装  ¥158.0
+
+[完成] 链路结束。

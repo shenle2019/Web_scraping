@@ -1,0 +1,4 @@
+[SPAWN] pid=29489
+[RESUME] app resumed, observing 15s...
+[ALIVE-AFTER-15S] False
+（说明：spawn 唤起后 15 秒内应用进程退出，未收到 Java 层 hook 消息）

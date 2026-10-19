@@ -1,0 +1,21 @@
+=== 1. 电脑环境 ===
+OS: Windows-10-10.0.19041-SP0
+Python: 3.8.8
+frida (PC): 16.3.3
+
+=== 2. adb 与手机连接 ===
+List of devices attached
+FA7B11A03073	device
+手机 CPU 架构: arm64-v8a
+
+=== 3. 手机端 frida-server 进程 ===
+root          29134      1 10865888 64212 0                   0 S fs1663
+
+=== 4. 端口转发 ===
+FA7B11A03073 tcp:27042 tcp:27042
+FA7B11A03073 tcp:27043 tcp:27043
+
+=== 5. frida 远程设备连通性 ===
+device: Device(id="socket", name="Local Socket", type='remote')
+进程总数: 143
+前台应用: None

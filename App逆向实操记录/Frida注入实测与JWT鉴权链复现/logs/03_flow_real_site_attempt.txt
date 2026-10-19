@@ -1,0 +1,5 @@
+==> 目标接口: https://miappshop.jshulin.com
+
+[1/4] GET /memberLogin/phoneCode (serviceType=5)
+[链路中断] 取码接口不可达: HTTPSConnectionPool(host='miappshop.jshulin.com', port=443): Max retries exceeded with url: /memberLogin/phoneCode?phone=13800000000&serviceType=5 (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000209633E1670>: Failed to establish a new connection: [WinError 10061] 由于目标计算机积极拒绝，无法连接。'))
+提示：真实站点已下线时属于预期失败；可改用 --base-url http://127.0.0.1:18080 验证链路。

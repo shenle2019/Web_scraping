@@ -1,0 +1,9 @@
+[MOCK] listening on http://127.0.0.1:18080
+[REQ ] GET /memberLogin/phoneCode params={'phone': ['13800000000'], 'serviceType': ['5']}
+[RESP] /memberLogin/phoneCode -> {"code": 10000, "message": "成功(本地 Mock)", "data": {"phoneCode": "123456", "serviceType": "5", "note": "真实环境验证码经短信下发，Mock 直
+[REQ ] POST /memberLogin/memberRegister body={"phone": "13800000000", "fid": "", "password": "Test123456", "phoneCode": "123456"}
+[RESP] /memberLogin/memberRegister -> {"code": 10000, "message": "注册成功(本地 Mock)", "data": null}
+[REQ ] POST /memberLogin/login body={"password": "Test123456", "username": "13800000000"}
+[RESP] /memberLogin/login -> {"code": 10000, "message": "成功", "data": {"token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxODA2MzI5NDg3MDU0NzAwMDAyIiwiZXhwIjoxNzkyMzk1ODgzLCJpYXQ
+[REQ ] POST /pro/searchByPage body={"cityNo": "", "keyword": "红酒", "limit": 10, "orderByContent": "", "page": 1, "enabled": 1}
+[RESP] /pro/searchByPage -> {"code": 10000, "message": "成功", "data": {"list": [{"id": 1001, "name": "法国进口红酒 干红葡萄酒 750ml", "price": 199.0, "stock": 120}, {"id": 10

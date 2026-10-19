@@ -1,0 +1,7 @@
+[ACTIVE] encodeMD5('1111111') = 7fa8282ad93047a4d6fe6111c93b308a
+[READY] hook installed
+[ATTACHED] 车智赢+
+[SKIP] com.che168.autotradercloud -> process with pid 28349 either refused to load frida-agent, or terminated during injection
+[WAIT] waiting for login action...
+（随后在手机登录页点击登录按钮：hook 未捕获到 encodeMD5 调用，
+  app 主进程崩溃，崩溃现场见 04_czy_login_crash_logcat.txt）
