@@ -1,0 +1,20 @@
+﻿==================================================================
+[请求] POST https://dealercloudapi.che168.com/tradercloud/sealed/login/login.ashx
+[请求体] appid=atc.android&_sign=44130B1ECCA8677A9E0EB8BDB2E8D8A1&appbuildcode=512&appchannelid=csy&appversion=5.6.1&channelid=csy&pwd=7fa8282ad93047a4d6fe6111c93b308a&signkey=&type=&udid=HMsPYP6Uj4y1jOTGMnXU5mgeJEqf0zKdyE7eytjyaGwFESW0J9qNqXQqBD5D%20iXN9MpsddKbE9EZqDh91XDxwpg%3D%3D&username=18953675221
+------------------------------------------------------------------
+[参数明细]
+  appid          = atc.android
+  _sign          = 44130B1ECCA8677A9E0EB8BDB2E8D8A1
+  appbuildcode   = 512
+  appchannelid   = csy
+  appversion     = 5.6.1
+  channelid      = csy
+  pwd            = 7fa8282ad93047a4d6fe6111c93b308a
+  udid           = HMsPYP6Uj4y1jOTGMnXU...(截断)
+  username       = 18953675221
+------------------------------------------------------------------
+[响应体] {"returncode":2040007,"message":"账号或密码错误"}
+==================================================================
+[关键观察] pwd=7fa8282ad93047a4d6fe6111c93b308a  -> 32位十六进制, 疑似 MD5 摘要
+下一步: jadx 反编译 apk, 搜索 'pwd' 定位加密函数(见 02_验证MD5.py)
+

@@ -1,0 +1,2 @@
+﻿# jadx 反编译完整输出体积大且可由 apk 重新生成，不入库（关键证据在 evidence/）
+decompiled/
