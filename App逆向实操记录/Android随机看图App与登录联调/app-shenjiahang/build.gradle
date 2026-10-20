@@ -1,0 +1,4 @@
+// AGP 版本与本机 Gradle 缓存保持一致，保证离线可构建
+plugins {
+    id 'com.android.application' version '8.0.2' apply false
+}

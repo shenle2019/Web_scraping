@@ -1,0 +1,9 @@
+﻿--------- beginning of main
+--------- beginning of system
+10-20 18:46:36.268  2128  2128 I LoginDemo: onCreate, target=http://127.0.0.1:8080/login
+10-20 18:46:45.817  2128  2128 I LoginDemo: submit start, username=justin
+10-20 18:46:45.861  2128  2271 I LoginDemo: response http=200 body={"code":100,"msg":"\u767b\u5f55\u6210\u529f","token":"d90c4b5fa4dca6e8953075abf5c2c523"} cost=41ms
+10-20 18:46:50.483  2128  2128 I LoginDemo: submit start, username=justin
+10-20 18:46:50.523  2128  2316 I LoginDemo: response http=200 body={"code":101,"msg":"\u7528\u6237\u540d\u6216\u5bc6\u7801\u9519\u8bef"} cost=40ms
+10-20 18:47:03.783  2128  2128 I LoginDemo: load photo start, url=http://127.0.0.1:8080/photo
+10-20 18:47:03.851  2128  2406 I LoginDemo: load photo done, bitmap=720x960 cost=67ms

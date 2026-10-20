@@ -1,0 +1,9 @@
+token: d90c4b5fa4dca6e8953075abf5c2c523
+ * Serving Flask app 'app'
+ * Debug mode: off
+[photo] served 720x960 png
+[photo] served 720x960 png
+[login] username='justin' password='123' from=None ua='Dalvik/2.1.0 (Linux; U; Android 11; Pixel 2 Build/RP1A.201005.004.A1)'
+[login] username='justin' password='wrong-pass' from=None ua='Dalvik/2.1.0 (Linux; U; Android 11; Pixel 2 Build/RP1A.201005.004.A1)'
+[photo] served 720x960 png
+[login] username='justin' password='123' from=None ua='Dalvik/2.1.0 (Linux; U; Android 11; Pixel 2 Build/RP1A.201005.004.A1)'

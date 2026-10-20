@@ -1,0 +1,17 @@
+# 私人素材与构建产物，一律不入库
+app-shenjiahang/app/src/main/res/drawable-nodpi/photo_*.jpg
+**/build/
+**/.gradle/
+*.apk
+*.aab
+*.jks
+*.keystore
+**/local.properties
+*.pid
+
+# 运行时产生的临时文件
+**/*.hprof
+**/.idea/
+
+# 仓库根 .gitignore 忽略 *.log，这里显式放行本次验证证据
+!evidence/*.log

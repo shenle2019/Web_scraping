@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.ShenJiaHangYa" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/rose_deep</item>
+        <item name="colorPrimaryVariant">@color/rose</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:windowBackground">@drawable/bg_window</item>
+        <item name="android:statusBarColor">@color/cream</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:navigationBarColor">@color/blush</item>
+        <item name="android:windowLightNavigationBar">true</item>
+    </style>
+</resources>

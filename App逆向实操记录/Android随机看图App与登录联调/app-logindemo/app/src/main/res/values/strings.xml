@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">登录联调Demo</string>
+    <string name="title">登录联调 Demo</string>
+    <string name="subtitle">day09 登录案例 · 真机 → adb reverse → 本机 Flask</string>
+    <string name="hint_username">用户名</string>
+    <string name="hint_password">密码</string>
+    <string name="default_username">justin</string>
+    <string name="default_password">123</string>
+    <string name="btn_login">登录（正确密码）</string>
+    <string name="btn_wrong">登录（错误密码）</string>
+    <string name="btn_photo">加载网络图片（Flask /photo）</string>
+    <string name="photo_desc">从本机 Flask 下载的网络图片</string>
+    <string name="result_label">响应结果</string>
+    <string name="footnote">说明：Adb reverse 把手机的 8080 端口映射到电脑的 8080，\n所以手机访问 127.0.0.1:8080 就是访问本机 Flask。</string>
+</resources>

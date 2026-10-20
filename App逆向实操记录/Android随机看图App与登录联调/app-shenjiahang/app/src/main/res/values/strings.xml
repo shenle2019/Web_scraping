@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">沈嘉杭呀</string>
+    <string name="subtitle">宝宝写真 · 随机一刻</string>
+    <string name="hint_tap">轻点照片，也能换一张</string>
+    <string name="btn_next">换一张</string>
+    <string name="caption">沈嘉杭呀 · 宝宝写真</string>
+    <string name="chip_format">%1$d / %2$d</string>
+    <string name="photo_desc">宝宝写真第 %1$d 张</string>
+</resources>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="cream">#FFF9F6</color>
+    <color name="blush">#FDEBEA</color>
+    <color name="rose">#F0A3AA</color>
+    <color name="rose_deep">#DE7F8A</color>
+    <color name="cocoa">#6B4B4B</color>
+    <color name="cocoa_light">#B08A8A</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="icon_bg">#FEF8F5</color>
+</resources>
