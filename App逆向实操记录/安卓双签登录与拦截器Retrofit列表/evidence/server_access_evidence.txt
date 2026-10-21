@@ -1,0 +1,96 @@
+﻿[2026-10-21 17:21:06] ===== server start =====
+[2026-10-21 17:21:36] ===== server start =====
+[2026-10-21 17:24:01] [HEADER-OK] path=/login ctime=1792574624 hsign=5294275551f7ae289ceb94858d7f8dba client='netapp/1.0 (okhttp)'
+[2026-10-21 17:24:01] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792574624 sign=59c5f4182efa39827ea09737bbccde15 expect=59c5f4182efa39827ea09737bbccde15
+[2026-10-21 17:24:01] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:24:01] [HEADER-OK] path=/films ctime=1792574624 hsign=5294275551f7ae289ceb94858d7f8dba client='netapp/1.0 (okhttp)'
+[2026-10-21 17:24:01] [FILMS-OK] user=justin count=10
+[2026-10-21 17:24:30] [HEADER-OK] path=/login ctime=1792574654 hsign=7172940916486a136049889614eab450 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:24:30] [LOGIN] user='justin' pwd=c33367701511b4f6020ec61ded352059 t1=1792574654 sign=ed5b17d54fa59ef8923d6822d4b8fc10 expect=ed5b17d54fa59ef8923d6822d4b8fc10
+[2026-10-21 17:24:30] [LOGIN-FAIL] 密码错误 user='justin' 收到=c33367701511b4f6020ec61ded352059 期望=e10adc3949ba59abbe56e057f20f883e
+[2026-10-21 17:24:40] [HEADER-OK] path=/login ctime=1792574663 hsign=abc5cb9f5ab38f65279c05bcda822e42 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:24:40] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792574663 sign=a22e3cf9c268f39aaf7b0ef4c46208d0 expect=a22e3cf9c268f39aaf7b0ef4c46208d0
+[2026-10-21 17:24:40] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:24:40] [HEADER-OK] path=/films ctime=1792574663 hsign=abc5cb9f5ab38f65279c05bcda822e42 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:24:40] [FILMS-OK] user=justin count=10
+[2026-10-21 17:27:27] [HEADER-OK] path=/login ctime=1792574847 hsign=b2cc3ba5d5bffc5cf813882e78b3fcd0 client='python-replay/1.0'
+[2026-10-21 17:27:27] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792574847 sign=3bd5c129dd0217b6c36d6801536ff79b expect=3bd5c129dd0217b6c36d6801536ff79b
+[2026-10-21 17:27:27] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:27:28] [HEADER-OK] path=/films ctime=1792574848 hsign=320ba6b811b8a61c9d29cf95886b03aa client='python-replay/1.0'
+[2026-10-21 17:27:28] [FILMS-OK] user=justin count=10
+[2026-10-21 17:27:30] [HEADER-OK] path=/login ctime=1792574850 hsign=8edd46d42491a220dacf2acbd1c3cc20 client='python-replay/1.0'
+[2026-10-21 17:27:30] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792574850 sign=00000000000000000000000000000000 expect=51c4c298626c3b35bd158def5666a377
+[2026-10-21 17:27:30] [LOGIN-FAIL] body sign 不匹配 收到=00000000000000000000000000000000 期望=51c4c298626c3b35bd158def5666a377
+[2026-10-21 17:27:31] [HEADER-OK] path=/login ctime=1792574851 hsign=4ae6ac14ddfdd4330ad9b5815e77b2fc client='python-replay/1.0'
+[2026-10-21 17:27:31] [LOGIN] user='justin' pwd=c33367701511b4f6020ec61ded352059 t1=1792574851 sign=b9289c5619d29e2e967bc4d0484742e5 expect=b9289c5619d29e2e967bc4d0484742e5
+[2026-10-21 17:27:31] [LOGIN-FAIL] 密码错误 user='justin' 收到=c33367701511b4f6020ec61ded352059 期望=e10adc3949ba59abbe56e057f20f883e
+[2026-10-21 17:27:32] [REJECT-HEADER] path=/login 缺少或非法 ctime='' client=''
+[2026-10-21 17:27:33] [REJECT-HEADER] path=/login ctime=1792571253 偏差 3601s 超限
+[2026-10-21 17:27:34] [REJECT-HEADER] path=/login ctime=1792574854 hsign=ffffffffffffffffffffffffffffffff 期望=525e77f56c51716d2791a3432d28b389
+[2026-10-21 17:27:36] [HEADER-OK] path=/films ctime=1792574856 hsign=84fba35dda0b473036d4b7e3ff48b807 client='python-replay/1.0'
+[2026-10-21 17:27:36] [FILMS-401] token='' 无效或未登录
+[2026-10-21 17:27:37] [HEADER-OK] path=/films ctime=1792574857 hsign=9309714ebe7b6b885b6f6b1a6d6e46c1 client='python-replay/1.0'
+[2026-10-21 17:27:37] [FILMS-401] token='deadbeefdeadbeefdeadbeefdeadbeef' 无效或未登录
+[2026-10-21 17:27:53] [HEADER-OK] path=/login ctime=1792574857 hsign=9309714ebe7b6b885b6f6b1a6d6e46c1 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:27:53] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792574857 sign=5fd576798eae121c6d4eb38106cb0a34 expect=5fd576798eae121c6d4eb38106cb0a34
+[2026-10-21 17:27:53] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:27:53] [HEADER-OK] path=/films ctime=1792574857 hsign=9309714ebe7b6b885b6f6b1a6d6e46c1 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:27:53] [FILMS-OK] user=justin count=10
+[2026-10-21 17:31:27] [HEADER-OK] path=/login ctime=1792575071 hsign=6de2d42861b057ba2489e572747b99ca client='netapp/1.0 (okhttp)'
+[2026-10-21 17:31:27] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575071 sign=4c52679fde2fd9b7795c196438d559f9 expect=4c52679fde2fd9b7795c196438d559f9
+[2026-10-21 17:31:27] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:31:27] [HEADER-OK] path=/films ctime=1792575071 hsign=6de2d42861b057ba2489e572747b99ca client='netapp/1.0 (okhttp)'
+[2026-10-21 17:31:27] [FILMS-OK] user=justin count=10
+[2026-10-21 17:36:30] [HEADER-OK] path=/login ctime=1792575373 hsign=4e0f4efd8ba3e0755dbbd327f5e7ba56 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:36:30] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575373 sign=0a23a3ee86f9b1ef5bc91617b548eb87 expect=0a23a3ee86f9b1ef5bc91617b548eb87
+[2026-10-21 17:36:30] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:36:30] [HEADER-OK] path=/films ctime=1792575373 hsign=4e0f4efd8ba3e0755dbbd327f5e7ba56 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:36:30] [FILMS-OK] user=justin count=10
+[2026-10-21 17:40:49] [HEADER-OK] path=/login ctime=1792575632 hsign=132e13f5ab44a35c3a8502ec1e00302a client='netapp/1.0 (okhttp)'
+[2026-10-21 17:40:49] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575632 sign=30a3e9616c9110f1ba38cbc3707ce603 expect=30a3e9616c9110f1ba38cbc3707ce603
+[2026-10-21 17:40:49] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:40:49] [HEADER-OK] path=/films ctime=1792575633 hsign=c18f6e1f6fb6fe16e44c116e003d1f44 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:40:49] [FILMS-OK] user=justin count=10
+[2026-10-21 17:43:52] [HEADER-OK] path=/login ctime=1792575816 hsign=dac4dd9677d4d6dd7aad630afdbfeccd client='netapp/1.0 (okhttp)'
+[2026-10-21 17:43:52] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575816 sign=632c0b257bd104b00fefd9786966c409 expect=632c0b257bd104b00fefd9786966c409
+[2026-10-21 17:43:52] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:43:53] [HEADER-OK] path=/films ctime=1792575816 hsign=dac4dd9677d4d6dd7aad630afdbfeccd client='netapp/1.0 (okhttp)'
+[2026-10-21 17:43:53] [FILMS-OK] user=justin count=10
+[2026-10-21 17:44:54] [HEADER-OK] path=/login ctime=1792575877 hsign=d514d07006759b4a5e229c654798bbfa client='netapp/1.0 (okhttp)'
+[2026-10-21 17:44:54] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575877 sign=985dc4543e24057003c88cefb7f8b8d1 expect=985dc4543e24057003c88cefb7f8b8d1
+[2026-10-21 17:44:54] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:44:54] [HEADER-OK] path=/films ctime=1792575877 hsign=d514d07006759b4a5e229c654798bbfa client='netapp/1.0 (okhttp)'
+[2026-10-21 17:44:54] [FILMS-OK] user=justin count=10
+[2026-10-21 17:45:18] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:45:34] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:45:34] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:45:46] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:46:52] [HEADER-OK] path=/login ctime=1792575996 hsign=934045541551a9b59a0f3e45d216c01e client='netapp/1.0 (okhttp)'
+[2026-10-21 17:46:52] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792575996 sign=ad78befd21b714188a2ab1c28e98feb6 expect=ad78befd21b714188a2ab1c28e98feb6
+[2026-10-21 17:46:52] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:46:53] [HEADER-OK] path=/films ctime=1792575996 hsign=934045541551a9b59a0f3e45d216c01e client='netapp/1.0 (okhttp)'
+[2026-10-21 17:46:53] [FILMS-OK] user=justin count=10
+[2026-10-21 17:47:22] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:47:51] [HEADER-OK] path=/login ctime=1792576055 hsign=3dbcfe1f947f627011fb1ed40c3bfa91 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:47:51] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792576055 sign=4730ccf911878adbf6a4b6ee399f6451 expect=4730ccf911878adbf6a4b6ee399f6451
+[2026-10-21 17:47:51] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:47:51] [HEADER-OK] path=/films ctime=1792576055 hsign=3dbcfe1f947f627011fb1ed40c3bfa91 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:47:51] [FILMS-OK] user=justin count=10
+[2026-10-21 17:48:37] [HEADER-OK] path=/login ctime=1792576100 hsign=eae296cce725118de491484549ab0867 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:48:37] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792576100 sign=4bc9c23badf2c6044b6794c264b36241 expect=4bc9c23badf2c6044b6794c264b36241
+[2026-10-21 17:48:37] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:48:37] [HEADER-OK] path=/films ctime=1792576100 hsign=eae296cce725118de491484549ab0867 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:48:37] [FILMS-OK] user=justin count=10
+[2026-10-21 17:49:06] [REJECT-HEADER] path=/films 缺少或非法 ctime='' client=''
+[2026-10-21 17:49:07] [REJECT-HEADER] path=/favicon.ico 缺少或非法 ctime='' client=''
+[2026-10-21 17:52:23] [HEADER-OK] path=/login ctime=1792576326 hsign=a80d33071db207d9746199e0b0df01de client='netapp/1.0 (okhttp)'
+[2026-10-21 17:52:23] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792576326 sign=35d0597e7da0e44ca6cad5b8bbb24a86 expect=35d0597e7da0e44ca6cad5b8bbb24a86
+[2026-10-21 17:52:23] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:52:23] [HEADER-OK] path=/films ctime=1792576326 hsign=a80d33071db207d9746199e0b0df01de client='netapp/1.0 (okhttp)'
+[2026-10-21 17:52:23] [FILMS-OK] user=justin count=10
+[2026-10-21 17:53:45] [HEADER-OK] path=/login ctime=1792576408 hsign=f29028744b91f217cf97462574102c54 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:53:45] [LOGIN] user='justin' pwd=e10adc3949ba59abbe56e057f20f883e t1=1792576408 sign=839fcc18ac9890fc7a7df63dbeb928c7 expect=839fcc18ac9890fc7a7df63dbeb928c7
+[2026-10-21 17:53:45] [LOGIN-OK] user=justin token=<token-masked>
+[2026-10-21 17:53:45] [HEADER-OK] path=/films ctime=1792576408 hsign=f29028744b91f217cf97462574102c54 client='netapp/1.0 (okhttp)'
+[2026-10-21 17:53:45] [FILMS-OK] user=justin count=10
+

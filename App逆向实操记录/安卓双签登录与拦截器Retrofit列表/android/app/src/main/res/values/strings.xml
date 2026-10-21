@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">NetAppDemo</string>
+    <string name="login_title">用户登录</string>
+    <string name="hint_user">用户名</string>
+    <string name="hint_pwd">密码</string>
+    <string name="btn_login">登录</string>
+    <string name="btn_reset">重置</string>
+    <string name="btn_retrofit">Retrofit 登录</string>
+    <string name="film_title">热映电影</string>
+    <string name="film_subtitle">列表数据来自 /films（Retrofit 发起，Gson 解析）</string>
+    <string name="film_cover">电影封面</string>
+    <string name="btn_logout">退出登录</string>
+    <string name="loading">加载中…</string>
+</resources>

@@ -1,0 +1,108 @@
+﻿[*] device: Device(id="socket@127.0.0.1:27043", name="127.0.0.1:27043", type='remote')
+[*] pid: 25172
+[*] attached: com.shenjiahang.netapp
+[frida] chain class = okhttp3.internal.http.RealInterceptorChain
+[frida] hooked proceed
+[*] hook loaded, �����ֻ��ϵ�һ�ε�¼ / ���б�ҳ��45s ���Զ��˳�
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Content-Type: application/x-www-form-urlencoded
+[frida]   Content-Length: 100
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Content-Type: application/x-www-form-urlencoded
+[frida]   Content-Length: 100
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> POST http://192.168.31.220:8080/login
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Content-Type: application/x-www-form-urlencoded
+[frida]   Content-Length: 100
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+[frida]   body: user=justin&pwd=e10adc3949ba59abbe56e057f20f883e&sign=0a23a3ee86f9b1ef5bc91617b548eb87&t1=1792575373
+
+[frida] >>> GET http://192.168.31.220:8080/films
+
+[frida] >>> GET http://192.168.31.220:8080/films
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+
+[frida] >>> GET http://192.168.31.220:8080/films
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+
+[frida] >>> GET http://192.168.31.220:8080/films
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+
+[frida] >>> GET http://192.168.31.220:8080/films
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+
+[frida] >>> GET http://192.168.31.220:8080/films
+[frida]   ctime: 1792575373
+[frida]   hsign: 4e0f4efd8ba3e0755dbbd327f5e7ba56
+[frida]   X-Client: netapp/1.0 (okhttp)
+[frida]   Authorization: Bearer <token-masked>
+[frida]   Host: 192.168.31.220:8080
+[frida]   Connection: Keep-Alive
+[frida]   Accept-Encoding: gzip
+[frida]   User-Agent: okhttp/4.9.1
+[*] done
+

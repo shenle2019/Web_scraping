@@ -1,0 +1,9 @@
+# 仅限学习研究，禁止商用。
+# 靶场依赖（与抓包工具分开装，避免 mitmproxy 的 werkzeug 依赖冲突）
+flask==2.0.3
+werkzeug==2.1.2
+requests>=2.25.0
+
+# 抓包/复刻工具（可选，单独安装）：
+#   pip install mitmproxy==8.0.0
+#   pip install frida==16.3.3
