@@ -1,0 +1,7 @@
+ready | hooks installed
+encodeMD5 | in=123456 out=e10adc3949ba59abbe56e057f20f883e
+getDesKey | key=appapiche168comappapiche168comap
+encode3Des | plain=f58f2d53-1309-36e1-a690-a34c8f49691c|70379918572707| cipher=mxd5AgE5TjiAm6fL0By539zDo0KLfelEUv5UE/eLUuZWiq3aKsuT5YMSI90qmyliwlUBzAnisdc=
+getUDID | udid=mxd5AgE5TjiAm6fL0By539zDo0KLfelEUv5UE/eLUuZWiq3aKsuT5YMSI90qmyliwlUBzAnisdc=
+encodeMD5 | in=W@oC!AH_6Ew1f6%8_appidatc.androidappversion3.56.0channelidcsypwde10adc3949ba59abbe56e057f20f883esignkeytypeudidmxd5AgE5TjiAm6fL0By539zDo0KLfelEUv5UE/eLUuZWiq3aKsuT5YMSI90qmyliwlUBzAnisdc=username13800138000W@oC!AH_6Ew1f6%8 out=5901f37086c86d2fb10ddf6b5702e699
+signByType | type=1 sign=5901F37086C86D2FB10DDF6B5702E699 map={_appid=atc.android, appversion=3.56.0, channelid=csy, pwd=e10adc3949ba59abbe56e057f20f883e, signkey=, type=, udid=mxd5AgE5TjiAm6fL0By539zDo0KLfelEUv5UE/eLUuZWiq3aKsuT5YMSI90qmyliwlUBzAnisdc=, username=13800138000}

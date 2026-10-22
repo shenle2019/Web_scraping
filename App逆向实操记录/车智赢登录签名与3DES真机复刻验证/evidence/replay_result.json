@@ -1,0 +1,23 @@
+{
+  "request": {
+    "_appid": "atc.android",
+    "appversion": "3.56.0",
+    "channelid": "csy",
+    "pwd": "e10adc3949ba59abbe56e057f20f883e",
+    "signkey": "",
+    "type": "",
+    "udid": "mxd5AgE5TjiAm6fL0By539zDo0KLfelEUv5UE/eLUuYjgT5y+0Bibt+AxlGmqqMWWIwJMdPOKNzvK/M4l4FoVA==",
+    "username": "13800138000",
+    "_sign": "063B389C48E73AF1534A5699FA87EBD3"
+  },
+  "udid_plain": "f58f2d53-1309-36e1-a690-a34c8f49691c|6783696218932|381632",
+  "response": {
+    "code": 0,
+    "data": {
+      "sign": "063B389C48E73AF1534A5699FA87EBD3",
+      "token": "4f4ad4d021c738c66ee7bed7885c1663",
+      "udid_plain": "f58f2d53-1309-36e1-a690-a34c8f49691c|6783696218932|381632"
+    },
+    "msg": "登录成功"
+  }
+}

@@ -1,0 +1,62 @@
+=== 目标 apk ===
+path   : E:\路飞学城\课件\APP逆向(12期)\day14-车智赢app\软件\车智赢-v3.56.0.apk
+size   : 178992876 bytes
+md5    : 26964888fde2ccee78245a75b7cc8d22
+
+=== apk 内容概览 ===
+arm64 so 数量 : 54
+dex 文件      : classes.dex, classes2.dex, classes3.dex, classes4.dex, classes5.dex, classes6.dex
+
+=== lib/arm64-v8a/libnative-lib.so ===
+size : 817528 bytes
+KEY_FULL("appapiche168comappapiche168comap") 命中 1 次，偏移 [670221]
+  0x0a3a0d 上下文: 78ebcffd5d73161b10d4476059f8b687ae1376d4aff\0yes\0appapiche168comappapiche168comap\0getPackageManag
+符号 Java_com_autohome_ahkit_jni_CheckSignUtil_get3desKey : [81888]
+符号 Java_com_autohome_ahkit_jni_CheckSignUtil_checkState : 未命中
+checkState 缓存常量 "yes" 偏移数量 : 1
+前若干处: ['0xa3a09']
+
+=== classes*.dex 明文盐值命中 ===
+classes.dex    ['KEY_AUTOHOME'] + KEY_FULL
+classes2.dex   ['KEY_V1', 'KEY_V2', 'KEY_SHARE', 'KEY_AUTOHOME']
+
+=== jadx 产物关键行摘录 ===
+
+--- SignManager.java ---
+source: evidence\jadx_key_classes\SignManager.java
+  10: @Metadata(d1 = {"\u0000 \n\u0002\u0018\u0002\n\u0002\u0010\u0000\n\u0002\b\u0002\n\u0002\u0010\u000e\n\u0002\b\u0005\n\u0002\u0010\b\n\u0000\n\u0002\u0018\u0002\n\u0000\bÆ\u0002\u0018\u00002\u00020\u0001B\u0007\b\u0002¢\u0006\u0002\u0010\u0002J$\u0010\b\u001a\u00020\u00042\b\b\u0001\u0010\t\u001a\u00020\n2\u0012\u0010\u000b\u001a\u000e\u0012\u0004\u0012\u00020\u0004\u0012\u0004\u0012\u00020\u00040\fR\u000e\u0010\u0003\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0005\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0006\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000R\u000e\u0010\u0007\u001a\u00020\u0004X\u0086T¢\u0006\u0002\n\u0000¨\u0006\r"}, d2 = {"Lcom/che168/atclibrary/base/SignManager;", "", "()V", "KEY_AUTOHOME", "", "KEY_SHARE", "KEY_V1", "KEY_V2", "signByType", "signType", "", "paramMap", "Ljava/util/TreeMap;", "ATCLibrary_release"}, k = 1, mv = {1, 6, 0}, xi = 48)
+  14:     public static final String KEY_AUTOHOME = "@7U$aPOE@$";
+  15:     public static final String KEY_SHARE = "moc.861ehc.relaed.bup.wyfv";
+  16:     public static final String KEY_V1 = "com.che168.www";
+  17:     public static final String KEY_V2 = "W@oC!AH_6Ew1f6%8";
+  22:     public final String signByType(@SignType int i, TreeMap<String, String> treeMap) {
+  25:         String str = KEY_V1;
+  28:                 str = KEY_V2;
+  30:                 str = KEY_SHARE;
+  32:                 str = KEY_AUTOHOME;
+  35:         sb.append(str);
+  40:         sb.append(str);
+
+--- SecurityUtil.java ---
+source: evidence\jadx_key_classes\SecurityUtil.java
+  22:     private static final String iv = "appapich";
+  25:     public static String encode3Des(Context context, String str) {
+  33:             Cipher cipher = Cipher.getInstance("desede/CBC/PKCS5Padding");
+  48:             Cipher cipher = Cipher.getInstance("desede/CBC/PKCS5Padding");
+
+--- AHAPIHelper.java ---
+source: evidence\jadx_key_classes\AHAPIHelper.java
+ 104:         map.put("udid", getUDID(context));
+ 115:     public static synchronized String getUDID(Context context) {
+ 119:             sb.append(AHDeviceUtil.getDeviceId(context));
+ 121:             sb.append(System.nanoTime());
+
+--- LaunchModel.java ---
+source: evidence\jadx_key_classes\LaunchModel.java
+  80:     public static final String KEY_SIGN = "_sign";
+ 187:                 return LaunchModel.lambda$initRequestCommonParams$0(i, treeMap);
+ 201:     public static /* synthetic */ TreeMap lambda$initRequestCommonParams$0(int i, TreeMap treeMap) {
+ 219:         String signByType = SignManager.INSTANCE.signByType(i, treeMap);
+ 220:         if (signByType != null) {
+ 221:             treeMap.put(KEY_SIGN, signByType);
+ 277:         treeMap.put(KEY_SIGN, SignManager.INSTANCE.signByType(0, treeMap));
