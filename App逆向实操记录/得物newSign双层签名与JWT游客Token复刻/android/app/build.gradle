@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.repl.dewu'
+    compileSdk 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.repl.dewu"
+        minSdk 24
+        targetSdk 33
+        versionCode 47405
+        versionName "4.74.5"
+        buildConfigField "String", "BASE_URL", "\"http://192.168.31.220:8000\""
+        ndk {
+            abiFilters "arm64-v8a"
+        }
+    }
+
+    buildFeatures {
+        buildConfig true
+    }
+
+    packaging {
+        jniLibs {
+            useLegacyPackaging true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation files('libs/okhttp-3.14.9.jar', 'libs/okio-1.17.2.jar')
+}
