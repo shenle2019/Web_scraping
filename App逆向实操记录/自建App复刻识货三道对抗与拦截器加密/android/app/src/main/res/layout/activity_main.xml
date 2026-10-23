@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="识货复刻 7.20.1（本地验证用）"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/keyword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="搜索关键词"
+        android:inputType="text"
+        android:singleLine="true"
+        android:text="篮球" />
+
+    <Button
+        android:id="@+id/btnSearchOld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索（老接口 · 免头明文）" />
+
+    <Button
+        android:id="@+id/btnSearchNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="搜索（新接口 · 风控头）" />
+
+    <Button
+        android:id="@+id/btnDetailOld"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详情（老接口 · 拦截器加密）" />
+
+    <Button
+        android:id="@+id/btnDetailNew"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="详情（新接口 · 免头明文）" />
+
+    <Button
+        android:id="@+id/btnContrast"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="对照请求（走系统代理）" />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="清空日志" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="当前 goods_id："
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/currentGoods"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="379112"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/log"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:textIsSelectable="true"
+            android:textSize="11sp" />
+    </ScrollView>
+
+</LinearLayout>
