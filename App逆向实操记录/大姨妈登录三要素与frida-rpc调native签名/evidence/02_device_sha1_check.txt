@@ -1,0 +1,5 @@
+# device / password 本地复算核验（脚本 frida/_calc.py 原样输出）
+sha1 = 885105cf0494dd2301b70faf94b0b39d41540e55
+expect 885105cf0494dd2301b70faf94b0b39d41540e55
+lqz***** -> WA89qByLlDeaGjmVNzXm/w==
+123456 -> vz80nR0HLbmsZ4xP6TX30g==

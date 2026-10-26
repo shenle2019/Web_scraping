@@ -1,0 +1,24 @@
+
+===== 2026-10-26 22:21:41 =====
+[1] device 明文 = null437474656aa92b44walleyegooglearm64-v8awalleyeRP1A.201005.004.A1abfarm873RP1A.201005.004.A1GooglePixel 2walleyerelease-keysuserandroid-buildEE:FA:A8:03:A9:1002:00:00:00:00:00
+    本地 sha1 = 885105cf0494dd2301b70faf94b0b39d41540e55
+    app deviceCode = 885105cf0494dd2301b70faf94b0b39d41540e55  一致: True
+[2] 密码 key = 9eb091a1fb36369d  iv = yoloho_dayima!%_
+    密码密文 = WA89qByLlDeaGjmVNzXm/w==
+[3] sign 明文 = 885105cf0494dd2301b70faf94b0b39d41540e55user/login189****5221WA89qByLlDeaGjmVNzXm/w==
+    sign = 5bcd65ecd0bc26785ccbbdac1d06051f
+[4] POST https://uicapi.yoloho.com/user/login
+    HTTP 200
+    {"errorLimie":0,"errno":"1","errdesc":"失败太多次啦，请半小时后再试噢~","timestamp":1793024503}
+
+===== 2026-10-26 22:52:35 =====
+[1] device 明文 = null437474656aa92b44walleyegooglearm64-v8awalleyeRP1A.201005.004.A1abfarm873RP1A.201005.004.A1GooglePixel 2walleyerelease-keysuserandroid-buildEE:FA:A8:03:A9:1002:00:00:00:00:00
+    本地 sha1 = 885105cf0494dd2301b70faf94b0b39d41540e55
+    app deviceCode = 885105cf0494dd2301b70faf94b0b39d41540e55  一致: True
+[2] 密码 key = 9eb091a1fb36369d  iv = yoloho_dayima!%_
+    密码密文 = WA89qByLlDeaGjmVNzXm/w==
+[3] sign 明文 = 885105cf0494dd2301b70faf94b0b39d41540e55user/login189****5221WA89qByLlDeaGjmVNzXm/w==
+    sign = 5bcd65ecd0bc26785ccbbdac1d06051f
+[4] POST https://uicapi.yoloho.com/user/login
+    HTTP 200
+    {"errorLimie":0,"errno":"1","errdesc":"账号或密码错误啦~","timestamp":1793026356}

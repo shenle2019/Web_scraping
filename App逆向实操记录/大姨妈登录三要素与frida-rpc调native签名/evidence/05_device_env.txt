@@ -1,0 +1,13 @@
+# 手机实测环境（adb 读取，2026-10-26）
+serial        : FA7B11A03073
+model         : Pixel 2
+brand         : google
+android       : 11
+sdk           : 30
+abi           : arm64-v8a
+fingerprint   : google/walleye/walleye:11/RP1A.201005.004.A1/6934943:user/release-keys
+screen        : Physical size: 1080x1920
+density       : Physical density: 420
+android_id    : 819b21008f2d8476
+wlan0 mac     : d6:54:f9:af:d8:22
+app version   :     versionName=8.6.0
