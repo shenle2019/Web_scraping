@@ -1,0 +1,18 @@
+--------- beginning of system
+--------- beginning of main
+10-26 10:28:35.027  4441  4473 I BiliReplica: SELFTEST|00|start|sdk=30
+10-26 10:28:35.030  4441  4473 I BiliReplica: SELFTEST|01|profile|buvid=XWF9CA7FCD5D394409767650C41CD7CBC881F
+10-26 10:28:35.030  4441  4473 I BiliReplica: SELFTEST|01|profile|device_id=KhgsGilKfEl+SnxPM08zAzMGPgdGBEJxRXczBDx+Rw
+10-26 10:28:35.030  4441  4473 I BiliReplica: SELFTEST|01|profile|session_id=1e95c236
+10-26 10:28:35.030  4441  4473 I BiliReplica: SELFTEST|01|profile|fp_local=0fa3ccf9fdd523f6336bf0800cc34009202610261028356728cd321532625fa8
+10-26 10:28:35.030  4441  4473 I BiliReplica: SELFTEST|01|profile|fp_remote=0fa3ccf9fdd523f6336bf0800cc3400920261026102835544cd7fff98f9039ff
+10-26 10:28:35.031  4441  4473 I BiliReplica: SELFTEST|02|native_parity|native=1e93bfbed801fa2d92947e33445066c9 java=1e93bfbed801fa2d92947e33445066c9 expected=1e93bfbed801fa2d92947e33445066c9|PASS
+10-26 10:28:35.032  4441  4473 I BiliReplica: CLICK|plain=aid=8848&auto_play=0&build=6240300&cid=175882888&did=KhgsGilKfEl+SnxPM08zAzMGPgdGBEJxRXczBDx+Rw&epid=0&from_spmid=main.ugc-video-detail.0.0&ftime=1792981705031&lv=0&mid=0&mobi_app=android&part=1&sid=0&spmid=main.ugc-video-detail.0.0&stime=1792981710031&sub_type=0&type=3&video_duration=600
+10-26 10:28:35.032  4441  4473 I BiliReplica: CLICK|sign=8a2515471299d349aabae461b56551479b39abed0adaaa6ef5a238ce53e741bc
+10-26 10:28:35.032  4441  4473 I BiliReplica: CLICK|cipher_hex=bf81a3c429699110da855077ee5d129f274255946f4ed0c0b4877adfaad9e50c6903317ff9fcce2b469290e5d84301e302e9886ddc6dd3aa765133c49c42e940c3a89a109df5b08830ac7c12267e30f49fc19852adbe843f430e5d6efd55d66782f643b474de99c269275ac84c27fe95a1a1888ee49e8370add8c6b45c6c15e3f52064216d12f7da941a9d7d2aaa9eadb1e1beb10e2613d51fa54b2ab18c3069a5aac325b5a8e8da206fc2c19c834bc69ee59fa00e91aded1719cad4051ae92d9ce6d144c9bb3323cd2699af52c95af367c2e52dd4a5c7de24e91927cf1a8d4c5b58943dc0f68b7acee5641b5ca778665ac5f0d13ffb9fdb297b976424c144c385f2575795d7a5aa4f14d27096b4bfe1879e519eb1ebaf71c94fa8da3969ff8894be5d52d9f5cbe33fd64cfe7b1a1c2ed85b14003be7f07f611bd95451671245b4c30b015b9656c809935cdf5fcb2be4e48f14a2c86fd9c9ae45d879b4d88d1bde6a5e07206cdb6366275d5394950006
+10-26 10:28:35.037  4441  4473 I BiliReplica: CLICK|resp=HTTP 200 {"code": 0, "verified": true, "endpoint": "click", "missing_headers": [], "sign": "8a2515471299d349aabae461b56551479b39abed0adaaa6ef5a238ce53e741bc", "param_count": 18}|PASS
+10-26 10:28:36.239  4441  4473 I BiliReplica: HEARTBEAT|start|sign=46ca619cbf9c52f5787ff96110fe12fb
+10-26 10:28:36.244  4441  4473 I BiliReplica: HEARTBEAT|start|resp=HTTP 200 {"code": 0, "verified": true, "endpoint": "heartbeat", "missing_headers": [], "sign": "46ca619cbf9c52f5787ff96110fe12fb", "session_shape_ok": true}|PASS
+10-26 10:28:37.444  4441  4473 I BiliReplica: HEARTBEAT|end|sign=818cdefb2ab31d8669651e4394a767fb
+10-26 10:28:37.454  4441  4473 I BiliReplica: HEARTBEAT|end|resp=HTTP 200 {"code": 0, "verified": true, "endpoint": "heartbeat", "missing_headers": [], "sign": "818cdefb2ab31d8669651e4394a767fb", "session_shape_ok": true}|PASS
+10-26 10:28:37.454  4441  4473 I BiliReplica: SELFTEST|99|done|3/3|PASS

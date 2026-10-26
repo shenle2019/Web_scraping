@@ -1,0 +1,20 @@
+[*] spawned com.example.bililike pid=5346, script=02_hook_headers.js
+[*] header hook installed
+[headers] Buvid     = XW2F3722B750ED03BFF69C44D4D338940AEC4
+[headers] Device-ID = e0ktGSgefE8pHywVaRVpLW4oH15rKRAjZVRjJR0sGA
+[headers] fp_local  = d13a77fad85b56c48eb3565d3e6a93ab202610261041049761732ac27bef4735
+[headers] fp_remote = d13a77fad85b56c48eb3565d3e6a93ab202610261041049d96fae9e9bb91ccbf
+[headers] session_id= 6cd3b2a8
+[headers] map=[object Object]
+[headers] Buvid     = XW2F3722B750ED03BFF69C44D4D338940AEC4
+[headers] Device-ID = e0ktGSgefE8pHywVaRVpLW4oH15rKRAjZVRjJR0sGA
+[headers] fp_local  = d13a77fad85b56c48eb3565d3e6a93ab202610261041049761732ac27bef4735
+[headers] fp_remote = d13a77fad85b56c48eb3565d3e6a93ab202610261041049d96fae9e9bb91ccbf
+[headers] session_id= 6cd3b2a8
+[headers] map=[object Object]
+[headers] Buvid     = XW2F3722B750ED03BFF69C44D4D338940AEC4
+[headers] Device-ID = e0ktGSgefE8pHywVaRVpLW4oH15rKRAjZVRjJR0sGA
+[headers] fp_local  = d13a77fad85b56c48eb3565d3e6a93ab202610261041049761732ac27bef4735
+[headers] fp_remote = d13a77fad85b56c48eb3565d3e6a93ab202610261041049d96fae9e9bb91ccbf
+[headers] session_id= 6cd3b2a8
+[headers] map=[object Object]

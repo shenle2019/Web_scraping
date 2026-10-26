@@ -1,0 +1,86 @@
+{
+  "case": "自建App复刻B站播放量/完播率签名（day17~day19）",
+  "generated_at": "2026-10-26 10:47:34",
+  "scope": "仅学习研究：App 只请求本机 mock server，不连接 B站线上接口",
+  "environment": {
+    "pc": "Windows 10 22H2 / JDK 1.8.0_371 / Python 3.8.8 / pycryptodome 3.24.0 / frida 16.3.3",
+    "android_sdk": "build-tools 30.0.3, platforms/android-30",
+    "ndk": "r25c（本次新装 D:\\soft\\android-ndk-r25c）",
+    "device": "Pixel 2 / Android 11 (SDK 30) / arm64-v8a / Magisk root",
+    "decompiler": "jadx CLI"
+  },
+  "artifacts": {
+    "app": "build/BiliReplica.apk",
+    "so": "build/lib/arm64-v8a/libbili.so",
+    "package": "com.example.bililike"
+  },
+  "app_selftest": {
+    "runs": 1,
+    "pass_runs": 1,
+    "last": "3/3 PASS"
+  },
+  "server_verify": {
+    "click": 32,
+    "heartbeat": 64,
+    "failed": 0,
+    "first_click_sign": "3d4bebb5c5694c4cf6feaa96ddcf184ee73a5be4681b84db635771d0e0eec8f6",
+    "heartbeat_sample": {
+      "session": "ac35b5ca154b24a99675b37449014b9b50f964c0",
+      "session_shape_ok": true,
+      "sign": "d2cbf6561e94b4625751855ce33549d8",
+      "sign_match": true
+    }
+  },
+  "frida": {
+    "01_hook_crypto": {
+      "sha256_salt": "9cafa6466a028bfb",
+      "aes_key": "fd6b639dbcff0c2a1b03b389ec763c4b",
+      "aes_iv": "77b07a672d57d64c"
+    },
+    "02_hook_headers": {
+      "Buvid": "XW2F3722B750ED03BFF69C44D4D338940AEC4",
+      "Device-ID": "e0ktGSgefE8pHywVaRVpLW4oH15rKRAjZVRjJR0sGA",
+      "fp_local": "d13a77fad85b56c48eb3565d3e6a93ab202610261041049761732ac27bef4735",
+      "fp_remote": "d13a77fad85b56c48eb3565d3e6a93ab202610261041049d96fae9e9bb91ccbf",
+      "session_id": "6cd3b2a8"
+    },
+    "03_hook_register_natives": {
+      "name": "nativeSign",
+      "signature": "(Ljava/lang/String;)Ljava/lang/String;",
+      "module": "libbili.so",
+      "offset": "0x23cc"
+    },
+    "04_hook_native_md5_update": {
+      "bili_md5_update_offset": "0x17dc",
+      "salts": [
+        "560c52cc",
+        "d288fed0",
+        "45859ed1",
+        "8bffd973"
+      ],
+      "salt_updates": 8,
+      "plain_updates": 2
+    },
+    "05_hook_newstringutf": {
+      "md5_returned": 3,
+      "top_frame": "libbili.so!native_sign+0x19c"
+    }
+  },
+  "bili_static_check": {
+    "package": "tv.danmaku.bili",
+    "versionName": "6.24.0",
+    "versionCode": "6240300",
+    "click_path": "classes5.dex",
+    "heartbeat_path": "classes5.dex, classes9.dex",
+    "sha256_salt_aes_key_iv": "classes10.dex",
+    "fp_local": "classes3.dex, classes5.dex",
+    "md5_salt_560c52cc": "dex 中不存在（在 so 层）",
+    "so_abi": "仅 armeabi-v7a / x86，无 arm64，故 32 位加载"
+  },
+  "offline_bypass": {
+    "method": "关闭 Wi-Fi 与移动数据后冷启动 v6.24.0",
+    "result": "停在 SplashActivity + 隐私协议弹窗，未出现强制更新",
+    "screenshot": "server/bili_offline.png",
+    "followup": "立即 force-stop 并恢复网络，未点同意、未登录、未触发上报"
+  }
+}

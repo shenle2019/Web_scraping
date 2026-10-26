@@ -1,0 +1,6 @@
+[*] spawned com.example.bililike pid=3678, script=03_hook_register_natives.js
+[*] symbol = _ZN3art3JNIILb0EE15RegisterNativesEP7_JNIEnvP7_jclassPK15JNINativeMethodi @0x74f61c0360
+[*] symbol = _ZN3art3JNIILb1EE15RegisterNativesEP7_JNIEnvP7_jclassPK15JNINativeMethodi @0x74f62294e0
+[*] RegisterNatives hooks installed: 2
+[RegisterNatives] class=com.example.bililike.BiliSign count=1
+  name=nativeSign sig=(Ljava/lang/String;)Ljava/lang/String; module=libbili.so offset=0x23cc

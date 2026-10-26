@@ -1,0 +1,7 @@
+[*] spawned com.example.bililike pid=3542, script=01_hook_crypto.js
+[*] crypto hooks installed
+[sha256Hex] salt=9cafa6466a028bfb
+[sha256Hex] plain=aid=8848&auto_play=0&build=6240300&cid=175882888&did=KRssSH9KKE0sHHoeYh5iUGUjZlJjIRheGl5uVhQjEw&epid...
+[sha256Hex] sign=102892fd9857ba271d9f472a6ff2e1e02fdcb470b77082069f31bcb235cf7e05
+[SecretKeySpec] alg=AES key=fd6b639dbcff0c2a1b03b389ec763c4b
+[IvParameterSpec] iv=77b07a672d57d64c hex=37376230376136373264353764363463

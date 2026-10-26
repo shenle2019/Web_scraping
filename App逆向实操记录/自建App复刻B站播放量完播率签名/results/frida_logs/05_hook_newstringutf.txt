@@ -1,0 +1,15 @@
+[*] spawned com.example.bililike pid=5502, script=05_hook_newstringutf.js
+[*] symbol = _ZN3art3JNIILb0EE12NewStringUTFEP7_JNIEnvPKc @0x74f61a99f0
+[*] NewStringUTF hook installed
+[NewStringUTF] 1e93bfbed801fa2d92947e33445066c9
+0x7485714568 libbili.so!native_sign+0x19c
+0x74e4c430c0 base.odex!0x20c0
+0x74e4c430c0 base.odex!0x20c0
+[NewStringUTF] f59cf257cc0d2bedc46fcd87ed91f55a
+0x7485714568 libbili.so!native_sign+0x19c
+0x74e4c430c0 base.odex!0x20c0
+0x74e4c430c0 base.odex!0x20c0
+[NewStringUTF] 301efddac6894ec4afbff8367b5b8475
+0x7485714568 libbili.so!native_sign+0x19c
+0x74e4c430c0 base.odex!0x20c0
+0x74e4c430c0 base.odex!0x20c0

@@ -1,0 +1,17 @@
+[*] spawned com.example.bililike pid=5423, script=04_hook_native_md5_update.js
+[*] libbili.so base=0x74e3b4e000 update=0x74e3b4f7dc offset=0x17dc（本工程导出符号的偏移；对照课件真实样本 sub_22B0，thumb 指令需 +1）
+[*] update hook installed
+[update][plain] len=370 actual_played_time=0&aid=8848&cid=175882888&epid=0&last_play_progress_time=0&max...
+[update][salt ] len=8 560c52cc
+[update][salt ] len=8 d288fed0
+[update][salt ] len=8 45859ed1
+[update][salt ] len=8 8bffd973
+[update][binary] len=38 (填充/长度位，忽略)
+[update][binary] len=8 (填充/长度位，忽略)
+[update][plain] len=380 actual_played_time=600&aid=8848&cid=175882888&epid=0&last_play_progress_time=600...
+[update][salt ] len=8 560c52cc
+[update][salt ] len=8 d288fed0
+[update][salt ] len=8 45859ed1
+[update][salt ] len=8 8bffd973
+[update][binary] len=28 (填充/长度位，忽略)
+[update][binary] len=8 (填充/长度位，忽略)
