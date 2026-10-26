@@ -1,0 +1,3 @@
+spawn pid=29637
+真机 get3desKey = 'appapiche168comappapiche168comap'
+结论：PASS 真机调用成功

@@ -1,0 +1,68 @@
+== 步骤 0：检查设备与安装状态 ==
+List of devices attached
+FA7B11A03073	device
+[0] ro.debuggable = 0
+[0] run-as 验证 debuggable = uid=10217(u0_a217) gid=10217(u0_a217) groups=10217(u0_a217),1004(input),1007(log),1011(adb),1015(sdcard_rw),1028(sdcard_r),3001(net_bt_admin),3002(net_bt),3003(inet),3006(net_bw_stats),3009(readproc),3011(uhid),50217(all_a217) context=u:r:runas_app:s0:c217,c256,c512,c768
+[0] 包路径 = package:/data/app/~~Lg-EHmNXCBA3poRi2ho0Bg==/com.nb.sodebug-E0rm5OQOg9O-tULWNT0wKQ==/base.apk
+
+== 步骤 1：am start -D 以调试模式启动 ==
+Starting: Intent { cmp=com.nb.sodebug/.MainActivity }
+[1] 进程 pid = 30768
+
+== 步骤 2：端口转发 tcp:8700 -> jdwp:30768 ==
+8700
+FA7B11A03073 tcp:8700 jdwp:30768
+
+== 步骤 3：jdb 附加 ==
+[jdb] 设置未捕获的java.lang.Throwable
+[jdb] 设置延迟的未捕获的java.lang.Throwable
+[jdb] 正在初始化jdb...
+
+== 步骤 4：下断点并放行 ==
+[jdb>] stop in com.nb.sodebug.MainActivity$1.onClick
+[jdb] > 设置断点com.nb.sodebug.MainActivity$1.onClick
+[jdb>] cont
+
+== 步骤 5：点击按钮触发断点 ==
+/sdcard/ui_dex.xml: 1 file pulled, 0 skipped. 0.9 MB/s (4158 bytes in 0.004s)
+[tap] 找到 "点我" bounds=(0,210,231,336) -> 点击 (115,273)
+[jdb] > 未挂起任何对象。
+[jdb] > 
+[jdb] 断点命中: "线程=main", com.nb.sodebug.MainActivity$1.onClick(), 行=34 bci=0
+[jdb] 
+
+== 步骤 6：next 单步越过 Utils.demo()，看局部变量 ==
+[jdb>] next
+[jdb] main[1] > 
+[jdb] 已完成的步骤: "线程=main", com.nb.sodebug.MainActivity$1.onClick(), 行=35 bci=4
+[jdb] 
+[jdb>] locals
+[jdb] main[1] 方法参数:
+[jdb] result = 3
+[jdb] 本地变量:
+[jdb] v = instance of com.google.android.material.button.MaterialButton(id=16436)
+[6] locals 里是否出现 result = 3：True
+[jdb>] cont
+[jdb>] exit
+
+== 步骤 7：logcat 验证 native 返回 3 ==
+[logcat] I/com.nb.sodebug(30768): Unquickening 12 vdex files!
+[logcat] W/ActivityThread(30768): Application com.nb.sodebug is waiting for the debugger on port 8100...
+[logcat] I/chatty  (30768): uid=10217(com.nb.sodebug) identical 5 lines
+[logcat] W/com.nb.sodebug(30768): Accessing hidden method Landroid/view/View;->computeFitSystemWindows(Landroid/graphics/Rect;Landroid/graphics/Rect;)Z (greylist, reflection, allowed)
+[logcat] W/com.nb.sodebug(30768): Accessing hidden method Landroid/view/ViewGroup;->makeOptionalFitsSystemWindows()V (greylist, reflection, allowed)
+[logcat] D/ArtManagerInternalImpl(18545): /data/misc/iorapd/com.nb.sodebug/1/com.nb.sodebug.MainActivity/compiled_traces/compiled_trace.pb doesn't exist
+[logcat] I/ActivityTaskManager(18545): Displayed com.nb.sodebug/.MainActivity: +3s868ms
+[logcat] I/iorapd  ( 1059): Perfetto TraceBuffer saved to file: /data/misc/iorapd/com.nb.sodebug/1/com.nb.sodebug.MainActivity/raw_traces/1793028691992379284.perfetto_trace.pb
+[logcat] I/AccessibilityNodeInfoDumper(30814): Skipping invisible child: android.view.accessibility.AccessibilityNodeInfo@a67b; boundsInParent: Rect(0, 0 - 0, 147); boundsInScreen: Rect(1080, 63 - 1080, 210); packageName: com.nb.sodebug; className: androidx.appcompat.widget.LinearLayoutCompat; text: null; error: null; maxTextLength: -1; stateDescription: null; contentDescription: null; tooltipText: null; viewIdResName: null; checkable: false; checked: false; focusable: false; focused: false; selected: false; clickable: false; longClickable: false; contextClickable: false; enabled: true; password: false; scrollable: false; importantForAccessibility: false; visible: false; actions: [AccessibilityAction: ACTION_SELECT - null, AccessibilityAction: ACTION_CLEAR_SELECTION - null, AccessibilityAction: ACTION_ACCESSIBILITY_FOCUS - null, AccessibilityAction: ACTION_SHOW_ON_SCREEN - null]
+[logcat] E/测试  (30768): 3
+
+== 判定 ==
+  app_debuggable               PASS
+  started_waiting_debugger     PASS
+  jdb_attached                 PASS
+  tapped                       PASS
+  breakpoint_hit               PASS
+  locals_result_3              PASS
+  logcat_result_3              PASS
+总判定：PASS

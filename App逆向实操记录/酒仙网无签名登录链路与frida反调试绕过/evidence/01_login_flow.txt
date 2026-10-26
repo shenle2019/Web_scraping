@@ -1,0 +1,10 @@
+base=http://127.0.0.1:8008 deviceIdentify=4e18f76b-8cc9-4d13-bd11-4a79ae97713e
+== 1. 图形验证码 + OCR ==
+== 2. 短信验证码登录 ==
+token=9c126d715bb20313825d96187d17b955879397091
+== 3. 用户名密码登录 ==
+token2=3b19a02096a3bdb04d8458744bc4e1b1660897705
+== 4. 预约（两次，第二次应返回重复预约）==
+first={'result': {'verificationState': True, 'actId': '2168', 'productId': '626626'}, 'errCode': '', 'success': '1', 'errMsg': ''}
+second={'result': {'verificationState': False}, 'errCode': '1200601', 'success': '0', 'errMsg': '您已预约成功，不需重复预约'}
+结论：PASS 全部链路跑通

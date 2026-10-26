@@ -1,0 +1,4 @@
+spawn pid=29056
+消息：{'type': 'send', 'payload': {'tag': 'hook', 'msg': 'loaded classes = 15874'}}
+6 秒后进程：'29056 29103'
+结论：PASS spawn 抢跑注入成功

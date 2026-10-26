@@ -1,0 +1,17 @@
+﻿仅限学习研究，禁止商用。
+android_server64 手机侧运行取证（day30/31 so调试）
+
+IDA Android 64-bit remote debug server(ST) v8.3.28. Hex-Rays (c) 2004-2023
+2026-10-26 23:35:17 Listening on 0.0.0.0:23946...
+2026-10-26 23:35:23 [1] Accepting connection from 127.0.0.1...
+recv: Connection closed by peer
+2026-10-26 23:35:23 [1] [1] Could not establish the connection
+2026-10-26 23:35:23 [1] Closing connection from 127.0.0.1...
+
+PC 侧端口转发：
+FA7B11A03073 tcp:8700 jdwp:30768
+FA7B11A03073 tcp:23946 tcp:23946
+
+
+TCP 23946 连接测试：OK（python socket connect 成功，服务端日志见上）
+

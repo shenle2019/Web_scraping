@@ -1,0 +1,15 @@
+== 1. 签名算法自检（对齐课件 hook 真值）==
+ts=1694450485059 期望=5VnGRNih2xWwXIF3QeuAYdD7j%2F4%3D 计算=5VnGRNih2xWwXIF3QeuAYdD7j%2F4%3D -> 一致
+== 2. 取本地 mock 公钥并加密手机号/密码 ==
+密钥位数=1024
+mobile 密文长度=344（hex）  password 密文长度=344
+sign=hsjlXKgasQpADLSxsW4Dt4PipuU%3D
+== 3. 用例：正常登录 ==
+HTTP 200 {'code': 0, 'msg': 'ok', 'data': {'token': '5ccd19d5f5208871a21a920dff80a34be4311ae6', 'uid': 10086, 'mobile': '18953675221', 'equipment': 'google'}}
+== 4. 用例：密码错误 ==
+{'code': 1001, 'msg': '用户名或密码错误'}
+== 5. 用例：篡改签名 ==
+{'code': 1002, 'msg': '签名错误'}
+== 6. 用例：过期时间戳（10 分钟前）==
+{'code': 1003, 'msg': '时间戳过期'}
+结论：PASS 四组用例全部符合预期

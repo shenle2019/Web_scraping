@@ -1,0 +1,11 @@
+文件 = E:\路飞学城\课件\APP逆向(12期)\_case_repl\day28\apks\xhs\libshield.so（738920 字节）
+架构 = ARM(32)，ELF32
+导出函数总数 = 473，其中 Java_* 静态注册符号 = 0
+  JNI_OnLoad：有
+  JNI_OnUnload：无
+字符串 com/xingin/shield/http/XhsHttpInterceptor      出现 1 次
+字符串 initializeNative                               出现 1 次
+字符串 okhttp3/Interceptor                            出现 2 次
+字符串 xy-platform-info                               出现 1 次
+字符串 shield                                         出现 18 次
+结论：so 用动态注册把 native 方法挂到 XhsHttpInterceptor 上，intercept 依赖 okhttp3 类型，纯 unidbg 调用必须先补齐这些 Java 环境。

@@ -1,0 +1,59 @@
+仅限学习研究，禁止商用。
+IDA Pro 8.3 批处理 attach 尝试记录（未打通）
+
+一、第一次：直接在中文路径下运行
+命令：
+  idat64.exe -A -S test_attach.idc -L ida_test.log libutils.so
+结果：ExitCode=1，未生成 .i64，IDC 脚本未执行
+日志特征：88 个插件全部加载失败
+  LoadLibrary(...\IDA_Pro_v8.3_Portable\plugins\dbg64.dll) error: 找不到指定的模块
+  ...
+  The key file is not found. -> OK
+原因：课件自带说明写明“绿色版释放路径不要含有中文路径”，IDA 用 QT LoadLibrary 时对中文路径转码有问题
+
+二、第二次：建立 ASCII 目录联接后运行
+命令：
+  New-Item -ItemType Junction -Path C:\ida83 -Target <课件IDA目录>
+  C:\ida83\idat64.exe -A -S test_attach.idc -L ida_test2.log libutils.so
+结果：ExitCode=1，仍未生成 .i64
+日志：
+  WARNING: Python 3 is not configured (Python3TargetDLL value is not set).
+  C:\ida83\plugins\findcrypt3.py: No module named 'yara'
+  The key file is not found. -> OK
+插件已能加载（中文路径问题已解决），但 IDA 主程序仍直接退出，怀疑缺少授权 key
+
+三、绿化工具执行结果（桌面代理操作）
+工具：C:\ida83\IDA_Pro_8.3_绿化工具.exe（中文控制台）
+输出：
+  设置.idb文件关联成功
+  设置.i64文件关联成功
+  设置桌面快捷方式成功
+  右键菜单添加成功
+  绿化完成!
+  enjoy it!!! By 云在天
+注册表 HKCU\Software\Hex-Rays\IDA 写入：
+  License = P.Y.G Team, Personal license
+  Python3TargetDLL = C:\ida83\python311\python311.dll
+  AutoCheckUpdates = 0
+  AutoUseLumina = 0
+生成 C:\ida83\ida.key（3219 字节）
+
+四、绿化后启动 IDA 的新报错
+ida64.exe 启动弹窗：
+  Unexpected fatal error while initializing Python runtime.
+  Please run idapyswitch to confirm or change the used Python runtime
+点确定后进程退出（exit code 1），无许可证相关提示
+
+五、python311 目录缺陷取证
+C:\ida83\python311\python311._pth 内容只包含：
+  python311.zip
+  .
+但 python311.zip 不存在；标准库实际位于 C:\ida83\python311\python311\ 下
+直接运行 C:\ida83\python311\python.exe -c "print(1)" 报：
+  ModuleNotFoundError: No module named 'encodings'
+
+六、结论
+so 调试所需的手机侧链路已通（android_server64 运行、23946 监听、adb forward、TCP 连接成功、
+libutils.so 模块基址 0x758322a000 已定位），但 IDA 客户端因绿色版 Python 运行时损坏无法进入主界面，
+因此 attach / 断点 / 单步 / 寄存器读取均未执行，不伪造结果。
+下一步最小修复：在 python311._pth 末尾补一行 python311，重启 ida64.exe 验证。

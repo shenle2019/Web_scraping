@@ -1,0 +1,2 @@
+Main-Class: CheSignDemo
+Class-Path: out/artifacts/unidbg_0_9_7_jar/unidbg-0.9.7.jar

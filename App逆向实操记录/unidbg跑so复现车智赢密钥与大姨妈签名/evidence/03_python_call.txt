@@ -1,0 +1,8 @@
+java = C:\Program Files\Java\jdk-1.8\bin\java.exe
+cwd  = E:\路飞学城\课件\APP逆向(12期)\_case_repl\day25\unidbg\unidbg-0.9.7
+[unidbg] so base = 0x40000000
+[unidbg] get3desKey = appapiche168comappapiche168comap
+[unidbg] key length = 32
+解析出的 key = 'appapiche168comappapiche168comap'
+与期望值比对：一致
+结论：PASS Python 调用 unidbg 成功且结果稳定

@@ -1,0 +1,45 @@
+== 步骤 1：找到装着 App 自身类的 dex 并 baksmali 反汇编 ==
+[1] apk 内 dex：classes3.dex, classes.dex, classes2.dex, classes4.dex
+[1] 目标类 Lcom/nb/sodebug/MainActivity; 在 classes3.dex
+[1] classes3.dex 大小 = 2748
+[cmd] C:\Program Files\Java\jdk-1.8\bin\java.exe -cp e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\baksmali-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\smali-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\dexlib2-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\util-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\guava-30.1.1-jre.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\failureaccess-1.0.1.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\jsr305-3.0.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\antlr-3.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\antlr-runtime-3.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\ST4-4.0.8.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\stringtemplate-3.2.1.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\jcommander-1.82.jar org.jf.baksmali.Main d E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\classes3.dex -o E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\smali
+
+== 步骤 2：定位并修改 smali 中的日志 TAG ==
+[2] 命中的原指令：const-string v2, "\u6d4b\u8bd5"
+  [smali] const-string v2, "PATCHED_BY_SMALI"
+  [smali] invoke-static {v2, v1}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
+
+== 步骤 3：smali 汇编回 dex ==
+[cmd] C:\Program Files\Java\jdk-1.8\bin\java.exe -cp e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\baksmali-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\smali-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\dexlib2-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\util-2.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\guava-30.1.1-jre.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\failureaccess-1.0.1.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\jsr305-3.0.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\antlr-3.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\antlr-runtime-3.5.2.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\ST4-4.0.8.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\stringtemplate-3.2.1.jar;e:\路飞学城\课件\APP逆向(12期)\day01-开班\软件\jadx\jadx-1.4.1\lib\jcommander-1.82.jar org.jf.smali.Main a E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\smali -o E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\classes_patched.dex
+[3] 新 dex 大小 = 2592
+
+== 步骤 4：塞回 apk -> zipalign -> apksigner 重签名 ==
+[cmd] D:\AndroidSdk\build-tools\30.0.3\zipalign.exe -f -p 4 E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\sodebug_unsigned.apk E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\sodebug_aligned.apk
+[cmd] C:\Program Files\Java\jdk-1.8\bin\keytool.exe -genkeypair -keystore E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\demo.keystore -storepass android -keypass android -alias demo -keyalg RSA -keysize 2048 -validity 3650 -dname CN=Demo, OU=Study, O=Study, L=SH, S=SH, C=CN
+  Warning:
+  JKS ��Կ��ʹ��ר�ø�ʽ������ʹ�� "keytool -importkeystore -srckeystore E:\·��ѧ��\�μ�\APP����(12��)\_case_repl\day30\smali_work\demo.keystore -destkeystore E:\·��ѧ��\�μ�\APP����(12��)\_case_repl\day30\smali_work\demo.keystore -deststoretype pkcs12" Ǩ�Ƶ���ҵ��׼��ʽ PKCS12��
+[cmd] D:\AndroidSdk\build-tools\30.0.3\apksigner.bat sign --ks E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\demo.keystore --ks-pass pass:android --key-pass pass:android --out E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\sodebug_signed.apk E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\sodebug_aligned.apk
+[cmd] D:\AndroidSdk\build-tools\30.0.3\apksigner.bat verify --print-certs E:\路飞学城\课件\APP逆向(12期)\_case_repl\day30\smali_work\sodebug_signed.apk
+  Signer #1 certificate DN: CN=Demo, OU=Study, O=Study, L=SH, ST=SH, C=CN
+  Signer #1 certificate SHA-256 digest: f558e9decb20487ce45fe43f1c9da0a53a2256457e9542729b782bbe402b14ad
+  Signer #1 certificate SHA-1 digest: 823672a49e423d23cc626e9434b68276e81913ed
+  Signer #1 certificate MD5 digest: c81ae51c651b41fc4d230582ad15ac36
+
+== 步骤 5：卸载原版 -> 安装改包 -> 点击按钮 -> 看 logcat ==
+Success
+Performing Streamed Install
+Success
+Starting: Intent { cmp=com.nb.sodebug/.MainActivity }
+[logcat] E/PATCHED_BY_SMALI(31771): 3
+
+== 判定 ==
+  dex_located            PASS
+  baksmali_ok            PASS
+  found_tag              PASS
+  smali_ok               PASS
+  zipalign_ok            PASS
+  signed                 PASS
+  patched_installed      PASS
+  tapped                 PASS
+  new_tag_logged         PASS
+总判定：PASS
